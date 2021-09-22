@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using EntidadesPetShop;
+
+namespace PetShop
+{
+    public partial class Frm_ABM : Form
+    {
+        private DataTable tabla;
+        public Frm_ABM()
+        {
+            InitializeComponent();
+        }
+
+        private void Frm_ABM_Load(object sender, EventArgs e)
+        {
+            ListarClientes();
+
+        }
+
+        private void btn_Guardar_Click(object sender, EventArgs e)
+        {
+
+
+
+
+            double.TryParse(txt_Billetera.Text, out double billetera);
+            Cliente newCliente = new Cliente(txt_Nombre.Text, txt_Apellido.Text, billetera);
+            List<Cliente> clientes = new List<Cliente>();
+            ComercioPetShop.CargarListaClientes(clientes);
+            clientes.Add(newCliente);
+            dgv_Tabla.DataSource = clientes;
+        }
+
+        public void ListarClientes()
+        {
+            tabla = new DataTable();
+            tabla.Columns.Add("ID");
+            tabla.Columns.Add("Nombre");
+            tabla.Columns.Add("Apellido");
+            tabla.Columns.Add("Billetera");
+
+            
+            List<Cliente> clientes = new List<Cliente>();
+            ComercioPetShop.CargarListaClientes(clientes);
+
+            dgv_Tabla.DataSource = clientes;
+        }
+    }
+}

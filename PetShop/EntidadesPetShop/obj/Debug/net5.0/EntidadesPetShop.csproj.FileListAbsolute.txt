@@ -1,0 +1,12 @@
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\bin\Debug\net5.0\EntidadesPetShop.deps.json
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\bin\Debug\net5.0\EntidadesPetShop.dll
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\bin\Debug\net5.0\ref\EntidadesPetShop.dll
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\bin\Debug\net5.0\EntidadesPetShop.pdb
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.csproj.AssemblyReference.cache
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.GeneratedMSBuildEditorConfig.editorconfig
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.AssemblyInfoInputs.cache
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.AssemblyInfo.cs
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.csproj.CoreCompileInputs.cache
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.dll
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\ref\EntidadesPetShop.dll
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.pdb
