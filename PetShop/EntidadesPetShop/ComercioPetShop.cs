@@ -8,6 +8,7 @@ namespace EntidadesPetShop
 {
     public static class ComercioPetShop
     {
+        #region Atributos
         private static string nombre;
         private static string direccion;
         private static long cuit;
@@ -16,7 +17,9 @@ namespace EntidadesPetShop
         private static List<Empleado> empleados;
         private static List<Administrador> administradores;
         private static Dictionary<string, string> usuarios;
+        #endregion
 
+        #region Constructor
         static ComercioPetShop()
         {
             nombre = "Piluso";
@@ -28,14 +31,12 @@ namespace EntidadesPetShop
             administradores = new List<Administrador>();
             usuarios = new Dictionary<string, string>();
         }
-
-        public static Dictionary<string, string> DictionaryUsuarios 
-        {   
-            get {return usuarios; }
-            set { usuarios = value; }
-        }
+        #endregion
 
 
+       
+
+        #region Metodos
         public static void CargarListaClientes(List<Cliente> clientes)
         {
             clientes.Add(new Cliente("Maria", "Noriega", 30000));
@@ -69,10 +70,13 @@ namespace EntidadesPetShop
             administradores.Add(new Administrador("Carolina", "Scrofani", 80000));
         }
 
-        public static void AgregarDictionaryUsuarios(Dictionary<string,string> usuarios)
+        public static void AgregarDictionaryUsuarios(Dictionary<string, string> usuarios)
         {
             usuarios.Add("Lucas", "asd123");
         }
+        #endregion
+
+
 
     }
 }

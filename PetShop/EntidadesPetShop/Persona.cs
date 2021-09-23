@@ -4,33 +4,19 @@ namespace EntidadesPetShop
 {
     public abstract class Persona
     {
+        #region Atributos
         private string nombre;
         private string apellido;
-        private int id;        
-        private double billetera;
-                
+        private string dni;
+        private string cuil;
+        #endregion
 
-        protected Persona(string nombre, string apellido, double billetera)
+        #region Propiedades
+        public string Nombre
         {
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.billetera = billetera;
+            get { return nombre; }
+            set { nombre = value; }
         }
-
-        public double Billetera
-        {
-            get { return billetera; }
-            set { billetera = value; }
-        }
-
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-
 
         public string Apellido
         {
@@ -38,15 +24,28 @@ namespace EntidadesPetShop
             set { apellido = value; }
         }
 
-
-        public string Nombre
+        public string Dni
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return dni; }
+            set { dni = value; }
         }
 
-        public abstract double DepositoBilletera();
-        public abstract double ExtraccionBilletera();
+        public string Cuil
+        {
+            get { return cuil; }
+            set { cuil = value; }
+        }
+        #endregion
 
+        #region Constructor
+        protected Persona(string nombre, string apellido, string dni, string cuil)
+        {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = dni;
+            this.cuil = cuil;
+        }
+
+        #endregion
     }
 }

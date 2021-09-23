@@ -8,20 +8,25 @@ namespace EntidadesPetShop
 {
     public class Administrador : Empleado
     {
-        private static int ultimoIdGenerado;
+        #region Atributos
+        private double bono;
+        #endregion
 
-        static Administrador()
+        #region Propiedades
+        public double Bono
         {
-            ultimoIdGenerado = 500;
+            get { return bono; }
+            set { bono = value; }
         }
 
-        public Administrador(string nombre, string apellido, double billetera) : base(nombre, apellido, billetera)
+        #endregion
+
+        #region Constructor        
+        public Administrador(int id, string nombre, string apellido, string dni, string cuil, Usuario usuario, double sueldo, double bono) : base(id, nombre, apellido, dni, cuil, usuario, sueldo)
         {
-            ultimoIdGenerado++;
-            this.Id = ultimoIdGenerado;
-            this.Nombre = nombre;
-            this.Apellido = apellido;
-            this.Billetera = billetera;
+            this.Bono = bono;
         }
+
+        #endregion
     }
 }

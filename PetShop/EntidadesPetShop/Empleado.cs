@@ -8,30 +8,52 @@ namespace EntidadesPetShop
 {
     public class Empleado : Persona
     {
+        #region Atributos
         private static int ultimoIdGenerado;
+        private int id;
+        private Usuario usuario;
+        private double sueldo;
+        #endregion
 
+        #region Propiedades
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public double Sueldo
+        {
+            get { return sueldo; }
+            set { sueldo = value; }
+        }
+
+        public Usuario Usuario
+        {
+            get { return usuario; }
+            set { usuario = value; }
+        }
+
+        #endregion
+
+        #region Constructor
         static Empleado()
         {
-            ultimoIdGenerado = 300;
-        }        
+            ultimoIdGenerado = 99999;
+        }
 
-        public Empleado(string nombre, string apellido, double billetera) : base(nombre, apellido, billetera) 
+        public Empleado(string nombre, string apellido, string dni, string cuil, Usuario usuario, double sueldo) : base(nombre, apellido, dni, cuil)
         {
             ultimoIdGenerado++;
             this.Id = ultimoIdGenerado;
             this.Nombre = nombre;
             this.Apellido = apellido;
-            this.Billetera = billetera;
+            this.Sueldo = sueldo;
+            this.Dni = dni;
+            this.Cuil = cuil;
+            this.Usuario = usuario;
         }
 
-        public override double DepositoBilletera()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override double ExtraccionBilletera()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
     }
 }

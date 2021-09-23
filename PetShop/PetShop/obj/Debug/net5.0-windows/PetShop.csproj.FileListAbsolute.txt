@@ -21,3 +21,26 @@ D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetSh
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.genruntimeconfig.cache
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_Login.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_ABM.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\PetShop.exe
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\PetShop.deps.json
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\PetShop.runtimeconfig.json
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\PetShop.runtimeconfig.dev.json
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\PetShop.dll
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\ref\PetShop.dll
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\PetShop.pdb
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\EntidadesPetShop.dll
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\EntidadesPetShop.pdb
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.csproj.AssemblyReference.cache
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_ABM.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_Login.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_MenuPrincipal.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.csproj.GenerateResource.cache
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.AssemblyInfoInputs.cache
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.AssemblyInfo.cs
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.csproj.CoreCompileInputs.cache
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.csproj.CopyComplete
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.dll
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\ref\PetShop.dll
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.pdb
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.genruntimeconfig.cache

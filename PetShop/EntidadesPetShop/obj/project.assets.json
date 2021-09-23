@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TUP\\2do Cuatrimestre 2021\\Programación y Laboratorio 2\\PetShop\\PetShop\\EntidadesPetShop\\EntidadesPetShop.csproj",
+      "projectUniqueName": "C:\\Users\\LuisAndaur\\Documents\\Parcial LABOII\\PetShop\\PetShop\\EntidadesPetShop\\EntidadesPetShop.csproj",
       "projectName": "EntidadesPetShop",
-      "projectPath": "D:\\TUP\\2do Cuatrimestre 2021\\Programación y Laboratorio 2\\PetShop\\PetShop\\EntidadesPetShop\\EntidadesPetShop.csproj",
+      "projectPath": "C:\\Users\\LuisAndaur\\Documents\\Parcial LABOII\\PetShop\\PetShop\\EntidadesPetShop\\EntidadesPetShop.csproj",
       "packagesPath": "C:\\Users\\LuisAndaur\\.nuget\\packages\\",
-      "outputPath": "D:\\TUP\\2do Cuatrimestre 2021\\Programación y Laboratorio 2\\PetShop\\PetShop\\EntidadesPetShop\\obj\\",
+      "outputPath": "C:\\Users\\LuisAndaur\\Documents\\Parcial LABOII\\PetShop\\PetShop\\EntidadesPetShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

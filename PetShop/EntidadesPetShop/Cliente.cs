@@ -9,30 +9,27 @@ namespace EntidadesPetShop
     public class Cliente : Persona
     {
         private static int ultimoIdGenerado;
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
 
         static Cliente()
         {
-            ultimoIdGenerado = 1000;
+            ultimoIdGenerado = 999;
         }
 
-        public Cliente(string nombre, string apellido, double billetera) : base(nombre, apellido, billetera)
+        public Cliente(string nombre, string apellido, string dni, string cuil) : base(nombre, apellido, dni, cuil)
         {
             ultimoIdGenerado++;
             this.Id = ultimoIdGenerado;
             this.Nombre = nombre;
             this.Apellido = apellido;
-            this.Billetera = billetera;
         }
 
-
-        public override double DepositoBilletera()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override double ExtraccionBilletera()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
