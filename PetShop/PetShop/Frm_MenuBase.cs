@@ -11,14 +11,14 @@ using EntidadesPetShop;
 
 namespace PetShop
 {
-    public partial class Frm_MenuPrincipal : Form
+    public partial class Frm_MenuBase : Form
     {
-        public Frm_MenuPrincipal()
+        public Frm_MenuBase()
         {
             InitializeComponent();
         }
 
-        public Frm_MenuPrincipal(string nombreUsuario) : this ()
+        public Frm_MenuBase(string nombreUsuario) : this ()
         {
             this.lbl_TituloMenuPrincipal.Text = $"{this.lbl_TituloMenuPrincipal.Text}{nombreUsuario}";
         }
@@ -51,7 +51,8 @@ namespace PetShop
 
         private void btn_Clientes_Click(object sender, EventArgs e)
         {
-            AbrirFormDentro(new Frm_ABM());
+            AbrirFormDentro(new Frm_abmBase());
         }
+
     }
 }

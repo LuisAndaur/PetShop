@@ -68,12 +68,13 @@ namespace PetShop
             // 
             // btn_Administrador
             // 
-            this.btn_Administrador.Location = new System.Drawing.Point(12, 350);
+            this.btn_Administrador.Location = new System.Drawing.Point(12, 347);
             this.btn_Administrador.Name = "btn_Administrador";
             this.btn_Administrador.Size = new System.Drawing.Size(130, 23);
             this.btn_Administrador.TabIndex = 4;
             this.btn_Administrador.Text = "Administrador";
             this.btn_Administrador.UseVisualStyleBackColor = true;
+            this.btn_Administrador.Click += new System.EventHandler(this.btn_Administrador_Click);
             // 
             // lbl_TextoAutocompletar
             // 
@@ -86,12 +87,13 @@ namespace PetShop
             // 
             // btn_Empleado
             // 
-            this.btn_Empleado.Location = new System.Drawing.Point(156, 350);
+            this.btn_Empleado.Location = new System.Drawing.Point(156, 347);
             this.btn_Empleado.Name = "btn_Empleado";
             this.btn_Empleado.Size = new System.Drawing.Size(130, 23);
             this.btn_Empleado.TabIndex = 5;
             this.btn_Empleado.Text = "Empleado";
             this.btn_Empleado.UseVisualStyleBackColor = true;
+            this.btn_Empleado.Click += new System.EventHandler(this.btn_Empleado_Click);
             // 
             // lbl_ErrorLogin
             // 

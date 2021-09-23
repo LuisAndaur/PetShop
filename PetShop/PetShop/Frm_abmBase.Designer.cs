@@ -1,7 +1,7 @@
 ﻿
 namespace PetShop
 {
-    partial class Frm_ABM
+    partial class Frm_abmBase
     {
         /// <summary>
         /// Required designer variable.

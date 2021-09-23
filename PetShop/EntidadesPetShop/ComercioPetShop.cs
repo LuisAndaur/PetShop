@@ -15,8 +15,7 @@ namespace EntidadesPetShop
         private static string razonSocial;
         private static List<Cliente> clientes;
         private static List<Empleado> empleados;
-        private static List<Administrador> administradores;
-        private static Dictionary<string, string> usuarios;
+        private static List<Usuario> usuarios;
         #endregion
 
         #region Constructor
@@ -28,51 +27,48 @@ namespace EntidadesPetShop
             razonSocial = "Pet Shop";
             clientes = new List<Cliente>();
             empleados = new List<Empleado>();
-            administradores = new List<Administrador>();
-            usuarios = new Dictionary<string, string>();
+            usuarios = new List<Usuario>();
         }
         #endregion
-
-
-       
+              
 
         #region Metodos
         public static void CargarListaClientes(List<Cliente> clientes)
         {
-            clientes.Add(new Cliente("Maria", "Noriega", 30000));
-            clientes.Add(new Cliente("Juan", "Lopez", 1000));
-            clientes.Add(new Cliente("Patricia", "Gomez", 300));
-            clientes.Add(new Cliente("Monica", "Antunez", 50000));
-            clientes.Add(new Cliente("Alma", "Nuñez", 2500));
-            clientes.Add(new Cliente("Pedro", "Gutierrez", 700));
-            clientes.Add(new Cliente("Angel", "Ortega", 4500));
-            clientes.Add(new Cliente("Lionel", "Messi", 15000));
-            clientes.Add(new Cliente("Antonella", "Martinez", 6800));
-            clientes.Add(new Cliente("Mauro", "Almada", 10000));
-            clientes.Add(new Cliente("Nadia", "DiMaria", 450));
+            clientes.Add(new Cliente("Maria", "Noriega", "33694911", 27336949114, 30000));
+            clientes.Add(new Cliente("Juan", "Lopez", "42053266", 27420532666, 1000));
+            clientes.Add(new Cliente("Patricia", "Gomez", "39971941", 27399719416, 300));
+            clientes.Add(new Cliente("Monica", "Antunez", "36631583", 27366315832, 50000));
+            clientes.Add(new Cliente("Alma", "Nuñez", "23195639", 27231956390, 2500));
+            clientes.Add(new Cliente("Pedro", "Gutierrez", "40685744", 27406857447, 700));
+            clientes.Add(new Cliente("Angel", "Ortega", "41264922", 20412649223, 4500));
+            clientes.Add(new Cliente("Lionel", "Messi", "32407271", 20324072714, 15000));
+            clientes.Add(new Cliente("Antonella", "Martinez", "38747220", 27387472207, 6800));
+            clientes.Add(new Cliente("Mauro", "Almada", "34636305", 20346363054, 10000));
+            clientes.Add(new Cliente("Nadia", "DiMaria", "20345033", 27203450333, 450));
+            clientes.Add(new Cliente("Pablo", "Sanchez", "43144306", 27431443063, 67450));
+            clientes.Add(new Cliente("Sandra", "Ojeda", "40719653", 27407196534, 850));
+            clientes.Add(new Cliente("Lisa", "Simpson", "28854286", 27288542863, 11450));
+            clientes.Add(new Cliente("Lucia", "Santamaria", "37821737", 27378217373, 2230));
+            clientes.Add(new Cliente("Carla", "Olmedo", "42217764", 26422177649, 100000));
         }
 
-        public static void CargarListaEmpleados(List<Empleado> empleados)
+        public static void CargarListaEmpleados(List<Empleado> empleados, List<Usuario> usuarios)
         {
-            empleados.Add(new Empleado("Luis", "Andaur", 100000));
-            empleados.Add(new Empleado("Carla", "Olmedo", 100000));
-            empleados.Add(new Empleado("Lucia", "Santamaria", 100000));
-            empleados.Add(new Empleado("Pablo", "Sanchez", 100000));
-            empleados.Add(new Empleado("Sandra", "Ojeda", 100000));
-            empleados.Add(new Empleado("Lisa", "Simpson", 100000));
+            empleados.Add(new Empleado("Ezequiel", "Oggioni", "42217620", 20422176209, usuarios[0], 250000));
+            empleados.Add(new Empleado("Lucas", "Rodriguez", "42385648", 20423856484, usuarios[1], 250000));
+            empleados.Add(new Empleado("Juan", "Santos", "41481920", 20414819207, usuarios[2], 150000));
+            empleados.Add(new Empleado("Carolina", "Scrofani", "42385227", 27423852270, usuarios[3], 150000));
+            empleados.Add(new Empleado("Luis", "Andaur", "33009897", 20330098979, usuarios[4], 150000));
         }
 
-        public static void CargarListaAdministradores(List<Administrador> administradores)
+        public static void CargarUsuarios(List<Usuario> usuarios)
         {
-            administradores.Add(new Administrador("Ezequiel", "Oggioni", 150000));
-            administradores.Add(new Administrador("Lucas", "Rodriguez", 100000));
-            administradores.Add(new Administrador("Juan", "Santos", 80000));
-            administradores.Add(new Administrador("Carolina", "Scrofani", 80000));
-        }
-
-        public static void AgregarDictionaryUsuarios(Dictionary<string, string> usuarios)
-        {
-            usuarios.Add("Lucas", "asd123");
+            usuarios.Add(new Usuario("eoggioni", "42217620", ERol.Administrador));
+            usuarios.Add(new Usuario("lrodriguez", "42385648", ERol.Administrador));
+            usuarios.Add(new Usuario("jsantos", "41481920", ERol.Staff));
+            usuarios.Add(new Usuario("cscrofani", "42385227", ERol.Staff));
+            usuarios.Add(new Usuario("landaur", "33009897", ERol.Staff));
         }
         #endregion
 

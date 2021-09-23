@@ -22,7 +22,7 @@ namespace EntidadesPetShop
         #endregion
 
         #region Constructor        
-        public Administrador(int id, string nombre, string apellido, string dni, string cuil, Usuario usuario, double sueldo, double bono) : base(id, nombre, apellido, dni, cuil, usuario, sueldo)
+        public Administrador(int id, string nombre, string apellido, string dni, long cuil, Usuario usuario, double sueldo, double bono) : base(nombre, apellido, dni, cuil, usuario, sueldo)
         {
             this.Bono = bono;
         }

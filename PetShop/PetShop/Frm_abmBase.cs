@@ -11,11 +11,11 @@ using EntidadesPetShop;
 
 namespace PetShop
 {
-    public partial class Frm_ABM : Form
+    public partial class Frm_abmBase : Form
     {
         private DataTable tabla;
         List<Cliente> clientes = new List<Cliente>();
-        public Frm_ABM()
+        public Frm_abmBase()
         {
             InitializeComponent();
         }
@@ -28,11 +28,11 @@ namespace PetShop
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            double.TryParse(txt_Billetera.Text, out double billetera);
-            Cliente newCliente = new Cliente(txt_Nombre.Text, txt_Apellido.Text, billetera);
+            //double.TryParse(txt_Billetera.Text, out double billetera);
+            //Cliente newCliente = new Cliente(txt_Nombre.Text, txt_Apellido.Text, billetera);
           //  List<Cliente> clientes = new List<Cliente>();
            // ComercioPetShop.CargarListaClientes(clientes);
-            clientes.Add(newCliente);
+           // clientes.Add(newCliente);
             dgv_Tabla.DataSource = null;
            
             dgv_Tabla.DataSource = clientes;

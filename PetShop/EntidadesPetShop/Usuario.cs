@@ -12,7 +12,7 @@ namespace EntidadesPetShop
         private string nombreUsuario;
         private string contraseña;
         private int idUsuario;
-        private string rol;
+        private ERol rol;
         private static int ultimoIdGenerado;
         #endregion
 
@@ -20,7 +20,6 @@ namespace EntidadesPetShop
         public int IdUsuario
         {
             get { return idUsuario; }
-            set { idUsuario = value; }
         }
         public string NombreUsuario
         {
@@ -34,10 +33,9 @@ namespace EntidadesPetShop
             set { contraseña = value; }
         }
 
-        public string Rol
+        public ERol Rol
         {
             get { return rol; }
-            set { rol = value; }
         }
 
         #endregion
@@ -48,7 +46,7 @@ namespace EntidadesPetShop
             ultimoIdGenerado = 0;
         }
 
-        public Usuario(string nombreUsuario, string contraseña, string rol)
+        public Usuario(string nombreUsuario, string contraseña, ERol rol)
         {
             ultimoIdGenerado++;
             this.idUsuario = ultimoIdGenerado;

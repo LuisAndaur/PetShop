@@ -8,7 +8,7 @@ namespace EntidadesPetShop
         private string nombre;
         private string apellido;
         private string dni;
-        private string cuil;
+        private long cuil;
         #endregion
 
         #region Propiedades
@@ -30,7 +30,7 @@ namespace EntidadesPetShop
             set { dni = value; }
         }
 
-        public string Cuil
+        public long Cuil
         {
             get { return cuil; }
             set { cuil = value; }
@@ -38,7 +38,7 @@ namespace EntidadesPetShop
         #endregion
 
         #region Constructor
-        protected Persona(string nombre, string apellido, string dni, string cuil)
+        protected Persona(string nombre, string apellido, string dni, long cuil)
         {
             this.nombre = nombre;
             this.apellido = apellido;

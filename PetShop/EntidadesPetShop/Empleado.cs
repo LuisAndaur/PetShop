@@ -42,7 +42,7 @@ namespace EntidadesPetShop
             ultimoIdGenerado = 99999;
         }
 
-        public Empleado(string nombre, string apellido, string dni, string cuil, Usuario usuario, double sueldo) : base(nombre, apellido, dni, cuil)
+        public Empleado(string nombre, string apellido, string dni, long cuil, Usuario usuario, double sueldo) : base(nombre, apellido, dni, cuil)
         {
             ultimoIdGenerado++;
             this.Id = ultimoIdGenerado;
@@ -53,7 +53,14 @@ namespace EntidadesPetShop
             this.Cuil = cuil;
             this.Usuario = usuario;
         }
-
         #endregion
+
+        public virtual double LiquidarSueldos(double sueldoActualizado)
+        {            
+            return this.Sueldo = sueldoActualizado;
+        }
+
+
+
     }
 }

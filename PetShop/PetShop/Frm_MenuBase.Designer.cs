@@ -1,7 +1,7 @@
 ﻿
 namespace PetShop
 {
-    partial class Frm_MenuPrincipal
+    partial class Frm_MenuBase
     {
         /// <summary>
         ///  Required designer variable.
@@ -98,11 +98,11 @@ namespace PetShop
             this.pnl_Contenedor.Size = new System.Drawing.Size(988, 541);
             this.pnl_Contenedor.TabIndex = 5;
             // 
-            // Frm_MenuPrincipal
+            // Frm_MenuBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 621);
+            this.ClientSize = new System.Drawing.Size(1184, 681);
             this.Controls.Add(this.pnl_Contenedor);
             this.Controls.Add(this.btn_Home);
             this.Controls.Add(this.lbl_Hora);
@@ -110,7 +110,9 @@ namespace PetShop
             this.Controls.Add(this.lbl_TituloMenuPrincipal);
             this.Controls.Add(this.btn_Clientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Frm_MenuPrincipal";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Frm_MenuBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.Load += new System.EventHandler(this.Frm_MenuPrincipal_Load);
@@ -120,14 +122,13 @@ namespace PetShop
         }
 
         #endregion
-
         private System.Windows.Forms.Button btn_Clientes;
-        private System.Windows.Forms.Label lbl_TituloMenuPrincipal;
-        private System.Windows.Forms.Label lbl_Fecha;
-        private System.Windows.Forms.Label lbl_Hora;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_Home;
         private System.Windows.Forms.Panel pnl_Contenedor;
+        private System.Windows.Forms.Label lbl_Fecha;
+        private System.Windows.Forms.Label lbl_Hora;
+        protected System.Windows.Forms.Label lbl_TituloMenuPrincipal;
+        protected System.Windows.Forms.Timer timer1;
     }
 }
 
