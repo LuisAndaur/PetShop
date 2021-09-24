@@ -34,17 +34,21 @@ namespace EntidadesPetShop
             ultimoIdGenerado = 999;
         }
 
-        public Cliente(string nombre, string apellido, string dni, long cuil, double saldo) : base(nombre, apellido, dni, cuil)
+        public Cliente(string nombre, string apellido, string dni, long cuil) : base(nombre, apellido, dni, cuil)
         {
             ultimoIdGenerado++;
             this.Id = ultimoIdGenerado;
             this.Nombre = nombre;
             this.Apellido = apellido;
-            this.Saldo = saldo;
+            this.Saldo = SaldoRandom();
         }
         #endregion
-
-
+        
+        private double SaldoRandom()
+        {
+            Random random = new Random();
+            return (double)random.Next(0,5500);
+        }
 
     }
 }

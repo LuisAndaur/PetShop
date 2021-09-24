@@ -35,22 +35,22 @@ namespace EntidadesPetShop
         #region Metodos
         public static void CargarListaClientes(List<Cliente> clientes)
         {
-            clientes.Add(new Cliente("Maria", "Noriega", "33694911", 27336949114, 30000));
-            clientes.Add(new Cliente("Juan", "Lopez", "42053266", 27420532666, 1000));
-            clientes.Add(new Cliente("Patricia", "Gomez", "39971941", 27399719416, 300));
-            clientes.Add(new Cliente("Monica", "Antunez", "36631583", 27366315832, 50000));
-            clientes.Add(new Cliente("Alma", "Nuñez", "23195639", 27231956390, 2500));
-            clientes.Add(new Cliente("Pedro", "Gutierrez", "40685744", 27406857447, 700));
-            clientes.Add(new Cliente("Angel", "Ortega", "41264922", 20412649223, 4500));
-            clientes.Add(new Cliente("Lionel", "Messi", "32407271", 20324072714, 15000));
-            clientes.Add(new Cliente("Antonella", "Martinez", "38747220", 27387472207, 6800));
-            clientes.Add(new Cliente("Mauro", "Almada", "34636305", 20346363054, 10000));
-            clientes.Add(new Cliente("Nadia", "DiMaria", "20345033", 27203450333, 450));
-            clientes.Add(new Cliente("Pablo", "Sanchez", "43144306", 27431443063, 67450));
-            clientes.Add(new Cliente("Sandra", "Ojeda", "40719653", 27407196534, 850));
-            clientes.Add(new Cliente("Lisa", "Simpson", "28854286", 27288542863, 11450));
-            clientes.Add(new Cliente("Lucia", "Santamaria", "37821737", 27378217373, 2230));
-            clientes.Add(new Cliente("Carla", "Olmedo", "42217764", 26422177649, 100000));
+            clientes.Add(new Cliente("Maria", "Noriega", "33694911", 27336949114));
+            clientes.Add(new Cliente("Juan", "Lopez", "42053266", 27420532666));
+            clientes.Add(new Cliente("Patricia", "Gomez", "39971941", 27399719416));
+            clientes.Add(new Cliente("Monica", "Antunez", "36631583", 27366315832));
+            clientes.Add(new Cliente("Alma", "Nuñez", "23195639", 27231956390));
+            clientes.Add(new Cliente("Pedro", "Gutierrez", "40685744", 27406857447));
+            clientes.Add(new Cliente("Angel", "Ortega", "41264922", 20412649223));
+            clientes.Add(new Cliente("Lionel", "Messi", "32407271", 20324072714));
+            clientes.Add(new Cliente("Antonella", "Martinez", "38747220", 27387472207));
+            clientes.Add(new Cliente("Mauro", "Almada", "34636305", 20346363054));
+            clientes.Add(new Cliente("Nadia", "DiMaria", "20345033", 27203450333));
+            clientes.Add(new Cliente("Pablo", "Sanchez", "43144306", 27431443063));
+            clientes.Add(new Cliente("Sandra", "Ojeda", "40719653", 27407196534));
+            clientes.Add(new Cliente("Lisa", "Simpson", "28854286", 27288542863));
+            clientes.Add(new Cliente("Lucia", "Santamaria", "37821737", 27378217373));
+            clientes.Add(new Cliente("Carla", "Olmedo", "42217764", 26422177649));
         }
 
         public static void CargarListaEmpleados(List<Empleado> empleados, List<Usuario> usuarios)
