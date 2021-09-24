@@ -20,12 +20,14 @@ namespace PetShop
 
         public Frm_MenuBase(string nombreUsuario) : this ()
         {
-            this.lbl_TituloMenuPrincipal.Text = $"{this.lbl_TituloMenuPrincipal.Text}{nombreUsuario}";
+            this.lbl_TituloMenuPrincipal.Text = $"\n{this.lbl_TituloMenuPrincipal.Text}{nombreUsuario}";
+            
         }
 
         private void Frm_MenuPrincipal_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            AbrirFormDentro(new Frm_Home());
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
@@ -49,10 +51,19 @@ namespace PetShop
             auxForm.Show();
         }
 
-        private void btn_Clientes_Click(object sender, EventArgs e)
+        private void btn_Home_Click(object sender, EventArgs e)
         {
-            AbrirFormDentro(new Frm_abmBase());
+            AbrirFormDentro(new Frm_Home());
         }
 
+        private void btn_Clientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormDentro(new Frm_abmClientes());
+        }        
+
+        private void btn_Productos_Click(object sender, EventArgs e)
+        {
+            AbrirFormDentro(new Frm_abmProductos());
+        }
     }
 }

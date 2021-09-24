@@ -16,6 +16,8 @@ namespace EntidadesPetShop
         private static List<Cliente> clientes;
         private static List<Empleado> empleados;
         private static List<Usuario> usuarios;
+        private static List<Producto> productos;
+        private static List<Ventas> ventas;
         #endregion
 
         #region Constructor
@@ -28,6 +30,8 @@ namespace EntidadesPetShop
             clientes = new List<Cliente>();
             empleados = new List<Empleado>();
             usuarios = new List<Usuario>();
+            productos = new List<Producto>();
+            ventas = new List<Ventas>();
         }
         #endregion
               
@@ -72,7 +76,41 @@ namespace EntidadesPetShop
         }
         #endregion
 
+        public static void CargarProductos(List<Producto> productos)
+        {
+            productos.Add(new Producto("Monaco Cuadrille L", 2899.90, ECategoria.Cama, "Casita acolchada y desarmable", "Puppy", 5));
+            productos.Add(new Producto("MDF Carpa", 2915.40, ECategoria.Cama, "Carpita muy suave, cómoda y calentita", "MDF", 3));
+            productos.Add(new Producto("Active mind", 4650.33, ECategoria.Alimento, "Provee nutrición de avanzada manteniéndolos sanos y activos", "Purina", 6));
+            productos.Add(new Producto("Mummy Pro", 10490.50, ECategoria.Alimento, "Alimento completo y balanceado", "Purina", 2));
+            productos.Add(new Producto("Super Ranch", 422.80, ECategoria.Alimento, "Alpiste alimento para aves x750grs", "Nelsoni", 9));
+            productos.Add(new Producto("Bife gigante", 288.45, ECategoria.Juguete, "Juguetes para perros con sonido con forma de churrasco", "SuperPet", 4));
+            productos.Add(new Producto("Super raton", 176.25, ECategoria.Juguete, "Raton con sisal y sonido", "SuperPet", 5));
+            productos.Add(new Producto("Antiparasitario plus", 403.20, ECategoria.Farmacia, "Antiparasitario de espectro total y una sola toma", "Basquen", 2));
+            productos.Add(new Producto("Aquadent", 2311.60, ECategoria.Farmacia, "Dental Plax Antiséptico Bucal", "Virbac", 3));
+            productos.Add(new Producto("Grava gris", 1251.65, ECategoria.Higiene, "Impide cualquier efecto adverso sobre el agua", "SuperPet", 6));
+            productos.Add(new Producto("Escaleta", 1870.25, ECategoria.Juguete, "Escalada interactiva para aves", "SuperPet", 2));
+            productos.Add(new Producto("Marlo sanitario", 632.75, ECategoria.Higiene, "Cuidado sanitario para roedores", "Nelsoni", 3));
+            productos.Add(new Producto("Tetra fin", 3354.10, ECategoria.Alimento, "Alimento para peces carassius y otros peces de agua fría.", "Golsfish", 5));
+            productos.Add(new Producto("Bedding L", 2081.30, ECategoria.Cama, "Cama de doble cara y reversible para conejo", "Golsfish", 1));
+            productos.Add(new Producto("Shampoo de algas", 1139.60, ECategoria.Higiene, "Shampoo de algas abrillantador de higiene en general", "Osspret", 4));
+            productos.Add(new Producto("Peine Plats", 269.30, ECategoria.Higiene, "Peine manopla de goma", "SuperPet", 3));
+            productos.Add(new Producto("Peine Plats", 364.20, ECategoria.Higiene, "Regulador de los niveles de pH y potasio", "Nutrafin", 7));
+            productos.Add(new Producto("Baño arena", 486.85, ECategoria.Higiene, "Baños de polvo imprescindibles para su pelaje suelto y esponjoso", "Zootec", 1));
+        }
 
+        public static void CargarVentas(List<Ventas> ventas, List<Empleado> empleados, List<Cliente> clientes, List<Producto> productos)
+        {
+            ventas.Add(new Ventas(empleados[3], clientes[2], productos[4], 2, productos[4].Precio*2));
+            ventas.Add(new Ventas(empleados[5], clientes[5], productos[12], 1, productos[12].Precio));
+            ventas.Add(new Ventas(empleados[1], clientes[7], productos[7], 3, productos[7].Precio*3));
+            ventas.Add(new Ventas(empleados[2], clientes[10], productos[5], 2, productos[5].Precio*2));
+            ventas.Add(new Ventas(empleados[4], clientes[8], productos[2], 2, productos[2].Precio*2));
+            ventas.Add(new Ventas(empleados[1], clientes[5], productos[10], 1, productos[10].Precio));
+            ventas.Add(new Ventas(empleados[3], clientes[1], productos[14], 2, productos[14].Precio*2));
+            ventas.Add(new Ventas(empleados[2], clientes[12], productos[9], 1, productos[9].Precio));
+            ventas.Add(new Ventas(empleados[4], clientes[15], productos[16], 1, productos[16].Precio));
+            ventas.Add(new Ventas(empleados[1], clientes[4], productos[3], 2, productos[3].Precio*2));
+        }
 
     }
 }

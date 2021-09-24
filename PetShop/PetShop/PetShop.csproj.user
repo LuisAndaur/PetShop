@@ -4,6 +4,15 @@
     <Compile Update="Frm_abmBase.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_abmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Frm_abmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Frm_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>

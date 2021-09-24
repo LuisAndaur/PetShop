@@ -37,11 +37,14 @@ namespace PetShop
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btn_Home = new System.Windows.Forms.Button();
             this.pnl_Contenedor = new System.Windows.Forms.Panel();
+            this.btn_Productos = new System.Windows.Forms.Button();
+            this.btn_Ventas = new System.Windows.Forms.Button();
+            this.btn_Empleados = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Clientes
             // 
-            this.btn_Clientes.Location = new System.Drawing.Point(450, 27);
+            this.btn_Clientes.Location = new System.Drawing.Point(12, 130);
             this.btn_Clientes.Name = "btn_Clientes";
             this.btn_Clientes.Size = new System.Drawing.Size(114, 35);
             this.btn_Clientes.TabIndex = 0;
@@ -62,7 +65,7 @@ namespace PetShop
             // 
             this.lbl_Fecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Fecha.AutoSize = true;
-            this.lbl_Fecha.Location = new System.Drawing.Point(12, 37);
+            this.lbl_Fecha.Location = new System.Drawing.Point(590, 9);
             this.lbl_Fecha.Name = "lbl_Fecha";
             this.lbl_Fecha.Size = new System.Drawing.Size(38, 15);
             this.lbl_Fecha.TabIndex = 2;
@@ -72,7 +75,7 @@ namespace PetShop
             // 
             this.lbl_Hora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Hora.AutoSize = true;
-            this.lbl_Hora.Location = new System.Drawing.Point(12, 68);
+            this.lbl_Hora.Location = new System.Drawing.Point(27, 534);
             this.lbl_Hora.Name = "lbl_Hora";
             this.lbl_Hora.Size = new System.Drawing.Size(33, 15);
             this.lbl_Hora.TabIndex = 3;
@@ -84,25 +87,57 @@ namespace PetShop
             // 
             // btn_Home
             // 
-            this.btn_Home.Location = new System.Drawing.Point(317, 27);
+            this.btn_Home.Location = new System.Drawing.Point(12, 78);
             this.btn_Home.Name = "btn_Home";
             this.btn_Home.Size = new System.Drawing.Size(114, 35);
             this.btn_Home.TabIndex = 4;
             this.btn_Home.Text = "Home";
             this.btn_Home.UseVisualStyleBackColor = true;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
             // pnl_Contenedor
             // 
-            this.pnl_Contenedor.Location = new System.Drawing.Point(112, 68);
+            this.pnl_Contenedor.Location = new System.Drawing.Point(148, 50);
             this.pnl_Contenedor.Name = "pnl_Contenedor";
-            this.pnl_Contenedor.Size = new System.Drawing.Size(988, 541);
+            this.pnl_Contenedor.Size = new System.Drawing.Size(1035, 630);
             this.pnl_Contenedor.TabIndex = 5;
+            // 
+            // btn_Productos
+            // 
+            this.btn_Productos.Location = new System.Drawing.Point(12, 182);
+            this.btn_Productos.Name = "btn_Productos";
+            this.btn_Productos.Size = new System.Drawing.Size(114, 35);
+            this.btn_Productos.TabIndex = 6;
+            this.btn_Productos.Text = "Productos";
+            this.btn_Productos.UseVisualStyleBackColor = true;
+            this.btn_Productos.Click += new System.EventHandler(this.btn_Productos_Click);
+            // 
+            // btn_Ventas
+            // 
+            this.btn_Ventas.Location = new System.Drawing.Point(12, 233);
+            this.btn_Ventas.Name = "btn_Ventas";
+            this.btn_Ventas.Size = new System.Drawing.Size(114, 35);
+            this.btn_Ventas.TabIndex = 7;
+            this.btn_Ventas.Text = "Ventas";
+            this.btn_Ventas.UseVisualStyleBackColor = true;
+            // 
+            // btn_Empleados
+            // 
+            this.btn_Empleados.Location = new System.Drawing.Point(12, 285);
+            this.btn_Empleados.Name = "btn_Empleados";
+            this.btn_Empleados.Size = new System.Drawing.Size(114, 35);
+            this.btn_Empleados.TabIndex = 8;
+            this.btn_Empleados.Text = "Empleados";
+            this.btn_Empleados.UseVisualStyleBackColor = true;
             // 
             // Frm_MenuBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 681);
+            this.ClientSize = new System.Drawing.Size(1194, 691);
+            this.Controls.Add(this.btn_Empleados);
+            this.Controls.Add(this.btn_Ventas);
+            this.Controls.Add(this.btn_Productos);
             this.Controls.Add(this.pnl_Contenedor);
             this.Controls.Add(this.btn_Home);
             this.Controls.Add(this.lbl_Hora);
@@ -129,6 +164,9 @@ namespace PetShop
         private System.Windows.Forms.Label lbl_Hora;
         protected System.Windows.Forms.Label lbl_TituloMenuPrincipal;
         protected System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btn_Productos;
+        private System.Windows.Forms.Button btn_Ventas;
+        private System.Windows.Forms.Button btn_Empleados;
     }
 }
 

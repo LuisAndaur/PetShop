@@ -13,8 +13,8 @@ namespace PetShop
 {
     public partial class Frm_abmBase : Form
     {
-        private DataTable tabla;
-        List<Cliente> clientes = new List<Cliente>();
+        //private DataTable tabla;
+        //List<Cliente> clientes = new List<Cliente>();
         public Frm_abmBase()
         {
             InitializeComponent();
@@ -22,36 +22,29 @@ namespace PetShop
 
         private void Frm_ABM_Load(object sender, EventArgs e)
         {
-            ListarClientes();
 
         }
 
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        public virtual void btn_Guardar_Click(object sender, EventArgs e)
         {
-            //double.TryParse(txt_Billetera.Text, out double billetera);
-            //Cliente newCliente = new Cliente(txt_Nombre.Text, txt_Apellido.Text, billetera);
-          //  List<Cliente> clientes = new List<Cliente>();
-           // ComercioPetShop.CargarListaClientes(clientes);
-           // clientes.Add(newCliente);
-            dgv_Tabla.DataSource = null;
-           
-            dgv_Tabla.DataSource = clientes;
-            dgv_Tabla.Refresh();
+
         }
 
-        public void ListarClientes()
+        public virtual void txt_Editar_Click(object sender, EventArgs e)
         {
-            //tabla = new DataTable();
-            //tabla.Columns.Add("ID");
-            //tabla.Columns.Add("Nombre");
-            //tabla.Columns.Add("Apellido");
-            //tabla.Columns.Add("Billetera");
 
+        }
+
+        public virtual void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void ListarBase()
+        {
             
-          
-            ComercioPetShop.CargarListaClientes(clientes);
-
-            dgv_Tabla.DataSource = clientes;
         }
+
+
     }
 }
