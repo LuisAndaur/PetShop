@@ -40,6 +40,7 @@ namespace PetShop
             this.btn_Productos = new System.Windows.Forms.Button();
             this.btn_Ventas = new System.Windows.Forms.Button();
             this.btn_Empleados = new System.Windows.Forms.Button();
+            this.btn_Cerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Clientes
@@ -55,9 +56,10 @@ namespace PetShop
             // lbl_TituloMenuPrincipal
             // 
             this.lbl_TituloMenuPrincipal.AutoSize = true;
+            this.lbl_TituloMenuPrincipal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloMenuPrincipal.Location = new System.Drawing.Point(12, 9);
             this.lbl_TituloMenuPrincipal.Name = "lbl_TituloMenuPrincipal";
-            this.lbl_TituloMenuPrincipal.Size = new System.Drawing.Size(88, 15);
+            this.lbl_TituloMenuPrincipal.Size = new System.Drawing.Size(141, 25);
             this.lbl_TituloMenuPrincipal.TabIndex = 1;
             this.lbl_TituloMenuPrincipal.Text = "Usuario activo: ";
             // 
@@ -65,9 +67,10 @@ namespace PetShop
             // 
             this.lbl_Fecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Fecha.AutoSize = true;
+            this.lbl_Fecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Fecha.Location = new System.Drawing.Point(590, 9);
             this.lbl_Fecha.Name = "lbl_Fecha";
-            this.lbl_Fecha.Size = new System.Drawing.Size(38, 15);
+            this.lbl_Fecha.Size = new System.Drawing.Size(50, 21);
             this.lbl_Fecha.TabIndex = 2;
             this.lbl_Fecha.Text = "Fecha";
             // 
@@ -75,9 +78,10 @@ namespace PetShop
             // 
             this.lbl_Hora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Hora.AutoSize = true;
-            this.lbl_Hora.Location = new System.Drawing.Point(27, 534);
+            this.lbl_Hora.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Hora.Location = new System.Drawing.Point(1023, 9);
             this.lbl_Hora.Name = "lbl_Hora";
-            this.lbl_Hora.Size = new System.Drawing.Size(33, 15);
+            this.lbl_Hora.Size = new System.Drawing.Size(53, 25);
             this.lbl_Hora.TabIndex = 3;
             this.lbl_Hora.Text = "Hora";
             // 
@@ -120,6 +124,7 @@ namespace PetShop
             this.btn_Ventas.TabIndex = 7;
             this.btn_Ventas.Text = "Ventas";
             this.btn_Ventas.UseVisualStyleBackColor = true;
+            this.btn_Ventas.Click += new System.EventHandler(this.btn_Ventas_Click);
             // 
             // btn_Empleados
             // 
@@ -129,12 +134,23 @@ namespace PetShop
             this.btn_Empleados.TabIndex = 8;
             this.btn_Empleados.Text = "Empleados";
             this.btn_Empleados.UseVisualStyleBackColor = true;
+            this.btn_Empleados.Click += new System.EventHandler(this.btn_Empleados_Click);
+            // 
+            // btn_Cerrar
+            // 
+            this.btn_Cerrar.Location = new System.Drawing.Point(12, 644);
+            this.btn_Cerrar.Name = "btn_Cerrar";
+            this.btn_Cerrar.Size = new System.Drawing.Size(114, 35);
+            this.btn_Cerrar.TabIndex = 9;
+            this.btn_Cerrar.Text = "Cerrar";
+            this.btn_Cerrar.UseVisualStyleBackColor = true;
             // 
             // Frm_MenuBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 691);
+            this.Controls.Add(this.btn_Cerrar);
             this.Controls.Add(this.btn_Empleados);
             this.Controls.Add(this.btn_Ventas);
             this.Controls.Add(this.btn_Productos);
@@ -167,6 +183,7 @@ namespace PetShop
         private System.Windows.Forms.Button btn_Productos;
         private System.Windows.Forms.Button btn_Ventas;
         private System.Windows.Forms.Button btn_Empleados;
+        private System.Windows.Forms.Button btn_Cerrar;
     }
 }
 

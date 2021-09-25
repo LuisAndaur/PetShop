@@ -65,5 +65,15 @@ namespace PetShop
         {
             AbrirFormDentro(new Frm_abmProductos());
         }
+
+        private void btn_Empleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormDentro(new Frm_abmEmpleados());
+        }
+
+        private void btn_Ventas_Click(object sender, EventArgs e)
+        {
+            AbrirFormDentro(new Frm_abmVentas());
+        }
     }
 }

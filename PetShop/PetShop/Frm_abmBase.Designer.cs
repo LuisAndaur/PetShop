@@ -31,16 +31,16 @@ namespace PetShop
         {
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.txt_Editar = new System.Windows.Forms.Button();
-            this.btn_Guardar = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
             this.gpb_Lista = new System.Windows.Forms.GroupBox();
-            this.lvw_Lista = new System.Windows.Forms.ListView();
             this.gpb_Datos = new System.Windows.Forms.GroupBox();
-            this.gpb_Lista.SuspendLayout();
+            this.btn_Limpiar = new System.Windows.Forms.Button();
+            this.btn_Listar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Eliminar
             // 
-            this.btn_Eliminar.Location = new System.Drawing.Point(140, 505);
+            this.btn_Eliminar.Location = new System.Drawing.Point(813, 575);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(83, 23);
             this.btn_Eliminar.TabIndex = 25;
@@ -50,7 +50,7 @@ namespace PetShop
             // 
             // txt_Editar
             // 
-            this.txt_Editar.Location = new System.Drawing.Point(46, 505);
+            this.txt_Editar.Location = new System.Drawing.Point(719, 575);
             this.txt_Editar.Name = "txt_Editar";
             this.txt_Editar.Size = new System.Drawing.Size(83, 23);
             this.txt_Editar.TabIndex = 24;
@@ -58,59 +58,70 @@ namespace PetShop
             this.txt_Editar.UseVisualStyleBackColor = true;
             this.txt_Editar.Click += new System.EventHandler(this.txt_Editar_Click);
             // 
-            // btn_Guardar
+            // btn_Agregar
             // 
-            this.btn_Guardar.Location = new System.Drawing.Point(229, 505);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(83, 23);
-            this.btn_Guardar.TabIndex = 23;
-            this.btn_Guardar.Text = "Guardar";
-            this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Location = new System.Drawing.Point(902, 575);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(83, 23);
+            this.btn_Agregar.TabIndex = 23;
+            this.btn_Agregar.Text = "Agregar";
+            this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // gpb_Lista
             // 
-            this.gpb_Lista.Controls.Add(this.lvw_Lista);
-            this.gpb_Lista.Location = new System.Drawing.Point(12, 12);
+            this.gpb_Lista.Location = new System.Drawing.Point(2, 5);
             this.gpb_Lista.Name = "gpb_Lista";
-            this.gpb_Lista.Size = new System.Drawing.Size(378, 265);
+            this.gpb_Lista.Size = new System.Drawing.Size(644, 621);
             this.gpb_Lista.TabIndex = 26;
             this.gpb_Lista.TabStop = false;
             this.gpb_Lista.Text = "Lista de ";
             // 
-            // lvw_Lista
-            // 
-            this.lvw_Lista.HideSelection = false;
-            this.lvw_Lista.Location = new System.Drawing.Point(20, 28);
-            this.lvw_Lista.Name = "lvw_Lista";
-            this.lvw_Lista.Size = new System.Drawing.Size(352, 237);
-            this.lvw_Lista.TabIndex = 0;
-            this.lvw_Lista.UseCompatibleStateImageBehavior = false;
-            this.lvw_Lista.View = System.Windows.Forms.View.Details;
-            // 
             // gpb_Datos
             // 
-            this.gpb_Datos.Location = new System.Drawing.Point(12, 301);
+            this.gpb_Datos.Location = new System.Drawing.Point(652, 5);
             this.gpb_Datos.Name = "gpb_Datos";
-            this.gpb_Datos.Size = new System.Drawing.Size(371, 160);
+            this.gpb_Datos.Size = new System.Drawing.Size(379, 530);
             this.gpb_Datos.TabIndex = 27;
             this.gpb_Datos.TabStop = false;
             this.gpb_Datos.Text = "Datos ";
+            // 
+            // btn_Limpiar
+            // 
+            this.btn_Limpiar.Location = new System.Drawing.Point(719, 546);
+            this.btn_Limpiar.Name = "btn_Limpiar";
+            this.btn_Limpiar.Size = new System.Drawing.Size(83, 23);
+            this.btn_Limpiar.TabIndex = 28;
+            this.btn_Limpiar.Text = "Limpiar";
+            this.btn_Limpiar.UseVisualStyleBackColor = true;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
+            // 
+            // btn_Listar
+            // 
+            this.btn_Listar.Location = new System.Drawing.Point(813, 546);
+            this.btn_Listar.Name = "btn_Listar";
+            this.btn_Listar.Size = new System.Drawing.Size(83, 23);
+            this.btn_Listar.TabIndex = 29;
+            this.btn_Listar.Text = "Listar";
+            this.btn_Listar.UseVisualStyleBackColor = true;
+            this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click);
             // 
             // Frm_abmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 630);
+            this.Controls.Add(this.btn_Listar);
+            this.Controls.Add(this.btn_Limpiar);
             this.Controls.Add(this.txt_Editar);
             this.Controls.Add(this.gpb_Datos);
-            this.Controls.Add(this.btn_Guardar);
+            this.Controls.Add(this.btn_Agregar);
             this.Controls.Add(this.btn_Eliminar);
             this.Controls.Add(this.gpb_Lista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_abmBase";
             this.Text = "Frm_ABM";
             this.Load += new System.EventHandler(this.Frm_ABM_Load);
-            this.gpb_Lista.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -119,9 +130,10 @@ namespace PetShop
 
         public System.Windows.Forms.Button btn_Eliminar;
         public System.Windows.Forms.Button txt_Editar;
-        public System.Windows.Forms.Button btn_Guardar;
+        public System.Windows.Forms.Button btn_Agregar;
         public System.Windows.Forms.GroupBox gpb_Lista;
-        public System.Windows.Forms.ListView lvw_Lista;
         public System.Windows.Forms.GroupBox gpb_Datos;
+        public System.Windows.Forms.Button btn_Limpiar;
+        public System.Windows.Forms.Button btn_Listar;
     }
 }

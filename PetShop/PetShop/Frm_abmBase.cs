@@ -25,7 +25,7 @@ namespace PetShop
 
         }
 
-        public virtual void btn_Guardar_Click(object sender, EventArgs e)
+        public virtual void ListarBase()
         {
 
         }
@@ -40,11 +40,26 @@ namespace PetShop
 
         }
 
-        public virtual void ListarBase()
+        
+
+        public virtual void btn_Agregar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
+        public virtual void btn_Limpiar_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        public virtual void Limpiar()
+        {
+
+        }
+
+        public virtual void btn_Listar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace EntidadesPetShop
             ultimoIdGenerado = 999;
         }
 
-        public Cliente(string nombre, string apellido, string dni, long cuil) : base(nombre, apellido, dni, cuil)
+        public Cliente(string nombre, string apellido, string dni, double cuil) : base(nombre, apellido, dni, cuil)
         {
             ultimoIdGenerado++;
             this.Id = ultimoIdGenerado;

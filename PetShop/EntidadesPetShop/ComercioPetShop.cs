@@ -34,8 +34,8 @@ namespace EntidadesPetShop
             ventas = new List<Ventas>();
         }
         #endregion
-              
 
+        
         #region Metodos
         public static void CargarListaClientes(List<Cliente> clientes)
         {
@@ -101,14 +101,14 @@ namespace EntidadesPetShop
         public static void CargarVentas(List<Ventas> ventas, List<Empleado> empleados, List<Cliente> clientes, List<Producto> productos)
         {
             ventas.Add(new Ventas(empleados[3], clientes[2], productos[4], 2, productos[4].Precio*2));
-            ventas.Add(new Ventas(empleados[5], clientes[5], productos[12], 1, productos[12].Precio));
+            ventas.Add(new Ventas(empleados[0], clientes[5], productos[12], 1, productos[12].Precio));
             ventas.Add(new Ventas(empleados[1], clientes[7], productos[7], 3, productos[7].Precio*3));
             ventas.Add(new Ventas(empleados[2], clientes[10], productos[5], 2, productos[5].Precio*2));
-            ventas.Add(new Ventas(empleados[4], clientes[8], productos[2], 2, productos[2].Precio*2));
+            ventas.Add(new Ventas(empleados[3], clientes[8], productos[2], 2, productos[2].Precio*2));
             ventas.Add(new Ventas(empleados[1], clientes[5], productos[10], 1, productos[10].Precio));
-            ventas.Add(new Ventas(empleados[3], clientes[1], productos[14], 2, productos[14].Precio*2));
+            ventas.Add(new Ventas(empleados[4], clientes[1], productos[14], 2, productos[14].Precio*2));
             ventas.Add(new Ventas(empleados[2], clientes[12], productos[9], 1, productos[9].Precio));
-            ventas.Add(new Ventas(empleados[4], clientes[15], productos[16], 1, productos[16].Precio));
+            ventas.Add(new Ventas(empleados[0], clientes[15], productos[16], 1, productos[16].Precio));
             ventas.Add(new Ventas(empleados[1], clientes[4], productos[3], 2, productos[3].Precio*2));
         }
 

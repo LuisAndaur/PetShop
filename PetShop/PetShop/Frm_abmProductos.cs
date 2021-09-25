@@ -26,14 +26,14 @@ namespace PetShop
             ComercioPetShop.CargarProductos(productos);
             foreach (Producto item in productos)
             {
-                ListViewItem lista = new ListViewItem(item.IdProducto.ToString());
-                lista.SubItems.Add(item.Nombre);
-                lista.SubItems.Add(item.Categoria.ToString());
-                lista.SubItems.Add(item.Precio.ToString());
-                lista.SubItems.Add(item.Descripcion);
-                lista.SubItems.Add(item.Marca);
-                lista.SubItems.Add(item.Stock.ToString());
-                lvw_Lista.Items.Add(lista);
+                int indice = dataGridView1.Rows.Add();
+                dataGridView1.Rows[indice].Cells[0].Value = item.IdProducto;
+                dataGridView1.Rows[indice].Cells[1].Value = item.Nombre;
+                dataGridView1.Rows[indice].Cells[2].Value = item.Categoria;
+                dataGridView1.Rows[indice].Cells[3].Value = item.Precio;
+                dataGridView1.Rows[indice].Cells[4].Value = item.Descripcion;
+                dataGridView1.Rows[indice].Cells[5].Value = item.Marca;
+                dataGridView1.Rows[indice].Cells[6].Value = item.Stock;
             }
         }
     }
