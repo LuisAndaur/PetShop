@@ -133,15 +133,14 @@ namespace PetShop
             txt_Cuil.Text = string.Empty;
         }
 
-        public override void btn_Listar_Click(object sender, EventArgs e)
-        {
-            ListarBase();
-        }
-
         public void CopiarLista(List<Cliente> aux)
         {
             clientes = aux;
-        }     
+        }
 
+        private void btn_Listar_Click_1(object sender, EventArgs e)
+        {
+            ListarBase();
+        }
     }
 }

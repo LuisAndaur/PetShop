@@ -36,6 +36,7 @@ namespace EntidadesPetShop
         public ERol Rol
         {
             get { return rol; }
+            set { rol = value; }
         }
 
         #endregion

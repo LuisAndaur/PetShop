@@ -39,7 +39,7 @@ namespace EntidadesPetShop
         #region Constructor
         static Empleado()
         {
-            ultimoIdGenerado = 99999;
+            ultimoIdGenerado = 100000;
         }
 
         public Empleado(string nombre, string apellido, string dni, double cuil, Usuario usuario, double sueldo) : base(nombre, apellido, dni, cuil)

@@ -104,7 +104,6 @@ namespace PetShop
             this.btn_Listar.TabIndex = 29;
             this.btn_Listar.Text = "Listar";
             this.btn_Listar.UseVisualStyleBackColor = true;
-            this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click);
             // 
             // Frm_abmBase
             // 

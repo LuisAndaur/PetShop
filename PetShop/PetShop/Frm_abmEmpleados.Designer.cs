@@ -31,6 +31,7 @@ namespace PetShop
         {
             this.dgv_Lista = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +49,8 @@ namespace PetShop
             this.lbl_Cuil = new System.Windows.Forms.Label();
             this.cmb_Rol = new System.Windows.Forms.ComboBox();
             this.lbl_Rol = new System.Windows.Forms.Label();
+            this.txt_Sueldo = new System.Windows.Forms.TextBox();
+            this.lbl_Sueldo = new System.Windows.Forms.Label();
             this.gpb_Lista.SuspendLayout();
             this.gpb_Datos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Lista)).BeginInit();
@@ -72,6 +75,8 @@ namespace PetShop
             // 
             // gpb_Datos
             // 
+            this.gpb_Datos.Controls.Add(this.txt_Sueldo);
+            this.gpb_Datos.Controls.Add(this.lbl_Sueldo);
             this.gpb_Datos.Controls.Add(this.lbl_Rol);
             this.gpb_Datos.Controls.Add(this.cmb_Rol);
             this.gpb_Datos.Controls.Add(this.txt_Cuil);
@@ -93,6 +98,7 @@ namespace PetShop
             // btn_Listar
             // 
             this.btn_Listar.Location = new System.Drawing.Point(801, 555);
+            this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click_1);
             // 
             // dgv_Lista
             // 
@@ -100,6 +106,7 @@ namespace PetShop
             this.dgv_Lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Lista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.Rol,
             this.Nombre,
             this.Apellido,
             this.dni,
@@ -110,12 +117,19 @@ namespace PetShop
             this.dgv_Lista.RowTemplate.Height = 25;
             this.dgv_Lista.Size = new System.Drawing.Size(632, 593);
             this.dgv_Lista.TabIndex = 0;
+            this.dgv_Lista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Lista_CellClick);
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
-            this.ID.Width = 90;
+            this.ID.Width = 60;
+            // 
+            // Rol
+            // 
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.Width = 80;
             // 
             // Nombre
             // 
@@ -126,22 +140,25 @@ namespace PetShop
             // 
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
+            this.Apellido.Width = 90;
             // 
             // dni
             // 
             this.dni.HeaderText = "DNI";
             this.dni.Name = "dni";
+            this.dni.Width = 90;
             // 
             // Cuil
             // 
             this.Cuil.HeaderText = "Cuil";
             this.Cuil.Name = "Cuil";
-            this.Cuil.Width = 110;
+            this.Cuil.Width = 90;
             // 
             // Sueldo
             // 
             this.Sueldo.HeaderText = "Sueldo";
             this.Sueldo.Name = "Sueldo";
+            this.Sueldo.Width = 90;
             // 
             // LBL_iD
             // 
@@ -242,6 +259,22 @@ namespace PetShop
             this.lbl_Rol.TabIndex = 11;
             this.lbl_Rol.Text = "Rol";
             // 
+            // txt_Sueldo
+            // 
+            this.txt_Sueldo.Location = new System.Drawing.Point(46, 478);
+            this.txt_Sueldo.Name = "txt_Sueldo";
+            this.txt_Sueldo.Size = new System.Drawing.Size(287, 23);
+            this.txt_Sueldo.TabIndex = 13;
+            // 
+            // lbl_Sueldo
+            // 
+            this.lbl_Sueldo.AutoSize = true;
+            this.lbl_Sueldo.Location = new System.Drawing.Point(46, 460);
+            this.lbl_Sueldo.Name = "lbl_Sueldo";
+            this.lbl_Sueldo.Size = new System.Drawing.Size(43, 15);
+            this.lbl_Sueldo.TabIndex = 12;
+            this.lbl_Sueldo.Text = "Sueldo";
+            // 
             // Frm_abmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -260,12 +293,6 @@ namespace PetShop
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_Lista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cuil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
         private System.Windows.Forms.TextBox txt_Cuil;
         private System.Windows.Forms.Label lbl_Cuil;
         private System.Windows.Forms.TextBox txt_Dni;
@@ -278,5 +305,14 @@ namespace PetShop
         private System.Windows.Forms.Label LBL_iD;
         private System.Windows.Forms.Label lbl_Rol;
         private System.Windows.Forms.ComboBox cmb_Rol;
+        private System.Windows.Forms.TextBox txt_Sueldo;
+        private System.Windows.Forms.Label lbl_Sueldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cuil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
     }
 }
