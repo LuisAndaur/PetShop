@@ -13,24 +13,19 @@ namespace PetShop
 {
     public partial class Frm_abmVentas : Frm_abmBase
     {
-        List<Cliente> clientes = new List<Cliente>();
-        List<Empleado> empleados = new List<Empleado>();
-        List<Usuario> usuarios = new List<Usuario>();
-        List<Producto> productos = new List<Producto>();
         List<Ventas> ventas = new List<Ventas>();
         public Frm_abmVentas()
         {
             InitializeComponent();
-            ListarBase();
         }
 
         public override void ListarBase()
         {
-            ComercioPetShop.CargarListaClientes(clientes);
-            ComercioPetShop.CargarUsuarios(usuarios);
-            ComercioPetShop.CargarListaEmpleados(empleados, usuarios);
-            ComercioPetShop.CargarProductos(productos);
-            ComercioPetShop.CargarVentas(ventas, empleados, clientes, productos);
+            //ComercioPetShop.CargarListaClientes(clientes);
+            //ComercioPetShop.CargarUsuarios(usuarios);
+            //ComercioPetShop.CargarListaEmpleados(empleados, usuarios);
+            //ComercioPetShop.CargarProductos(productos);
+            //ComercioPetShop.CargarVentas(ventas, empleados, clientes, productos);
 
             foreach (Ventas item in ventas)
             {
@@ -42,6 +37,10 @@ namespace PetShop
                 dataGridView1.Rows[indice].Cells[4].Value = item.Cantidad;
                 dataGridView1.Rows[indice].Cells[5].Value = item.PrecioTotal;
             }
+        }
+        public void CopiarLista(List<Ventas> aux)
+        {
+            ventas = aux;
         }
     }
 }

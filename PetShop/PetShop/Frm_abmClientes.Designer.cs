@@ -36,12 +36,6 @@ namespace PetShop
             this.Cuil = new System.Windows.Forms.ColumnHeader();
             this.Saldo = new System.Windows.Forms.ColumnHeader();
             this.dgv_Lista = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_Nombre = new System.Windows.Forms.Label();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.txt_Apellido = new System.Windows.Forms.TextBox();
@@ -52,6 +46,12 @@ namespace PetShop
             this.lbl_Cuil = new System.Windows.Forms.Label();
             this.txt_Id = new System.Windows.Forms.TextBox();
             this.lbl_Id = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_Lista.SuspendLayout();
             this.gpb_Datos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Lista)).BeginInit();
@@ -87,6 +87,21 @@ namespace PetShop
             this.gpb_Datos.Controls.Add(this.txt_Nombre);
             this.gpb_Datos.Controls.Add(this.lbl_Nombre);
             this.gpb_Datos.Text = "Datos clientes";
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Nombre, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Nombre, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Apellido, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Apellido, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Dni, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Dni, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Cuil, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Cuil, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Id, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Id, 0);
+
+            // 
+            // txt_Buscar
+            // 
+
             // 
             // ID
             // 
@@ -143,45 +158,10 @@ namespace PetShop
             this.dgv_Lista.Name = "dgv_Lista";
             this.dgv_Lista.ReadOnly = true;
             this.dgv_Lista.RowTemplate.Height = 25;
+            this.dgv_Lista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Lista.Size = new System.Drawing.Size(632, 593);
             this.dgv_Lista.TabIndex = 1;
-            this.dgv_Lista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Apellido";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "DNI";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Cuil";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Saldo";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dgv_Lista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Lista_CellClick);
             // 
             // lbl_Nombre
             // 
@@ -264,6 +244,42 @@ namespace PetShop
             this.lbl_Id.TabIndex = 8;
             this.lbl_Id.Text = "ID";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Apellido";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "DNI";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Cuil";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Saldo";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
             // Frm_abmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -271,7 +287,6 @@ namespace PetShop
             this.ClientSize = new System.Drawing.Size(1035, 630);
             this.Name = "Frm_abmClientes";
             this.Text = "Frm_abmClientes";
-            this.Load += new System.EventHandler(this.Frm_abmClientes_Load);
             this.gpb_Lista.ResumeLayout(false);
             this.gpb_Datos.ResumeLayout(false);
             this.gpb_Datos.PerformLayout();
@@ -289,12 +304,6 @@ namespace PetShop
         private System.Windows.Forms.ColumnHeader Cuil;
         private System.Windows.Forms.ColumnHeader Saldo;
         private System.Windows.Forms.DataGridView dgv_Lista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.TextBox txt_Cuil;
         private System.Windows.Forms.Label lbl_Cuil;
         private System.Windows.Forms.TextBox txt_Dni;
@@ -305,5 +314,11 @@ namespace PetShop
         private System.Windows.Forms.Label lbl_Nombre;
         private System.Windows.Forms.TextBox txt_Id;
         private System.Windows.Forms.Label lbl_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

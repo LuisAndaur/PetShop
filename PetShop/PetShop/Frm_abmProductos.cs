@@ -23,7 +23,7 @@ namespace PetShop
 
         public override void ListarBase()
         {
-            ComercioPetShop.CargarProductos(productos);
+            //ComercioPetShop.CargarProductos(productos);
             foreach (Producto item in productos)
             {
                 int indice = dataGridView1.Rows.Add();
@@ -35,6 +35,11 @@ namespace PetShop
                 dataGridView1.Rows[indice].Cells[5].Value = item.Marca;
                 dataGridView1.Rows[indice].Cells[6].Value = item.Stock;
             }
+        }
+
+        public void CopiarLista(List<Producto> aux)
+        {
+            productos = aux;
         }
     }
 }

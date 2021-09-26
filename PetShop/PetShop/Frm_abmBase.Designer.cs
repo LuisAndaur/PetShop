@@ -110,9 +110,10 @@ namespace PetShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1035, 630);
-            this.Controls.Add(this.btn_Listar);
             this.Controls.Add(this.btn_Limpiar);
+            this.Controls.Add(this.btn_Listar);
             this.Controls.Add(this.txt_Editar);
             this.Controls.Add(this.gpb_Datos);
             this.Controls.Add(this.btn_Agregar);
@@ -120,8 +121,9 @@ namespace PetShop
             this.Controls.Add(this.gpb_Lista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_abmBase";
+            this.Opacity = 0D;
             this.Text = "Frm_ABM";
-            this.Load += new System.EventHandler(this.Frm_ABM_Load);
+            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.ResumeLayout(false);
 
         }

@@ -39,6 +39,7 @@ namespace PetShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(1194, 691);
             this.Name = "Frm_MenuStaff";
             this.Text = "Frm_MenuStaff";

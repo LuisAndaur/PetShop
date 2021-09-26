@@ -101,7 +101,8 @@ namespace PetShop
             // 
             // pnl_Contenedor
             // 
-            this.pnl_Contenedor.Location = new System.Drawing.Point(148, 50);
+            this.pnl_Contenedor.BackColor = System.Drawing.Color.White;
+            this.pnl_Contenedor.Location = new System.Drawing.Point(147, 49);
             this.pnl_Contenedor.Name = "pnl_Contenedor";
             this.pnl_Contenedor.Size = new System.Drawing.Size(1035, 630);
             this.pnl_Contenedor.TabIndex = 5;

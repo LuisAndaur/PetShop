@@ -15,6 +15,8 @@ namespace PetShop
         public Frm_Home()
         {
             InitializeComponent();
+            this.BackColor = Color.LightGray;
+            this.TransparencyKey = Color.LightGray;
         }
     }
 }

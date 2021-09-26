@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EntidadesPetShop;
 
 namespace PetShop
 {
     public partial class Frm_MenuAdmin : Frm_MenuBase
     {
+       
         public Frm_MenuAdmin()
         {
             InitializeComponent();
@@ -21,5 +23,6 @@ namespace PetShop
         {
             this.lbl_TituloMenuPrincipal.Text = $"{this.lbl_TituloMenuPrincipal.Text}{nombreUsuario}";
         }
+
     }
 }

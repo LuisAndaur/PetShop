@@ -14,18 +14,16 @@ namespace PetShop
     public partial class Frm_abmClientes : Frm_abmBase
     {
         private int indice = 0;
-        bool cargoLista;
         List<Cliente> clientes = new List<Cliente>();
         
         public Frm_abmClientes()
         {
             InitializeComponent();            
         }
-
+        
         public override void ListarBase()
-        {         
-            ComercioPetShop.CargarListaClientes(clientes);        
-
+        {
+            dgv_Lista.Rows.Clear();
             foreach (Cliente item in clientes)
             {
                 indice = dgv_Lista.Rows.Add();
@@ -38,7 +36,7 @@ namespace PetShop
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_Lista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indice = e.RowIndex;
             if (indice != -1)
@@ -58,17 +56,21 @@ namespace PetShop
             foreach (Cliente item in clientes)
             {
                 if (item.Id == auxId)
-                {
-                    MessageBox.Show("El cliente ya existe");
+                {                    
+                    item.Nombre = txt_Nombre.Text;
+                    item.Apellido = txt_Apellido.Text;
+                    item.Dni = txt_Dni.Text;
+                    item.Cuil = double.Parse(txt_Cuil.Text);
+                    MessageBox.Show("Datos del cliente modificados");
                     existe = true;
                 }
             }
 
             if (!existe)
             {
-                MessageBox.Show("El cliente es nuevo");
+                MessageBox.Show("El cliente es nuevo. Agreguelo.");
             }
-            
+            ListarBase();
         }
 
         public override void btn_Eliminar_Click(object sender, EventArgs e)
@@ -80,11 +82,11 @@ namespace PetShop
                 foreach (Cliente item in clientes)
                 {
                     if (item.Id == auxId)
-                    {
-                        MessageBox.Show("El cliente fue eliminado");
+                    {                        
                         dgv_Lista.Rows.RemoveAt(indice);
                         clientes.Remove(item);
                         existe = true;
+                        MessageBox.Show("El cliente fue eliminado");
                         break;
                     }
                 }
@@ -110,25 +112,11 @@ namespace PetShop
 
             if (!existe)
             {
-
-                MessageBox.Show("El cliente es nuevo");
+                MessageBox.Show("Nuevo cliente agregado");
                 double.TryParse(txt_Cuil.Text, out double cuil);
-                clientes.Add(new Cliente(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil));
-                               
+                clientes.Add(new Cliente(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil));                               
             }
-            dgv_Lista.Rows.Clear();
-
-            foreach (Cliente item in clientes)
-            {
-                indice = dgv_Lista.Rows.Add();
-                dgv_Lista.Rows[indice].Cells[0].Value = item.Id;
-                dgv_Lista.Rows[indice].Cells[1].Value = item.Nombre;
-                dgv_Lista.Rows[indice].Cells[2].Value = item.Apellido;
-                dgv_Lista.Rows[indice].Cells[3].Value = item.Dni;
-                dgv_Lista.Rows[indice].Cells[4].Value = item.Cuil;
-                dgv_Lista.Rows[indice].Cells[5].Value = item.Saldo;
-            }
-
+            ListarBase();
         }
 
         public override void btn_Limpiar_Click(object sender, EventArgs e)
@@ -147,22 +135,13 @@ namespace PetShop
 
         public override void btn_Listar_Click(object sender, EventArgs e)
         {
-            
-            if (!cargoLista)
-            {
-                ListarBase();
-                cargoLista = true;
-            }
-            else
-            {
-                MessageBox.Show("lista ya cargada");
-            }
+            ListarBase();
         }
 
-        private void Frm_abmClientes_Load(object sender, EventArgs e)
+        public void CopiarLista(List<Cliente> aux)
         {
-            
-            
-        }
+            clientes = aux;
+        }     
+
     }
 }

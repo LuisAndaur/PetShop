@@ -13,21 +13,18 @@ namespace PetShop
 {
     public partial class Frm_abmBase : Form
     {
-        //private DataTable tabla;
-        //List<Cliente> clientes = new List<Cliente>();
+        
+
         public Frm_abmBase()
         {
             InitializeComponent();
-        }
-
-        private void Frm_ABM_Load(object sender, EventArgs e)
-        {
-
+            this.BackColor = Color.LightGray;
+            this.TransparencyKey = Color.LightGray;
         }
 
         public virtual void ListarBase()
         {
-
+            
         }
 
         public virtual void txt_Editar_Click(object sender, EventArgs e)
@@ -61,5 +58,7 @@ namespace PetShop
         {
 
         }
+
+
     }
 }

@@ -13,6 +13,12 @@ namespace PetShop
 {
     public partial class Frm_MenuBase : Form
     {
+        List<Cliente> clientes = new List<Cliente>();
+        List<Empleado> empleados = new List<Empleado>();
+        List<Usuario> usuarios = new List<Usuario>();
+        List<Producto> productos = new List<Producto>();
+        List<Ventas> ventas = new List<Ventas>();
+
         public Frm_MenuBase()
         {
             InitializeComponent();
@@ -20,14 +26,18 @@ namespace PetShop
 
         public Frm_MenuBase(string nombreUsuario) : this ()
         {
-            this.lbl_TituloMenuPrincipal.Text = $"\n{this.lbl_TituloMenuPrincipal.Text}{nombreUsuario}";
-            
+            this.lbl_TituloMenuPrincipal.Text = $"\n{this.lbl_TituloMenuPrincipal.Text}{nombreUsuario}";            
         }
 
         private void Frm_MenuPrincipal_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
             AbrirFormDentro(new Frm_Home());
+            ComercioPetShop.CargarListaClientes(clientes);
+            ComercioPetShop.CargarUsuarios(usuarios);
+            ComercioPetShop.CargarListaEmpleados(empleados, usuarios);
+            ComercioPetShop.CargarProductos(productos);
+            ComercioPetShop.CargarVentas(ventas, empleados, clientes, productos);
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
@@ -58,22 +68,32 @@ namespace PetShop
 
         private void btn_Clientes_Click(object sender, EventArgs e)
         {
-            AbrirFormDentro(new Frm_abmClientes());
+            Frm_abmClientes formClientes = new Frm_abmClientes();
+            AbrirFormDentro(formClientes);
+            formClientes.CopiarLista(clientes);
         }        
 
         private void btn_Productos_Click(object sender, EventArgs e)
         {
-            AbrirFormDentro(new Frm_abmProductos());
+            Frm_abmProductos formProductos = new Frm_abmProductos();
+            AbrirFormDentro(formProductos);
+            formProductos.CopiarLista(productos);
         }
 
         private void btn_Empleados_Click(object sender, EventArgs e)
         {
-            AbrirFormDentro(new Frm_abmEmpleados());
+            Frm_abmEmpleados formEmpleados = new Frm_abmEmpleados();
+            AbrirFormDentro(formEmpleados);
+            formEmpleados.CopiarLista(empleados);
         }
 
         private void btn_Ventas_Click(object sender, EventArgs e)
         {
-            AbrirFormDentro(new Frm_abmVentas());
+            Frm_abmVentas formVentas = new Frm_abmVentas();
+            AbrirFormDentro(formVentas);
+            formVentas.CopiarLista(ventas);
         }
+
+
     }
 }
