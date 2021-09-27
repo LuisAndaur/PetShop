@@ -81,7 +81,6 @@ namespace PetShop
             // btn_Listar
             // 
             this.btn_Listar.Location = new System.Drawing.Point(813, 555);
-            this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click_1);
             // 
             // lbl_Nombre
             // 
@@ -148,7 +147,6 @@ namespace PetShop
             // 
             this.lbl_Apellido.Location = new System.Drawing.Point(24, 469);
             this.lbl_Apellido.Visible = false;
-
             // 
             // txt_Sueldo
             // 

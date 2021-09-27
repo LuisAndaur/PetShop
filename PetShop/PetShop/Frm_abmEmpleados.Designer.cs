@@ -50,10 +50,6 @@ namespace PetShop
             // 
             this.txt_Editar.Location = new System.Drawing.Point(707, 584);
             // 
-            // txt_Id
-            // 
-            this.txt_Id.Location = new System.Drawing.Point(206, 53);
-            // 
             // btn_Agregar
             // 
             this.btn_Agregar.Location = new System.Drawing.Point(890, 584);
@@ -74,7 +70,10 @@ namespace PetShop
             // btn_Listar
             // 
             this.btn_Listar.Location = new System.Drawing.Point(801, 555);
-            this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click_1);
+            // 
+            // txt_Id
+            // 
+            this.txt_Id.Location = new System.Drawing.Point(206, 53);
             // 
             // lbl_Categoria
             // 
@@ -121,10 +120,6 @@ namespace PetShop
             // 
             this.lbl_Stock.Location = new System.Drawing.Point(34, 473);
             this.lbl_Stock.Visible = false;
-            // 
-            // lbl_Rol
-            // 
-            this.lbl_Rol.Location = new System.Drawing.Point(186, 109);
             // 
             // dgv_Lista
             // 

@@ -65,17 +65,16 @@ namespace PetShop
                     item.Apellido = txt_Apellido.Text;
                     item.Dni = txt_Dni.Text;
                     item.Cuil = double.Parse(txt_Cuil.Text);
-                    item.Usuario.NombreUsuario = item.GenerarNombreUsuario(txt_Nombre.Text, txt_Apellido.Text);
-                    item.Usuario.Contraseña = txt_Dni.Text;
+                    item.Sueldo = double.Parse(txt_Sueldo.Text);
                     item.Usuario.Rol = Enum.Parse<ERol>(cmb_Enumerado.Text);
-                    MessageBox.Show("Datos del emlpleado modificados");
+                    MessageBox.Show("Datos del empleado modificados");
                     existe = true;
                 }
             }
 
             if (!existe)
             {
-                MessageBox.Show("El cliente es nuevo. Agreguelo.");
+                MessageBox.Show("El empleado es nuevo. Agreguelo.");
             }
             ListarBase();
         }
@@ -93,13 +92,13 @@ namespace PetShop
                         dgv_Lista.Rows.RemoveAt(indice);
                         empleados.Remove(item);
                         existe = true;
-                        MessageBox.Show("El cliente fue eliminado");
+                        MessageBox.Show("El empleado fue eliminado");
                         break;
                     }
                 }
                 if (!existe)
                 {
-                    MessageBox.Show("El cliente no existe en la lista, no se puede eliminar");
+                    MessageBox.Show("El empleado no existe en la lista, no se puede eliminar");
                 }
             }
         }
@@ -116,17 +115,17 @@ namespace PetShop
                     existe = true;
                 }
             }
- 
+
             if (!existe)
             {
                 double.TryParse(txt_Cuil.Text, out double cuil);
                 Empleado newEmpleado = new Empleado(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil);
                 string nombreUsuario = newEmpleado.GenerarNombreUsuario(txt_Nombre.Text, txt_Apellido.Text);
-                Usuario usuario = new Usuario(nombreUsuario, txt_Dni.Text,(ERol)cmb_Enumerado.SelectedItem);
-                double.TryParse(txt_Sueldo.Text, out double sueldo);                                
+                Usuario usuario = new Usuario(nombreUsuario, txt_Dni.Text, (ERol)cmb_Enumerado.SelectedItem);
+                double.TryParse(txt_Sueldo.Text, out double sueldo);
 
-                empleados.Add(new Empleado(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil,usuario,sueldo));
-                MessageBox.Show("Nuevo empleado agregado agregado");
+                empleados.Add(new Empleado(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil, usuario, sueldo));
+                MessageBox.Show("Nuevo empleado agregado");
             }
             ListarBase();
         }
@@ -152,7 +151,7 @@ namespace PetShop
             empleados = aux;
         }
 
-        private void btn_Listar_Click_1(object sender, EventArgs e)
+        public override void btn_Listar_Click(object sender, EventArgs e)
         {
             ListarBase();
         }

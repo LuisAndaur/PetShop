@@ -138,7 +138,7 @@ namespace PetShop
             clientes = aux;
         }
 
-        private void btn_Listar_Click_1(object sender, EventArgs e)
+        public override void btn_Listar_Click(object sender, EventArgs e)
         {
             ListarBase();
         }

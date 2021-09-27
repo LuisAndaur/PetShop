@@ -68,10 +68,6 @@ namespace PetShop
             // 
             this.gpb_Datos.Text = "Datos clientes";
             // 
-            // btn_Listar
-            // 
-            this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click_1);
-            // 
             // cmb_Enumerado
             // 
             this.cmb_Enumerado.Location = new System.Drawing.Point(31, 479);
@@ -81,10 +77,6 @@ namespace PetShop
             // 
             this.lbl_Categoria.Location = new System.Drawing.Point(31, 461);
             this.lbl_Categoria.Visible = false;
-            // 
-            // txt_Nombre
-            // 
-
             // 
             // txt_Precio
             // 
@@ -126,7 +118,6 @@ namespace PetShop
             // 
             this.lbl_Stock.Location = new System.Drawing.Point(31, 461);
             this.lbl_Stock.Visible = false;
-
             // 
             // txt_Sueldo
             // 
@@ -137,23 +128,6 @@ namespace PetShop
             // 
             this.lbl_Sueldo.Location = new System.Drawing.Point(28, 461);
             this.lbl_Sueldo.Visible = false;
-            // 
-            // txt_Cuil
-            // 
-
-
-            // 
-            // lbl_Cuil
-            // 
-
-            // 
-            // txt_Dni
-            // 
-
-            // 
-            // lbl_Dni
-            // 
-
             // 
             // lbl_Rol
             // 
