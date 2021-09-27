@@ -14,8 +14,8 @@ namespace PetShop
     public partial class Frm_MenuBase : Form
     {
         List<Cliente> clientes = new List<Cliente>();
-        List<Empleado> empleados = new List<Empleado>();
         List<Usuario> usuarios = new List<Usuario>();
+        List<Empleado> empleados = new List<Empleado>();
         List<Producto> productos = new List<Producto>();
         List<Ventas> ventas = new List<Ventas>();
 
@@ -32,6 +32,7 @@ namespace PetShop
         private void Frm_MenuPrincipal_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            empleados.Clear();
             AbrirFormDentro(new Frm_Home());
             ComercioPetShop.CargarListaClientes(clientes);
             ComercioPetShop.CargarUsuarios(usuarios);
@@ -94,6 +95,29 @@ namespace PetShop
             formVentas.CopiarLista(ventas);
         }
 
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btn_CambiarUsuario_Click(object sender, EventArgs e)
+        {
+            Frm_Login login = new Frm_Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void Frm_MenuBase_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("¿Está seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+        public virtual void CopiarLista(List<Empleado> aux)
+        {
+            empleados = aux;
+        }
 
     }
 }

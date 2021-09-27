@@ -42,8 +42,8 @@ namespace PetShop
             foreach (Empleado item in empleados)
             {                
                 if (item.Usuario.NombreUsuario == txt_Usuario.Text && item.Usuario.Contraseña == txt_Password.Text)
-                {
-                    if(item.Usuario.Rol == ERol.Administrador)
+                {                   
+                    if (item.Usuario.Rol == ERol.Administrador)
                     {
                         Frm_MenuAdmin menuAdmin = new Frm_MenuAdmin(item.Nombre);
                         menuAdmin.Show();

@@ -39,18 +39,19 @@ namespace EntidadesPetShop
         #region Constructor
         static Empleado()
         {
-            ultimoIdGenerado = 100000;
+            ultimoIdGenerado = 99999;
         }
 
-        public Empleado(string nombre, string apellido, string dni, double cuil, Usuario usuario, double sueldo) : base(nombre, apellido, dni, cuil)
+        public Empleado(string nombre, string apellido, string dni, double cuil) : base(nombre, apellido, dni, cuil)
+        {
+
+        }
+
+        public Empleado(string nombre, string apellido, string dni, double cuil, Usuario usuario, double sueldo) : this (nombre, apellido, dni, cuil)
         {
             ultimoIdGenerado++;
             this.Id = ultimoIdGenerado;
-            this.Nombre = nombre;
-            this.Apellido = apellido;
             this.Sueldo = sueldo;
-            this.Dni = dni;
-            this.Cuil = cuil;
             this.Usuario = usuario;
         }
         #endregion
@@ -60,7 +61,10 @@ namespace EntidadesPetShop
             return this.Sueldo = sueldoActualizado;
         }
 
-
+        public string GenerarNombreUsuario(string nombre, string apellido)
+        {
+            return $"{nombre[0]}{apellido}".ToLower();
+        }
 
     }
 }

@@ -13,7 +13,6 @@ namespace PetShop
 {
     public partial class Frm_MenuAdmin : Frm_MenuBase
     {
-       
         public Frm_MenuAdmin()
         {
             InitializeComponent();

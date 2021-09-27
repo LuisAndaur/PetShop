@@ -41,11 +41,13 @@ namespace PetShop
             this.btn_Ventas = new System.Windows.Forms.Button();
             this.btn_Empleados = new System.Windows.Forms.Button();
             this.btn_Cerrar = new System.Windows.Forms.Button();
+            this.btn_CambiarUsuario = new System.Windows.Forms.Button();
+            this.btn_Vender = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Clientes
             // 
-            this.btn_Clientes.Location = new System.Drawing.Point(12, 130);
+            this.btn_Clientes.Location = new System.Drawing.Point(12, 180);
             this.btn_Clientes.Name = "btn_Clientes";
             this.btn_Clientes.Size = new System.Drawing.Size(114, 35);
             this.btn_Clientes.TabIndex = 0;
@@ -91,7 +93,7 @@ namespace PetShop
             // 
             // btn_Home
             // 
-            this.btn_Home.Location = new System.Drawing.Point(12, 78);
+            this.btn_Home.Location = new System.Drawing.Point(12, 70);
             this.btn_Home.Name = "btn_Home";
             this.btn_Home.Size = new System.Drawing.Size(114, 35);
             this.btn_Home.TabIndex = 4;
@@ -109,7 +111,7 @@ namespace PetShop
             // 
             // btn_Productos
             // 
-            this.btn_Productos.Location = new System.Drawing.Point(12, 182);
+            this.btn_Productos.Location = new System.Drawing.Point(12, 235);
             this.btn_Productos.Name = "btn_Productos";
             this.btn_Productos.Size = new System.Drawing.Size(114, 35);
             this.btn_Productos.TabIndex = 6;
@@ -119,7 +121,7 @@ namespace PetShop
             // 
             // btn_Ventas
             // 
-            this.btn_Ventas.Location = new System.Drawing.Point(12, 233);
+            this.btn_Ventas.Location = new System.Drawing.Point(12, 345);
             this.btn_Ventas.Name = "btn_Ventas";
             this.btn_Ventas.Size = new System.Drawing.Size(114, 35);
             this.btn_Ventas.TabIndex = 7;
@@ -129,7 +131,7 @@ namespace PetShop
             // 
             // btn_Empleados
             // 
-            this.btn_Empleados.Location = new System.Drawing.Point(12, 285);
+            this.btn_Empleados.Location = new System.Drawing.Point(12, 290);
             this.btn_Empleados.Name = "btn_Empleados";
             this.btn_Empleados.Size = new System.Drawing.Size(114, 35);
             this.btn_Empleados.TabIndex = 8;
@@ -145,12 +147,34 @@ namespace PetShop
             this.btn_Cerrar.TabIndex = 9;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = true;
+            this.btn_Cerrar.Click += new System.EventHandler(this.btn_Cerrar_Click);
+            // 
+            // btn_CambiarUsuario
+            // 
+            this.btn_CambiarUsuario.Location = new System.Drawing.Point(12, 590);
+            this.btn_CambiarUsuario.Name = "btn_CambiarUsuario";
+            this.btn_CambiarUsuario.Size = new System.Drawing.Size(114, 35);
+            this.btn_CambiarUsuario.TabIndex = 10;
+            this.btn_CambiarUsuario.Text = "Cambiar usuario";
+            this.btn_CambiarUsuario.UseVisualStyleBackColor = true;
+            this.btn_CambiarUsuario.Click += new System.EventHandler(this.btn_CambiarUsuario_Click);
+            // 
+            // btn_Vender
+            // 
+            this.btn_Vender.Location = new System.Drawing.Point(12, 125);
+            this.btn_Vender.Name = "btn_Vender";
+            this.btn_Vender.Size = new System.Drawing.Size(114, 35);
+            this.btn_Vender.TabIndex = 11;
+            this.btn_Vender.Text = "Vender";
+            this.btn_Vender.UseVisualStyleBackColor = true;
             // 
             // Frm_MenuBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 691);
+            this.Controls.Add(this.btn_Vender);
+            this.Controls.Add(this.btn_CambiarUsuario);
             this.Controls.Add(this.btn_Cerrar);
             this.Controls.Add(this.btn_Empleados);
             this.Controls.Add(this.btn_Ventas);
@@ -167,6 +191,7 @@ namespace PetShop
             this.Name = "Frm_MenuBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_MenuBase_FormClosing);
             this.Load += new System.EventHandler(this.Frm_MenuPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,9 +207,11 @@ namespace PetShop
         protected System.Windows.Forms.Label lbl_TituloMenuPrincipal;
         protected System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_Productos;
-        private System.Windows.Forms.Button btn_Ventas;
-        private System.Windows.Forms.Button btn_Empleados;
         private System.Windows.Forms.Button btn_Cerrar;
+        public System.Windows.Forms.Button btn_Empleados;
+        private System.Windows.Forms.Button btn_CambiarUsuario;
+        private System.Windows.Forms.Button btn_Vender;
+        public System.Windows.Forms.Button btn_Ventas;
     }
 }
 

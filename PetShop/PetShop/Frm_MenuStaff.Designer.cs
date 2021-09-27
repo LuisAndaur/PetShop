@@ -35,6 +35,14 @@ namespace PetShop
             // 
             this.timer1.Enabled = true;
             // 
+            // btn_Empleados
+            // 
+            this.btn_Empleados.Visible = false;
+            // 
+            // btn_Ventas
+            // 
+            this.btn_Ventas.Visible = false;
+            // 
             // Frm_MenuStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);

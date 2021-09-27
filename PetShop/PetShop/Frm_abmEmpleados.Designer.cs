@@ -37,20 +37,6 @@ namespace PetShop
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LBL_iD = new System.Windows.Forms.Label();
-            this.txt_Id = new System.Windows.Forms.TextBox();
-            this.txt_Nombre = new System.Windows.Forms.TextBox();
-            this.lbl_Nombre = new System.Windows.Forms.Label();
-            this.txt_Apellido = new System.Windows.Forms.TextBox();
-            this.lbl_Apellido = new System.Windows.Forms.Label();
-            this.txt_Dni = new System.Windows.Forms.TextBox();
-            this.lbl_Dni = new System.Windows.Forms.Label();
-            this.txt_Cuil = new System.Windows.Forms.TextBox();
-            this.lbl_Cuil = new System.Windows.Forms.Label();
-            this.cmb_Rol = new System.Windows.Forms.ComboBox();
-            this.lbl_Rol = new System.Windows.Forms.Label();
-            this.txt_Sueldo = new System.Windows.Forms.TextBox();
-            this.lbl_Sueldo = new System.Windows.Forms.Label();
             this.gpb_Lista.SuspendLayout();
             this.gpb_Datos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Lista)).BeginInit();
@@ -64,6 +50,10 @@ namespace PetShop
             // 
             this.txt_Editar.Location = new System.Drawing.Point(707, 584);
             // 
+            // txt_Id
+            // 
+            this.txt_Id.Location = new System.Drawing.Point(206, 53);
+            // 
             // btn_Agregar
             // 
             this.btn_Agregar.Location = new System.Drawing.Point(890, 584);
@@ -75,20 +65,6 @@ namespace PetShop
             // 
             // gpb_Datos
             // 
-            this.gpb_Datos.Controls.Add(this.txt_Sueldo);
-            this.gpb_Datos.Controls.Add(this.lbl_Sueldo);
-            this.gpb_Datos.Controls.Add(this.lbl_Rol);
-            this.gpb_Datos.Controls.Add(this.cmb_Rol);
-            this.gpb_Datos.Controls.Add(this.txt_Cuil);
-            this.gpb_Datos.Controls.Add(this.lbl_Cuil);
-            this.gpb_Datos.Controls.Add(this.txt_Dni);
-            this.gpb_Datos.Controls.Add(this.lbl_Dni);
-            this.gpb_Datos.Controls.Add(this.txt_Apellido);
-            this.gpb_Datos.Controls.Add(this.lbl_Apellido);
-            this.gpb_Datos.Controls.Add(this.txt_Nombre);
-            this.gpb_Datos.Controls.Add(this.lbl_Nombre);
-            this.gpb_Datos.Controls.Add(this.txt_Id);
-            this.gpb_Datos.Controls.Add(this.LBL_iD);
             this.gpb_Datos.Text = "Datos de empleados";
             // 
             // btn_Limpiar
@@ -99,6 +75,56 @@ namespace PetShop
             // 
             this.btn_Listar.Location = new System.Drawing.Point(801, 555);
             this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click_1);
+            // 
+            // lbl_Categoria
+            // 
+            this.lbl_Categoria.Location = new System.Drawing.Point(34, 473);
+            this.lbl_Categoria.Visible = false;
+            // 
+            // txt_Precio
+            // 
+            this.txt_Precio.Location = new System.Drawing.Point(34, 491);
+            this.txt_Precio.Visible = false;
+            // 
+            // lbl_Precio
+            // 
+            this.lbl_Precio.Location = new System.Drawing.Point(34, 473);
+            this.lbl_Precio.Visible = false;
+            // 
+            // txt_Marca
+            // 
+            this.txt_Marca.Location = new System.Drawing.Point(34, 491);
+            this.txt_Marca.Visible = false;
+            // 
+            // lbl_Marca
+            // 
+            this.lbl_Marca.Location = new System.Drawing.Point(34, 473);
+            this.lbl_Marca.Visible = false;
+            // 
+            // txt_Descripcion
+            // 
+            this.txt_Descripcion.Location = new System.Drawing.Point(34, 491);
+            this.txt_Descripcion.Size = new System.Drawing.Size(319, 26);
+            this.txt_Descripcion.Visible = false;
+            // 
+            // lbl_Descripcion
+            // 
+            this.lbl_Descripcion.Location = new System.Drawing.Point(34, 473);
+            this.lbl_Descripcion.Visible = false;
+            // 
+            // txt_Stock
+            // 
+            this.txt_Stock.Location = new System.Drawing.Point(34, 491);
+            this.txt_Stock.Visible = false;
+            // 
+            // lbl_Stock
+            // 
+            this.lbl_Stock.Location = new System.Drawing.Point(34, 473);
+            this.lbl_Stock.Visible = false;
+            // 
+            // lbl_Rol
+            // 
+            this.lbl_Rol.Location = new System.Drawing.Point(186, 109);
             // 
             // dgv_Lista
             // 
@@ -160,121 +186,6 @@ namespace PetShop
             this.Sueldo.Name = "Sueldo";
             this.Sueldo.Width = 90;
             // 
-            // LBL_iD
-            // 
-            this.LBL_iD.AutoSize = true;
-            this.LBL_iD.Location = new System.Drawing.Point(46, 62);
-            this.LBL_iD.Name = "LBL_iD";
-            this.LBL_iD.Size = new System.Drawing.Size(18, 15);
-            this.LBL_iD.TabIndex = 0;
-            this.LBL_iD.Text = "ID";
-            // 
-            // txt_Id
-            // 
-            this.txt_Id.Location = new System.Drawing.Point(46, 80);
-            this.txt_Id.Name = "txt_Id";
-            this.txt_Id.ReadOnly = true;
-            this.txt_Id.Size = new System.Drawing.Size(287, 23);
-            this.txt_Id.TabIndex = 1;
-            // 
-            // txt_Nombre
-            // 
-            this.txt_Nombre.Location = new System.Drawing.Point(46, 145);
-            this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(287, 23);
-            this.txt_Nombre.TabIndex = 3;
-            // 
-            // lbl_Nombre
-            // 
-            this.lbl_Nombre.AutoSize = true;
-            this.lbl_Nombre.Location = new System.Drawing.Point(46, 127);
-            this.lbl_Nombre.Name = "lbl_Nombre";
-            this.lbl_Nombre.Size = new System.Drawing.Size(51, 15);
-            this.lbl_Nombre.TabIndex = 2;
-            this.lbl_Nombre.Text = "Nombre";
-            // 
-            // txt_Apellido
-            // 
-            this.txt_Apellido.Location = new System.Drawing.Point(46, 211);
-            this.txt_Apellido.Name = "txt_Apellido";
-            this.txt_Apellido.Size = new System.Drawing.Size(287, 23);
-            this.txt_Apellido.TabIndex = 5;
-            // 
-            // lbl_Apellido
-            // 
-            this.lbl_Apellido.AutoSize = true;
-            this.lbl_Apellido.Location = new System.Drawing.Point(46, 193);
-            this.lbl_Apellido.Name = "lbl_Apellido";
-            this.lbl_Apellido.Size = new System.Drawing.Size(51, 15);
-            this.lbl_Apellido.TabIndex = 4;
-            this.lbl_Apellido.Text = "Apellido";
-            // 
-            // txt_Dni
-            // 
-            this.txt_Dni.Location = new System.Drawing.Point(46, 282);
-            this.txt_Dni.Name = "txt_Dni";
-            this.txt_Dni.Size = new System.Drawing.Size(287, 23);
-            this.txt_Dni.TabIndex = 7;
-            // 
-            // lbl_Dni
-            // 
-            this.lbl_Dni.AutoSize = true;
-            this.lbl_Dni.Location = new System.Drawing.Point(46, 264);
-            this.lbl_Dni.Name = "lbl_Dni";
-            this.lbl_Dni.Size = new System.Drawing.Size(27, 15);
-            this.lbl_Dni.TabIndex = 6;
-            this.lbl_Dni.Text = "DNI";
-            // 
-            // txt_Cuil
-            // 
-            this.txt_Cuil.Location = new System.Drawing.Point(46, 355);
-            this.txt_Cuil.Name = "txt_Cuil";
-            this.txt_Cuil.Size = new System.Drawing.Size(287, 23);
-            this.txt_Cuil.TabIndex = 9;
-            // 
-            // lbl_Cuil
-            // 
-            this.lbl_Cuil.AutoSize = true;
-            this.lbl_Cuil.Location = new System.Drawing.Point(46, 337);
-            this.lbl_Cuil.Name = "lbl_Cuil";
-            this.lbl_Cuil.Size = new System.Drawing.Size(28, 15);
-            this.lbl_Cuil.TabIndex = 8;
-            this.lbl_Cuil.Text = "Cuil";
-            // 
-            // cmb_Rol
-            // 
-            this.cmb_Rol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_Rol.FormattingEnabled = true;
-            this.cmb_Rol.Location = new System.Drawing.Point(46, 415);
-            this.cmb_Rol.Name = "cmb_Rol";
-            this.cmb_Rol.Size = new System.Drawing.Size(287, 23);
-            this.cmb_Rol.TabIndex = 10;
-            // 
-            // lbl_Rol
-            // 
-            this.lbl_Rol.AutoSize = true;
-            this.lbl_Rol.Location = new System.Drawing.Point(46, 397);
-            this.lbl_Rol.Name = "lbl_Rol";
-            this.lbl_Rol.Size = new System.Drawing.Size(24, 15);
-            this.lbl_Rol.TabIndex = 11;
-            this.lbl_Rol.Text = "Rol";
-            // 
-            // txt_Sueldo
-            // 
-            this.txt_Sueldo.Location = new System.Drawing.Point(46, 478);
-            this.txt_Sueldo.Name = "txt_Sueldo";
-            this.txt_Sueldo.Size = new System.Drawing.Size(287, 23);
-            this.txt_Sueldo.TabIndex = 13;
-            // 
-            // lbl_Sueldo
-            // 
-            this.lbl_Sueldo.AutoSize = true;
-            this.lbl_Sueldo.Location = new System.Drawing.Point(46, 460);
-            this.lbl_Sueldo.Name = "lbl_Sueldo";
-            this.lbl_Sueldo.Size = new System.Drawing.Size(43, 15);
-            this.lbl_Sueldo.TabIndex = 12;
-            this.lbl_Sueldo.Text = "Sueldo";
-            // 
             // Frm_abmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -293,20 +204,6 @@ namespace PetShop
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_Lista;
-        private System.Windows.Forms.TextBox txt_Cuil;
-        private System.Windows.Forms.Label lbl_Cuil;
-        private System.Windows.Forms.TextBox txt_Dni;
-        private System.Windows.Forms.Label lbl_Dni;
-        private System.Windows.Forms.TextBox txt_Apellido;
-        private System.Windows.Forms.Label lbl_Apellido;
-        private System.Windows.Forms.TextBox txt_Nombre;
-        private System.Windows.Forms.Label lbl_Nombre;
-        private System.Windows.Forms.TextBox txt_Id;
-        private System.Windows.Forms.Label LBL_iD;
-        private System.Windows.Forms.Label lbl_Rol;
-        private System.Windows.Forms.ComboBox cmb_Rol;
-        private System.Windows.Forms.TextBox txt_Sueldo;
-        private System.Windows.Forms.Label lbl_Sueldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;

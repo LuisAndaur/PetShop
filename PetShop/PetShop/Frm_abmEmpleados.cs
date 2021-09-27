@@ -18,8 +18,8 @@ namespace PetShop
         public Frm_abmEmpleados()
         {
             InitializeComponent();
-            cmb_Rol.DataSource = Enum.GetValues(typeof(ERol));
-            cmb_Rol.SelectedIndex = -1;
+            cmb_Enumerado.DataSource = Enum.GetValues(typeof(ERol));
+            cmb_Enumerado.SelectedIndex = -1;
         }
 
         public override void ListarBase()
@@ -44,7 +44,7 @@ namespace PetShop
             if (indice != -1)
             {
                 txt_Id.Text = dgv_Lista.Rows[indice].Cells[0].Value.ToString();
-                cmb_Rol.Text = dgv_Lista.Rows[indice].Cells[1].Value.ToString();
+                cmb_Enumerado.Text = dgv_Lista.Rows[indice].Cells[1].Value.ToString();
                 txt_Nombre.Text = dgv_Lista.Rows[indice].Cells[2].Value.ToString();
                 txt_Apellido.Text = dgv_Lista.Rows[indice].Cells[3].Value.ToString();
                 txt_Dni.Text = dgv_Lista.Rows[indice].Cells[4].Value.ToString();
@@ -65,9 +65,9 @@ namespace PetShop
                     item.Apellido = txt_Apellido.Text;
                     item.Dni = txt_Dni.Text;
                     item.Cuil = double.Parse(txt_Cuil.Text);
-                    item.Usuario.NombreUsuario = $"{txt_Nombre.Text[0]}{txt_Apellido.Text}".ToUpper();
+                    item.Usuario.NombreUsuario = item.GenerarNombreUsuario(txt_Nombre.Text, txt_Apellido.Text);
                     item.Usuario.Contraseña = txt_Dni.Text;
-                    item.Usuario.Rol = Enum.Parse<ERol>(cmb_Rol.Text);
+                    item.Usuario.Rol = Enum.Parse<ERol>(cmb_Enumerado.Text);
                     MessageBox.Show("Datos del emlpleado modificados");
                     existe = true;
                 }
@@ -116,14 +116,14 @@ namespace PetShop
                     existe = true;
                 }
             }
-
+ 
             if (!existe)
             {
-                string nombreUsuario = $"{txt_Nombre.Text[0]}{txt_Apellido.Text}".ToLower();
-                Usuario usuario = new Usuario(nombreUsuario, txt_Dni.Text,(ERol)cmb_Rol.SelectedItem);
-                                
                 double.TryParse(txt_Cuil.Text, out double cuil);
-                double.TryParse(txt_Sueldo.Text, out double sueldo);
+                Empleado newEmpleado = new Empleado(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil);
+                string nombreUsuario = newEmpleado.GenerarNombreUsuario(txt_Nombre.Text, txt_Apellido.Text);
+                Usuario usuario = new Usuario(nombreUsuario, txt_Dni.Text,(ERol)cmb_Enumerado.SelectedItem);
+                double.TryParse(txt_Sueldo.Text, out double sueldo);                                
 
                 empleados.Add(new Empleado(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil,usuario,sueldo));
                 MessageBox.Show("Nuevo empleado agregado agregado");
@@ -139,7 +139,7 @@ namespace PetShop
         public override void Limpiar()
         {
             txt_Id.Text = string.Empty;
-            cmb_Rol.SelectedIndex = -1;
+            cmb_Enumerado.SelectedIndex = -1;
             txt_Nombre.Text = string.Empty;
             txt_Apellido.Text = string.Empty;
             txt_Dni.Text = string.Empty;
