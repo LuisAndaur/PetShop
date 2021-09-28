@@ -66,5 +66,9 @@ namespace EntidadesPetShop
             return $"{nombre[0]}{apellido}".ToLower();
         }
 
+        public static void ResetearIdEmpleado()
+        {
+            ultimoIdGenerado = 99999;
+        }
     }
 }

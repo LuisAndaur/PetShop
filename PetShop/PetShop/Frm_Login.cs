@@ -14,7 +14,7 @@ namespace PetShop
     public partial class Frm_Login : Form
     {
         List<Empleado> empleados = new List<Empleado>();
-        List<Usuario> usuarios = new List<Usuario>();
+        
         
         /// <summary>
         /// Inicializa los componentes del Win Form
@@ -22,13 +22,11 @@ namespace PetShop
         public Frm_Login()
         {
             InitializeComponent();
-            CargaEmpleados();
         }
 
-        private void CargaEmpleados()
+        private void Frm_Login_Load(object sender, EventArgs e)
         {
-            ComercioPetShop.CargarUsuarios(usuarios);
-            ComercioPetShop.CargarListaEmpleados(empleados, usuarios);
+            empleados = ComercioPetShop.ListaEmpleados;
         }
 
         /// <summary>
@@ -42,7 +40,7 @@ namespace PetShop
             foreach (Empleado item in empleados)
             {                
                 if (item.Usuario.NombreUsuario == txt_Usuario.Text && item.Usuario.Contraseña == txt_Password.Text)
-                {                   
+                {
                     if (item.Usuario.Rol == ERol.Administrador)
                     {
                         Frm_MenuAdmin menuAdmin = new Frm_MenuAdmin(item.Nombre);
@@ -85,5 +83,7 @@ namespace PetShop
             txt_Usuario.Text = empleados[numero].Usuario.NombreUsuario;
             txt_Password.Text = empleados[numero].Usuario.Contraseña;
         }
+
+        
     }
 }

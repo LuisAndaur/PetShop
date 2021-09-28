@@ -1,0 +1,5 @@
+Empleado: Juan
+Cliente: Sandra
+Producto: Grava gris
+Cantidad: 1
+Precio final: $1251,65

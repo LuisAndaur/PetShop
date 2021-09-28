@@ -167,6 +167,7 @@ namespace PetShop
             this.btn_Vender.TabIndex = 11;
             this.btn_Vender.Text = "Vender";
             this.btn_Vender.UseVisualStyleBackColor = true;
+            this.btn_Vender.Click += new System.EventHandler(this.btn_Vender_Click);
             // 
             // Frm_MenuBase
             // 

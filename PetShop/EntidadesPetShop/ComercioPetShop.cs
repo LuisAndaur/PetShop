@@ -11,14 +11,45 @@ namespace EntidadesPetShop
         #region Atributos
         private static string nombre;
         private static string direccion;
-        private static long cuit;
+        private static double cuit;
         private static string razonSocial;
         private static List<Cliente> clientes;
         private static List<Empleado> empleados;
         private static List<Usuario> usuarios;
         private static List<Producto> productos;
-        private static List<Ventas> ventas;
+        private static List<VentasHistoricas> ventasHistoricas;
         #endregion
+
+        public static string Nombre { get; }
+        public static string Direccion { get; }
+        public static double Cuit { get; }
+        public static string RazonSocial { get; }
+
+
+
+        public static List<Cliente> ListaClientes
+        {
+            get { return clientes; }
+            set { clientes = value; }
+        }
+        public static List<Empleado> ListaEmpleados
+        {
+            get { return empleados; }
+            set { empleados = value; }
+        }
+        public static List<Producto> ListaProductos
+        {
+            get { return productos; }
+            set { productos = value; }
+        }
+
+        public static List<VentasHistoricas> ListaVentasHistoricas
+        {
+            get { return ventasHistoricas; }
+            set { ventasHistoricas = value; }
+        }
+
+
 
         #region Constructor
         static ComercioPetShop()
@@ -31,13 +62,19 @@ namespace EntidadesPetShop
             empleados = new List<Empleado>();
             usuarios = new List<Usuario>();
             productos = new List<Producto>();
-            ventas = new List<Ventas>();
+            ventasHistoricas = new List<VentasHistoricas>();
+
+            CargarListaClientes();
+            CargarUsuarios();
+            CargarListaEmpleados();
+            CargarProductos();
+            CargarVentas();
         }
         #endregion
 
         
         #region Metodos
-        public static void CargarListaClientes(List<Cliente> clientes)
+        public static void CargarListaClientes()
         {
             clientes.Add(new Cliente("Maria", "Noriega", "33694911", 27336949114));
             clientes.Add(new Cliente("Juan", "Lopez", "42053266", 27420532666));
@@ -57,7 +94,7 @@ namespace EntidadesPetShop
             clientes.Add(new Cliente("Carla", "Olmedo", "42217764", 26422177649));
         }
 
-        public static void CargarListaEmpleados(List<Empleado> empleados, List<Usuario> usuarios)
+        public static void CargarListaEmpleados()
         {
             empleados.Add(new Empleado("Ezequiel", "Oggioni", "42217620", 20422176209, usuarios[0], 250000));
             empleados.Add(new Empleado("Lucas", "Rodriguez", "42385648", 20423856484, usuarios[1], 250000));
@@ -66,7 +103,7 @@ namespace EntidadesPetShop
             empleados.Add(new Empleado("Luis", "Andaur", "33009897", 20330098979, usuarios[4], 150000));
         }
 
-        public static void CargarUsuarios(List<Usuario> usuarios)
+        public static void CargarUsuarios()
         {
             usuarios.Add(new Usuario("eoggioni", "42217620", ERol.Administrador));
             usuarios.Add(new Usuario("lrodriguez", "42385648", ERol.Administrador));
@@ -76,7 +113,7 @@ namespace EntidadesPetShop
         }
         #endregion
 
-        public static void CargarProductos(List<Producto> productos)
+        public static void CargarProductos()
         {
             productos.Add(new Producto("Monaco Cuadrille L", 2899.90, ECategoria.Cama, "Casita acolchada y desarmable", "Puppy", 5));
             productos.Add(new Producto("MDF Carpa", 2915.40, ECategoria.Cama, "Carpita muy suave, cómoda y calentita", "MDF", 3));
@@ -98,19 +135,20 @@ namespace EntidadesPetShop
             productos.Add(new Producto("Baño arena", 486.85, ECategoria.Higiene, "Baños de polvo imprescindibles para su pelaje suelto y esponjoso", "Zootec", 1));
         }
 
-        public static void CargarVentas(List<Ventas> ventas, List<Empleado> empleados, List<Cliente> clientes, List<Producto> productos)
+        public static void CargarVentas()
         {
-            ventas.Add(new Ventas(empleados[3], clientes[2], productos[4], 2, productos[4].Precio*2));
-            ventas.Add(new Ventas(empleados[0], clientes[5], productos[12], 1, productos[12].Precio));
-            ventas.Add(new Ventas(empleados[1], clientes[7], productos[7], 3, productos[7].Precio*3));
-            ventas.Add(new Ventas(empleados[2], clientes[10], productos[5], 2, productos[5].Precio*2));
-            ventas.Add(new Ventas(empleados[3], clientes[8], productos[2], 2, productos[2].Precio*2));
-            ventas.Add(new Ventas(empleados[1], clientes[5], productos[10], 1, productos[10].Precio));
-            ventas.Add(new Ventas(empleados[4], clientes[1], productos[14], 2, productos[14].Precio*2));
-            ventas.Add(new Ventas(empleados[2], clientes[12], productos[9], 1, productos[9].Precio));
-            ventas.Add(new Ventas(empleados[0], clientes[15], productos[16], 1, productos[16].Precio));
-            ventas.Add(new Ventas(empleados[1], clientes[4], productos[3], 2, productos[3].Precio*2));
+            ventasHistoricas.Add(new VentasHistoricas(empleados[3], clientes[2], productos[4], 2, productos[4].Precio*2));
+            ventasHistoricas.Add(new VentasHistoricas(empleados[0], clientes[5], productos[12], 1, productos[12].Precio));
+            ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[7], productos[7], 3, productos[7].Precio*3));
+            ventasHistoricas.Add(new VentasHistoricas(empleados[2], clientes[10], productos[5], 2, productos[5].Precio*2));
+            ventasHistoricas.Add(new VentasHistoricas(empleados[3], clientes[8], productos[2], 2, productos[2].Precio*2));
+            ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[5], productos[10], 1, productos[10].Precio));
+            ventasHistoricas.Add(new VentasHistoricas(empleados[4], clientes[1], productos[14], 2, productos[14].Precio*2));
+            ventasHistoricas.Add(new VentasHistoricas(empleados[2], clientes[12], productos[9], 1, productos[9].Precio));
+            ventasHistoricas.Add(new VentasHistoricas(empleados[0], clientes[15], productos[16], 1, productos[16].Precio));
+            ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[4], productos[3], 2, productos[3].Precio*2));
         }
 
+        
     }
 }

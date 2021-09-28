@@ -22,6 +22,12 @@ namespace PetShop
             cmb_Enumerado.SelectedIndex = -1;
         }
 
+        private void Frm_abmProductos_Load(object sender, EventArgs e)
+        {
+            productos = ComercioPetShop.ListaProductos;
+            ListarBase();
+        }
+
         public override void ListarBase()
         {
             dgv_Lista.Rows.Clear();
@@ -148,9 +154,6 @@ namespace PetShop
             ListarBase();
         }
 
-        public void CopiarLista(List<Producto> aux)
-        {
-            productos = aux;
-        }
+
     }
 }

@@ -13,6 +13,9 @@
     <Compile Update="Frm_abmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Frm_abmVender.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Frm_abmVentas.cs">
       <SubType>Form</SubType>
     </Compile>

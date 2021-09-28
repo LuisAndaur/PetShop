@@ -51,3 +51,4 @@ D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetSh
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmProductos.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmEmpleados.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVentas.resources
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVender.resources

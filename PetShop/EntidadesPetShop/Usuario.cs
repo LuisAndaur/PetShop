@@ -57,5 +57,10 @@ namespace EntidadesPetShop
         }
 
         #endregion
+
+        public static void ResetearIdUsuario()
+        {
+            ultimoIdGenerado = 0;
+        }
     }
 }

@@ -20,7 +20,12 @@ namespace PetShop
         {
             InitializeComponent();            
         }
-        
+
+        private void Frm_abmClientes_Load(object sender, EventArgs e)
+        {
+            clientes = ComercioPetShop.ListaClientes;
+        }
+
         public override void ListarBase()
         {
             dgv_Lista.Rows.Clear();
@@ -133,14 +138,11 @@ namespace PetShop
             txt_Cuil.Text = string.Empty;
         }
 
-        public void CopiarLista(List<Cliente> aux)
-        {
-            clientes = aux;
-        }
-
         public override void btn_Listar_Click(object sender, EventArgs e)
         {
             ListarBase();
         }
+
+ 
     }
 }

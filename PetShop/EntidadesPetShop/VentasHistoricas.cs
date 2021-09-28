@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntidadesPetShop
 {
-    public class Ventas
+    public class VentasHistoricas
     {
         #region Atributos
         private int idVenta;
@@ -57,12 +57,12 @@ namespace EntidadesPetShop
         #endregion
 
         #region Constructor
-        static Ventas()
+        static VentasHistoricas()
         {
             ultimoIdGenerado = 0;
         }
 
-        public Ventas(Empleado empleado, Cliente cliente, Producto producto, int cantidad, double precioTotal)
+        public VentasHistoricas(Empleado empleado, Cliente cliente, Producto producto, int cantidad, double precioTotal)
         {
             ultimoIdGenerado++;
             this.IdVenta = ultimoIdGenerado;

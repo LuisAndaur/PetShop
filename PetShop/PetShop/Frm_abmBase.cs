@@ -13,8 +13,6 @@ namespace PetShop
 {
     public partial class Frm_abmBase : Form
     {
-        
-
         public Frm_abmBase()
         {
             InitializeComponent();

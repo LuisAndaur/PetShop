@@ -13,11 +13,7 @@ namespace PetShop
 {
     public partial class Frm_MenuBase : Form
     {
-        List<Cliente> clientes = new List<Cliente>();
-        List<Usuario> usuarios = new List<Usuario>();
-        List<Empleado> empleados = new List<Empleado>();
         List<Producto> productos = new List<Producto>();
-        List<Ventas> ventas = new List<Ventas>();
 
         public Frm_MenuBase()
         {
@@ -32,13 +28,7 @@ namespace PetShop
         private void Frm_MenuPrincipal_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-            empleados.Clear();
             AbrirFormDentro(new Frm_Home());
-            ComercioPetShop.CargarListaClientes(clientes);
-            ComercioPetShop.CargarUsuarios(usuarios);
-            ComercioPetShop.CargarListaEmpleados(empleados, usuarios);
-            ComercioPetShop.CargarProductos(productos);
-            ComercioPetShop.CargarVentas(ventas, empleados, clientes, productos);
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
@@ -71,28 +61,30 @@ namespace PetShop
         {
             Frm_abmClientes formClientes = new Frm_abmClientes();
             AbrirFormDentro(formClientes);
-            formClientes.CopiarLista(clientes);
         }        
 
         private void btn_Productos_Click(object sender, EventArgs e)
         {
             Frm_abmProductos formProductos = new Frm_abmProductos();
             AbrirFormDentro(formProductos);
-            formProductos.CopiarLista(productos);
         }
 
         private void btn_Empleados_Click(object sender, EventArgs e)
         {
             Frm_abmEmpleados formEmpleados = new Frm_abmEmpleados();
             AbrirFormDentro(formEmpleados);
-            formEmpleados.CopiarLista(empleados);
         }
 
         private void btn_Ventas_Click(object sender, EventArgs e)
         {
             Frm_abmVentas formVentas = new Frm_abmVentas();
             AbrirFormDentro(formVentas);
-            formVentas.CopiarLista(ventas);
+        }
+
+        private void btn_Vender_Click(object sender, EventArgs e)
+        {
+            Frm_abmVender formVender = new Frm_abmVender();
+            AbrirFormDentro(formVender);
         }
 
         private void btn_Cerrar_Click(object sender, EventArgs e)
@@ -114,10 +106,7 @@ namespace PetShop
                 e.Cancel = true;
             }
         }
-        public virtual void CopiarLista(List<Empleado> aux)
-        {
-            empleados = aux;
-        }
+  
 
     }
 }

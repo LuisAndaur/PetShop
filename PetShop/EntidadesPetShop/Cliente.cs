@@ -50,5 +50,9 @@ namespace EntidadesPetShop
             return (double)random.Next(0,5500);
         }
 
+        public static void ResetearIdCliente()
+        {
+            ultimoIdGenerado = 999;
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,34 +14,97 @@ namespace PetShop
 {
     public partial class Frm_abmVentas : Frm_abmBase
     {
-        List<Ventas> ventas = new List<Ventas>();
+        private int indice = 0;
+        List<VentasHistoricas> ventasHistoricas = new List<VentasHistoricas>();
         public Frm_abmVentas()
         {
             InitializeComponent();
         }
 
+        private void Frm_abmVentas_Load(object sender, EventArgs e)
+        {
+            ventasHistoricas = ComercioPetShop.ListaVentasHistoricas;
+        }
+
         public override void ListarBase()
         {
-            //ComercioPetShop.CargarListaClientes(clientes);
-            //ComercioPetShop.CargarUsuarios(usuarios);
-            //ComercioPetShop.CargarListaEmpleados(empleados, usuarios);
-            //ComercioPetShop.CargarProductos(productos);
-            //ComercioPetShop.CargarVentas(ventas, empleados, clientes, productos);
-
-            foreach (Ventas item in ventas)
+            dgv_Lista.Rows.Clear();
+            foreach (VentasHistoricas item in ventasHistoricas)
             {
-                int indice = dataGridView1.Rows.Add();
-                dataGridView1.Rows[indice].Cells[0].Value = item.IdVenta;
-                dataGridView1.Rows[indice].Cells[1].Value = item.Empleado.Nombre;
-                dataGridView1.Rows[indice].Cells[2].Value = item.Cliente.Nombre;
-                dataGridView1.Rows[indice].Cells[3].Value = item.Producto.Nombre;
-                dataGridView1.Rows[indice].Cells[4].Value = item.Cantidad;
-                dataGridView1.Rows[indice].Cells[5].Value = item.PrecioTotal;
+                int indice = dgv_Lista.Rows.Add();
+                dgv_Lista.Rows[indice].Cells[0].Value = item.IdVenta;
+                dgv_Lista.Rows[indice].Cells[1].Value = item.Empleado.Nombre;
+                dgv_Lista.Rows[indice].Cells[2].Value = item.Cliente.Nombre;
+                dgv_Lista.Rows[indice].Cells[3].Value = item.Producto.Nombre;
+                dgv_Lista.Rows[indice].Cells[4].Value = item.Cantidad;
+                dgv_Lista.Rows[indice].Cells[5].Value = item.PrecioTotal;
             }
         }
-        public void CopiarLista(List<Ventas> aux)
+
+        private void dgv_Lista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ventas = aux;
+            indice = e.RowIndex;
+            if (indice != -1)
+            {
+                txt_Id.Text = dgv_Lista.Rows[indice].Cells[0].Value.ToString();
+                txt_Empleado.Text = dgv_Lista.Rows[indice].Cells[1].Value.ToString();
+                txt_Cliente.Text = dgv_Lista.Rows[indice].Cells[2].Value.ToString();
+                txt_Producto.Text = dgv_Lista.Rows[indice].Cells[3].Value.ToString();
+                txt_Cantidad.Text = dgv_Lista.Rows[indice].Cells[4].Value.ToString();
+                txt_PrecioFinal.Text = dgv_Lista.Rows[indice].Cells[5].Value.ToString();
+            }
         }
+
+        public override void btn_Listar_Click(object sender, EventArgs e)
+        {
+            ListarBase();
+        }
+
+        public override void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        public override void Limpiar()
+        {
+            txt_Id.Text = string.Empty;
+            txt_Empleado.Text = string.Empty;
+            txt_Cliente.Text = string.Empty;
+            txt_Producto.Text = string.Empty;
+            txt_Cantidad.Text = string.Empty;
+            txt_PrecioFinal.Text = string.Empty;
+        }
+
+  
+
+        private void btn_Ticket_Click(object sender, EventArgs e)
+        {
+            string[] lineas = {$"Empleado: {txt_Empleado.Text}\nCliente: {txt_Cliente.Text}\nProducto: {txt_Producto.Text}\nCantidad: {txt_Cantidad.Text}\nPrecio final: ${txt_PrecioFinal.Text}" };
+            //StringBuilder stringBuilder = new StringBuilder();
+            //stringBuilder.Append(ComercioPetShop.Nombre);
+            //stringBuilder.Append(" " + ComercioPetShop.Cuit.ToString());
+            //stringBuilder.AppendLine(" " + ComercioPetShop.Direccion);
+            //stringBuilder.AppendFormat($" numero: {txt_Id} Fecha {DateTime.Now.ToLongDateString()}");
+
+            //stringBuilder.AppendLine($"Precio final:  ${txt_PrecioFinal}");
+            //string[] detalles = new[] { stringBuilder.ToString() };
+            using (StreamWriter outputFile = new StreamWriter("D:\\TUP\\2do Cuatrimestre 2021\\Programación y Laboratorio 2\\PetShop\\PetShop\\ticketVenta.txt"))
+            //{
+            //    foreach (string linea in detalles)
+            //    {
+            //        outputFile.WriteLine(linea);
+            //        outputFile.WriteLine(detalles);
+            //    }
+
+
+
+            foreach (string linea in lineas)
+            {
+                outputFile.WriteLine(linea);
+            }
+            MessageBox.Show("Ticket generado con exito");
+        }
+
+        
     }
 }

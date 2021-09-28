@@ -22,6 +22,11 @@ namespace PetShop
             cmb_Enumerado.SelectedIndex = -1;
         }
 
+        private void Frm_abmEmpleados_Load(object sender, EventArgs e)
+        {
+            empleados = ComercioPetShop.ListaEmpleados;
+        }
+
         public override void ListarBase()
         {
             dgv_Lista.Rows.Clear();
@@ -146,14 +151,11 @@ namespace PetShop
             txt_Sueldo.Text = string.Empty;
         }
 
-        public void CopiarLista(List<Empleado> aux)
-        {
-            empleados = aux;
-        }
-
         public override void btn_Listar_Click(object sender, EventArgs e)
         {
             ListarBase();
         }
+
+        
     }
 }

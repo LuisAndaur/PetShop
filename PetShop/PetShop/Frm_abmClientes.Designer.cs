@@ -237,6 +237,7 @@ namespace PetShop
             this.ClientSize = new System.Drawing.Size(1035, 630);
             this.Name = "Frm_abmClientes";
             this.Text = "Frm_abmClientes";
+            this.Load += new System.EventHandler(this.Frm_abmClientes_Load);
             this.gpb_Lista.ResumeLayout(false);
             this.gpb_Datos.ResumeLayout(false);
             this.gpb_Datos.PerformLayout();
