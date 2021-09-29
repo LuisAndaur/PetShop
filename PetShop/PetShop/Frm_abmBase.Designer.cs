@@ -161,9 +161,11 @@ namespace PetShop
             // txt_Cuil
             // 
             this.txt_Cuil.Location = new System.Drawing.Point(33, 338);
+            this.txt_Cuil.MaxLength = 11;
             this.txt_Cuil.Name = "txt_Cuil";
             this.txt_Cuil.Size = new System.Drawing.Size(317, 23);
             this.txt_Cuil.TabIndex = 19;
+            this.txt_Cuil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cuil_KeyPress);
             // 
             // lbl_Cuil
             // 
@@ -177,6 +179,7 @@ namespace PetShop
             // txt_Dni
             // 
             this.txt_Dni.Location = new System.Drawing.Point(31, 268);
+            this.txt_Dni.MaxLength = 8;
             this.txt_Dni.Name = "txt_Dni";
             this.txt_Dni.Size = new System.Drawing.Size(319, 23);
             this.txt_Dni.TabIndex = 17;
@@ -295,6 +298,7 @@ namespace PetShop
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(135, 23);
             this.txt_Nombre.TabIndex = 3;
+            this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
             // 
             // lbl_Nombre
             // 

@@ -16,13 +16,19 @@ namespace EntidadesPetShop
         public double Bono
         {
             get { return bono; }
-            set { bono = value; }
+            set 
+            {
+                if (value > 0)
+                {
+                    bono = value;
+                }                 
+            }
         }
 
         #endregion
 
         #region Constructor        
-        public Administrador(int id, string nombre, string apellido, string dni, long cuil, Usuario usuario, double sueldo, double bono) : base(nombre, apellido, dni, cuil, usuario, sueldo)
+        public Administrador(int id, string nombre, string apellido, string dni, long cuil, string nombreUsuario, string pass, ERol rol, double sueldo, double bono) : base(nombre, apellido, dni, cuil, nombreUsuario, pass, rol, sueldo)
         {
             this.Bono = bono;
         }

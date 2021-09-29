@@ -15,7 +15,6 @@ namespace EntidadesPetShop
         private static string razonSocial;
         private static List<Cliente> clientes;
         private static List<Empleado> empleados;
-        private static List<Usuario> usuarios;
         private static List<Producto> productos;
         private static List<VentasHistoricas> ventasHistoricas;
         #endregion
@@ -60,12 +59,10 @@ namespace EntidadesPetShop
             razonSocial = "Pet Shop";
             clientes = new List<Cliente>();
             empleados = new List<Empleado>();
-            usuarios = new List<Usuario>();
             productos = new List<Producto>();
             ventasHistoricas = new List<VentasHistoricas>();
 
             CargarListaClientes();
-            CargarUsuarios();
             CargarListaEmpleados();
             CargarProductos();
             CargarVentas();
@@ -74,7 +71,7 @@ namespace EntidadesPetShop
 
         
         #region Metodos
-        public static void CargarListaClientes()
+        private static void CargarListaClientes()
         {
             clientes.Add(new Cliente("Maria", "Noriega", "33694911", 27336949114));
             clientes.Add(new Cliente("Juan", "Lopez", "42053266", 27420532666));
@@ -94,26 +91,17 @@ namespace EntidadesPetShop
             clientes.Add(new Cliente("Carla", "Olmedo", "42217764", 26422177649));
         }
 
-        public static void CargarListaEmpleados()
+        private static void CargarListaEmpleados()
         {
-            empleados.Add(new Empleado("Ezequiel", "Oggioni", "42217620", 20422176209, usuarios[0], 250000));
-            empleados.Add(new Empleado("Lucas", "Rodriguez", "42385648", 20423856484, usuarios[1], 250000));
-            empleados.Add(new Empleado("Juan", "Santos", "41481920", 20414819207, usuarios[2], 150000));
-            empleados.Add(new Empleado("Carolina", "Scrofani", "42385227", 27423852270, usuarios[3], 150000));
-            empleados.Add(new Empleado("Luis", "Andaur", "33009897", 20330098979, usuarios[4], 150000));
-        }
-
-        public static void CargarUsuarios()
-        {
-            usuarios.Add(new Usuario("eoggioni", "42217620", ERol.Administrador));
-            usuarios.Add(new Usuario("lrodriguez", "42385648", ERol.Administrador));
-            usuarios.Add(new Usuario("jsantos", "41481920", ERol.Staff));
-            usuarios.Add(new Usuario("cscrofani", "42385227", ERol.Staff));
-            usuarios.Add(new Usuario("landaur", "33009897", ERol.Staff));
+            empleados.Add(new Empleado("Ezequiel", "Oggioni", "42217620", 20422176209, "eoggioni", "42217620", ERol.Administrador, 250000));
+            empleados.Add(new Empleado("Lucas", "Rodriguez", "42385648", 20423856484, "lrodriguez", "42385648", ERol.Administrador, 250000));
+            empleados.Add(new Empleado("Juan", "Santos", "41481920", 20414819207, "jsantos", "41481920", ERol.Staff, 150000));
+            empleados.Add(new Empleado("Carolina", "Scrofani", "42385227", 27423852270, "cscrofani", "42385227", ERol.Staff, 150000));
+            empleados.Add(new Empleado("Luis", "Andaur", "33009897", 20330098979, "landaur", "33009897", ERol.Staff, 150000));
         }
         #endregion
 
-        public static void CargarProductos()
+        private static void CargarProductos()
         {
             productos.Add(new Producto("Monaco Cuadrille L", 2899.90, ECategoria.Cama, "Casita acolchada y desarmable", "Puppy", 5));
             productos.Add(new Producto("MDF Carpa", 2915.40, ECategoria.Cama, "Carpita muy suave, cómoda y calentita", "MDF", 3));
@@ -135,7 +123,7 @@ namespace EntidadesPetShop
             productos.Add(new Producto("Baño arena", 486.85, ECategoria.Higiene, "Baños de polvo imprescindibles para su pelaje suelto y esponjoso", "Zootec", 1));
         }
 
-        public static void CargarVentas()
+        private static void CargarVentas()
         {
             ventasHistoricas.Add(new VentasHistoricas(empleados[3], clientes[2], productos[4], 2, productos[4].Precio*2));
             ventasHistoricas.Add(new VentasHistoricas(empleados[0], clientes[5], productos[12], 1, productos[12].Precio));
@@ -150,5 +138,30 @@ namespace EntidadesPetShop
         }
 
         
+        public static Empleado LoguearEmpleados(string nombreUsuario, string pass)
+        {
+            if (ValidarCamposIngresados(nombreUsuario, pass))
+            {
+                foreach (Empleado item in empleados)
+                {
+                    if (item.NombreUsuario.Trim().ToLower() == nombreUsuario.Trim().ToLower() && item.Pass.Trim() == pass.Trim())
+                    {
+                        return item;
+                    }
+                }
+            }
+            return null;
+        }
+
+
+        private static bool ValidarCamposIngresados(string nombreUsuario, string pass)
+        {
+            if (string.IsNullOrEmpty(nombreUsuario) || string.IsNullOrEmpty(pass))
+            {
+                return false;
+            }
+            return true;
+        }
+
     }
 }

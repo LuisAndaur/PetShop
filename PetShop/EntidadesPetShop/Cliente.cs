@@ -24,7 +24,13 @@ namespace EntidadesPetShop
         public double Saldo
         {
             get { return saldo; }
-            set { saldo = value; }
+            set 
+            {
+                if (value > -1)
+                {
+                    saldo = value;
+                }                 
+            }
         }
         #endregion
 

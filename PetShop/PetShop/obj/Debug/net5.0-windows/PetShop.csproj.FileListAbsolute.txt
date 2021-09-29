@@ -43,9 +43,7 @@ C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\n
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.pdb
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.genruntimeconfig.cache
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmBase.resources
-D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_MenuAdmin.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_MenuBase.resources
-D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_MenuStaff.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_Home.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmClientes.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmProductos.resources

@@ -11,27 +11,58 @@ namespace EntidadesPetShop
         #region Atributos
         private static int ultimoIdGenerado;
         private int id;
-        private Usuario usuario;
+        private string nombreUsuario;
+        private string pass;
+        private ERol rol;
         private double sueldo;
         #endregion
+
 
         #region Propiedades
         public int Id
         {
             get { return id; }
-            set { id = value; }
         }
 
         public double Sueldo
         {
             get { return sueldo; }
-            set { sueldo = value; }
+            set 
+            {
+                if (value > 0)
+                {
+                    sueldo = value;
+                }                
+            }
         }
 
-        public Usuario Usuario
+        public string NombreUsuario
         {
-            get { return usuario; }
-            set { usuario = value; }
+            get { return nombreUsuario; }
+            set 
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    nombreUsuario = value;
+                }                 
+            }
+        }
+        public string Pass
+        {
+            get { return pass; }
+            set 
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    pass = value;
+                }
+            }
+        }
+
+        public ERol Rol
+        {
+            get { return rol; }
+            set { rol = value; }
         }
 
         #endregion
@@ -47,12 +78,14 @@ namespace EntidadesPetShop
 
         }
 
-        public Empleado(string nombre, string apellido, string dni, double cuil, Usuario usuario, double sueldo) : this (nombre, apellido, dni, cuil)
+        public Empleado(string nombre, string apellido, string dni, double cuil, string nombreUsuario, string pass, ERol rol, double sueldo) : this (nombre, apellido, dni, cuil)
         {
             ultimoIdGenerado++;
-            this.Id = ultimoIdGenerado;
+            this.id = ultimoIdGenerado;
             this.Sueldo = sueldo;
-            this.Usuario = usuario;
+            this.NombreUsuario = nombreUsuario;
+            this.Pass = pass;
+            this.Rol = rol;
         }
         #endregion
 
@@ -66,9 +99,6 @@ namespace EntidadesPetShop
             return $"{nombre[0]}{apellido}".ToLower();
         }
 
-        public static void ResetearIdEmpleado()
-        {
-            ultimoIdGenerado = 99999;
-        }
+  
     }
 }

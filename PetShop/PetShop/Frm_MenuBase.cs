@@ -13,22 +13,21 @@ namespace PetShop
 {
     public partial class Frm_MenuBase : Form
     {
-        List<Producto> productos = new List<Producto>();
-
         public Frm_MenuBase()
         {
             InitializeComponent();
         }
 
-        public Frm_MenuBase(string nombreUsuario) : this ()
+        public Frm_MenuBase(Empleado empleado) : this ()
         {
-            this.lbl_TituloMenuPrincipal.Text = $"\n{this.lbl_TituloMenuPrincipal.Text}{nombreUsuario}";            
+            this.lbl_UsuarioActivo.Text = $"{this.lbl_UsuarioActivo.Text}{empleado.Nombre}";         
         }
 
         private void Frm_MenuPrincipal_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
             AbrirFormDentro(new Frm_Home());
+            
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)

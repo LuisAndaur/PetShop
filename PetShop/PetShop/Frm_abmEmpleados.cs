@@ -34,7 +34,7 @@ namespace PetShop
             {
                 int indice = dgv_Lista.Rows.Add();
                 dgv_Lista.Rows[indice].Cells[0].Value = item.Id;
-                dgv_Lista.Rows[indice].Cells[1].Value = item.Usuario.Rol;
+                dgv_Lista.Rows[indice].Cells[1].Value = item.Rol;
                 dgv_Lista.Rows[indice].Cells[2].Value = item.Nombre;
                 dgv_Lista.Rows[indice].Cells[3].Value = item.Apellido;
                 dgv_Lista.Rows[indice].Cells[4].Value = item.Dni;
@@ -71,7 +71,7 @@ namespace PetShop
                     item.Dni = txt_Dni.Text;
                     item.Cuil = double.Parse(txt_Cuil.Text);
                     item.Sueldo = double.Parse(txt_Sueldo.Text);
-                    item.Usuario.Rol = Enum.Parse<ERol>(cmb_Enumerado.Text);
+                    item.Rol = Enum.Parse<ERol>(cmb_Enumerado.Text);
                     MessageBox.Show("Datos del empleado modificados");
                     existe = true;
                 }
@@ -126,10 +126,9 @@ namespace PetShop
                 double.TryParse(txt_Cuil.Text, out double cuil);
                 Empleado newEmpleado = new Empleado(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil);
                 string nombreUsuario = newEmpleado.GenerarNombreUsuario(txt_Nombre.Text, txt_Apellido.Text);
-                Usuario usuario = new Usuario(nombreUsuario, txt_Dni.Text, (ERol)cmb_Enumerado.SelectedItem);
                 double.TryParse(txt_Sueldo.Text, out double sueldo);
 
-                empleados.Add(new Empleado(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil, usuario, sueldo));
+                empleados.Add(new Empleado(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil, nombreUsuario, txt_Dni.Text, (ERol)cmb_Enumerado.SelectedItem, sueldo));
                 MessageBox.Show("Nuevo empleado agregado");
             }
             ListarBase();

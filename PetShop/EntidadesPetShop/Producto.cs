@@ -29,13 +29,25 @@ namespace EntidadesPetShop
         public string Nombre
         {
             get { return nombre; }
-            set { nombre = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    nombre = value;
+                }                 
+            }
         }
 
         public double Precio
         {
             get { return precio; }
-            set { precio = value; }
+            set 
+            {
+                if (value > 0)
+                {
+                    precio = value;
+                }                
+            }
         }
 
         public ECategoria Categoria
@@ -47,19 +59,37 @@ namespace EntidadesPetShop
         public string Descripcion
         {
             get { return descripcion; }
-            set { descripcion = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    descripcion = value;
+                }                
+            }
         }
 
         public string Marca
         {
             get { return marca; }
-            set { marca = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    marca = value;
+                }
+            }
         }
 
         public int Stock
         {
             get { return stock; }
-            set { stock = value; }
+            set
+            {
+                if (stock > -1)
+                {
+                    stock = value;
+                }
+            }
         }
         #endregion
 
@@ -72,13 +102,13 @@ namespace EntidadesPetShop
         public Producto(string nombre, double precio, ECategoria categoria, string descripcion, string marca, int stock)
         {
             ultimoIdGenerado++;
-            this.idProducto = ultimoIdGenerado;
-            this.nombre = nombre;
-            this.precio = precio;
-            this.categoria = categoria;
-            this.descripcion = descripcion;
-            this.marca = marca;
-            this.stock = stock;
+            this.IdProducto = ultimoIdGenerado;
+            this.Nombre = nombre;
+            this.Precio = precio;
+            this.Categoria = categoria;
+            this.Descripcion = descripcion;
+            this.Marca = marca;
+            this.Stock = stock;
         }
         #endregion
 

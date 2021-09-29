@@ -75,7 +75,21 @@ namespace PetShop
             txt_PrecioFinal.Text = string.Empty;
         }
 
-  
+        public override void txt_Editar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public override void btn_Agregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void btn_Ticket_Click(object sender, EventArgs e)
         {

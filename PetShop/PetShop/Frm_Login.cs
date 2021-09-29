@@ -37,25 +37,28 @@ namespace PetShop
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
             bool coincide = false;
-            foreach (Empleado item in empleados)
-            {                
-                if (item.Usuario.NombreUsuario == txt_Usuario.Text && item.Usuario.Contraseña == txt_Password.Text)
+            Empleado auxEmpleado = ComercioPetShop.LoguearEmpleados(txt_Usuario.Text, txt_Password.Text);
+            if (auxEmpleado != null)
+            {
+                if (auxEmpleado.Rol == ERol.Administrador)
                 {
-                    if (item.Usuario.Rol == ERol.Administrador)
-                    {
-                        Frm_MenuAdmin menuAdmin = new Frm_MenuAdmin(item.Nombre);
-                        menuAdmin.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        Frm_MenuStaff menuStaff = new Frm_MenuStaff(item.Nombre);
-                        menuStaff.Show();
-                        this.Hide();
-                    }                    
-                    coincide = true;
-                }                
-            }
+                    Frm_MenuBase menuBase = new Frm_MenuBase(auxEmpleado);
+                    menuBase.Show();
+                    menuBase.BackColor = Color.LightCoral;
+                    this.Hide();
+                }
+                else
+                {
+                    Frm_MenuBase menuBase = new Frm_MenuBase(auxEmpleado);
+                    menuBase.Show();
+                    menuBase.BackColor = Color.Lavender;
+                    menuBase.btn_Empleados.Visible = false;
+                    menuBase.btn_Ventas.Visible = false;
+                    this.Hide();
+                }                    
+                coincide = true;
+            }                
+
             if(!coincide)
             {
                 txt_Usuario.Text = string.Empty;
@@ -70,8 +73,8 @@ namespace PetShop
             Random random = new Random();
             numero = random.Next(0, 2);
 
-            txt_Usuario.Text = empleados[numero].Usuario.NombreUsuario;
-            txt_Password.Text = empleados[numero].Usuario.Contraseña;
+            txt_Usuario.Text = empleados[numero].NombreUsuario;
+            txt_Password.Text = empleados[numero].Pass;
         }
 
         private void btn_Empleado_Click(object sender, EventArgs e)
@@ -80,8 +83,8 @@ namespace PetShop
             Random random = new Random();
             numero = random.Next(2, 5);
 
-            txt_Usuario.Text = empleados[numero].Usuario.NombreUsuario;
-            txt_Password.Text = empleados[numero].Usuario.Contraseña;
+            txt_Usuario.Text = empleados[numero].NombreUsuario;
+            txt_Password.Text = empleados[numero].Pass;
         }
 
         
