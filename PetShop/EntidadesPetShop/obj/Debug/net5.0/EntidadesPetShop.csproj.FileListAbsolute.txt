@@ -14,7 +14,6 @@ C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\bi
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\bin\Debug\net5.0\EntidadesPetShop.dll
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\bin\Debug\net5.0\ref\EntidadesPetShop.dll
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\bin\Debug\net5.0\EntidadesPetShop.pdb
-C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.csproj.AssemblyReference.cache
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.AssemblyInfoInputs.cache
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.AssemblyInfo.cs
@@ -22,3 +21,4 @@ C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\ob
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.dll
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\ref\EntidadesPetShop.dll
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.pdb
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\EntidadesPetShop\obj\Debug\net5.0\EntidadesPetShop.csproj.AssemblyReference.cache

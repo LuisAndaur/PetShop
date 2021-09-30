@@ -24,6 +24,7 @@ namespace PetShop
         private void Frm_abmClientes_Load(object sender, EventArgs e)
         {
             clientes = ComercioPetShop.ListaClientes;
+            ListarBase();
         }
 
         public override void ListarBase()
@@ -136,11 +137,6 @@ namespace PetShop
             txt_Apellido.Text = string.Empty;
             txt_Dni.Text = string.Empty;
             txt_Cuil.Text = string.Empty;
-        }
-
-        public override void btn_Listar_Click(object sender, EventArgs e)
-        {
-            ListarBase();
         }
 
  

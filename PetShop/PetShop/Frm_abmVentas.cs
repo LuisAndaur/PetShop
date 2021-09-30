@@ -24,6 +24,7 @@ namespace PetShop
         private void Frm_abmVentas_Load(object sender, EventArgs e)
         {
             ventasHistoricas = ComercioPetShop.ListaVentasHistoricas;
+            ListarBase();
         }
 
         public override void ListarBase()
@@ -53,11 +54,6 @@ namespace PetShop
                 txt_Cantidad.Text = dgv_Lista.Rows[indice].Cells[4].Value.ToString();
                 txt_PrecioFinal.Text = dgv_Lista.Rows[indice].Cells[5].Value.ToString();
             }
-        }
-
-        public override void btn_Listar_Click(object sender, EventArgs e)
-        {
-            ListarBase();
         }
 
         public override void btn_Limpiar_Click(object sender, EventArgs e)

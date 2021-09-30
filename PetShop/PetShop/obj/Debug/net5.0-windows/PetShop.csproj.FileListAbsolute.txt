@@ -29,9 +29,7 @@ C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\n
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\EntidadesPetShop.dll
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\EntidadesPetShop.pdb
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.csproj.AssemblyReference.cache
-C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_ABM.resources
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_Login.resources
-C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_MenuPrincipal.resources
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.csproj.GenerateResource.cache
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.AssemblyInfoInputs.cache
@@ -50,3 +48,11 @@ D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetSh
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmEmpleados.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVentas.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVender.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmBase.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmClientes.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmEmpleados.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmProductos.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVender.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVentas.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_Home.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_MenuBase.resources

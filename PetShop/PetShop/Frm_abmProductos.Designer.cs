@@ -78,10 +78,6 @@ namespace PetShop
             // 
             this.btn_Limpiar.Location = new System.Drawing.Point(719, 555);
             // 
-            // btn_Listar
-            // 
-            this.btn_Listar.Location = new System.Drawing.Point(813, 555);
-            // 
             // lbl_Nombre
             // 
             this.lbl_Nombre.Location = new System.Drawing.Point(11, 109);
@@ -129,10 +125,6 @@ namespace PetShop
             // lbl_Descripcion
             // 
             this.lbl_Descripcion.Location = new System.Drawing.Point(11, 250);
-            // 
-            // txt_Stock
-            // 
-            this.txt_Stock.Location = new System.Drawing.Point(11, 378);
             // 
             // lbl_Stock
             // 

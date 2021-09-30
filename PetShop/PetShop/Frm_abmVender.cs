@@ -11,7 +11,7 @@ using EntidadesPetShop;
 
 namespace PetShop
 {
-    public partial class Frm_abmVender : Frm_abmVentas
+    public partial class Frm_abmVender
     {
         List<VentasHistoricas> ventas = new List<VentasHistoricas>();
         List<Cliente> clientes = new List<Cliente>();

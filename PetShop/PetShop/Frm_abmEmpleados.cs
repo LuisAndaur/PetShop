@@ -15,7 +15,7 @@ namespace PetShop
     {
         private int indice = 0;
         List<Empleado> empleados = new List<Empleado>();
-        public Frm_abmEmpleados()
+        public Frm_abmEmpleados() 
         {
             InitializeComponent();
             cmb_Enumerado.DataSource = Enum.GetValues(typeof(ERol));
@@ -25,6 +25,7 @@ namespace PetShop
         private void Frm_abmEmpleados_Load(object sender, EventArgs e)
         {
             empleados = ComercioPetShop.ListaEmpleados;
+            ListarBase();
         }
 
         public override void ListarBase()
@@ -150,10 +151,6 @@ namespace PetShop
             txt_Sueldo.Text = string.Empty;
         }
 
-        public override void btn_Listar_Click(object sender, EventArgs e)
-        {
-            ListarBase();
-        }
 
         
     }

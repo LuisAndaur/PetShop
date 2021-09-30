@@ -100,7 +100,6 @@ namespace PetShop
             this.gpb_Datos.Controls.SetChildIndex(this.lbl_Descripcion, 0);
             this.gpb_Datos.Controls.SetChildIndex(this.txt_Descripcion, 0);
             this.gpb_Datos.Controls.SetChildIndex(this.lbl_Stock, 0);
-            this.gpb_Datos.Controls.SetChildIndex(this.txt_Stock, 0);
             this.gpb_Datos.Controls.SetChildIndex(this.lbl_Apellido, 0);
             this.gpb_Datos.Controls.SetChildIndex(this.txt_Apellido, 0);
             this.gpb_Datos.Controls.SetChildIndex(this.lbl_Dni, 0);
@@ -124,10 +123,6 @@ namespace PetShop
             // btn_Limpiar
             // 
             this.btn_Limpiar.Location = new System.Drawing.Point(719, 556);
-            // 
-            // btn_Listar
-            // 
-            this.btn_Listar.Location = new System.Drawing.Point(808, 556);
             // 
             // lbl_Nombre
             // 
@@ -179,11 +174,6 @@ namespace PetShop
             // 
             this.lbl_Descripcion.Location = new System.Drawing.Point(31, 483);
             this.lbl_Descripcion.Visible = false;
-            // 
-            // txt_Stock
-            // 
-            this.txt_Stock.Location = new System.Drawing.Point(31, 501);
-            this.txt_Stock.Visible = false;
             // 
             // lbl_Stock
             // 
@@ -412,7 +402,6 @@ namespace PetShop
             this.Controls.SetChildIndex(this.btn_Agregar, 0);
             this.Controls.SetChildIndex(this.gpb_Datos, 0);
             this.Controls.SetChildIndex(this.txt_Editar, 0);
-            this.Controls.SetChildIndex(this.btn_Listar, 0);
             this.Controls.SetChildIndex(this.btn_Limpiar, 0);
             this.Controls.SetChildIndex(this.btn_Ticket, 0);
             this.gpb_Lista.ResumeLayout(false);

@@ -34,6 +34,7 @@ namespace PetShop
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.gpb_Lista = new System.Windows.Forms.GroupBox();
             this.gpb_Datos = new System.Windows.Forms.GroupBox();
+            this.nud_Stock = new System.Windows.Forms.NumericUpDown();
             this.lbl_Rol = new System.Windows.Forms.Label();
             this.txt_Sueldo = new System.Windows.Forms.TextBox();
             this.lbl_Sueldo = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@ namespace PetShop
             this.lbl_Dni = new System.Windows.Forms.Label();
             this.txt_Apellido = new System.Windows.Forms.TextBox();
             this.lbl_Apellido = new System.Windows.Forms.Label();
-            this.txt_Stock = new System.Windows.Forms.TextBox();
             this.lbl_Stock = new System.Windows.Forms.Label();
             this.txt_Descripcion = new System.Windows.Forms.TextBox();
             this.lbl_Descripcion = new System.Windows.Forms.Label();
@@ -58,8 +58,8 @@ namespace PetShop
             this.txt_Id = new System.Windows.Forms.TextBox();
             this.lbl_Id = new System.Windows.Forms.Label();
             this.btn_Limpiar = new System.Windows.Forms.Button();
-            this.btn_Listar = new System.Windows.Forms.Button();
             this.gpb_Datos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Stock)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Eliminar
@@ -103,6 +103,7 @@ namespace PetShop
             // 
             // gpb_Datos
             // 
+            this.gpb_Datos.Controls.Add(this.nud_Stock);
             this.gpb_Datos.Controls.Add(this.lbl_Rol);
             this.gpb_Datos.Controls.Add(this.txt_Sueldo);
             this.gpb_Datos.Controls.Add(this.lbl_Sueldo);
@@ -112,7 +113,6 @@ namespace PetShop
             this.gpb_Datos.Controls.Add(this.lbl_Dni);
             this.gpb_Datos.Controls.Add(this.txt_Apellido);
             this.gpb_Datos.Controls.Add(this.lbl_Apellido);
-            this.gpb_Datos.Controls.Add(this.txt_Stock);
             this.gpb_Datos.Controls.Add(this.lbl_Stock);
             this.gpb_Datos.Controls.Add(this.txt_Descripcion);
             this.gpb_Datos.Controls.Add(this.lbl_Descripcion);
@@ -133,6 +133,13 @@ namespace PetShop
             this.gpb_Datos.TabStop = false;
             this.gpb_Datos.Text = "Datos ";
             // 
+            // nud_Stock
+            // 
+            this.nud_Stock.Location = new System.Drawing.Point(33, 378);
+            this.nud_Stock.Name = "nud_Stock";
+            this.nud_Stock.Size = new System.Drawing.Size(120, 23);
+            this.nud_Stock.TabIndex = 25;
+            // 
             // lbl_Rol
             // 
             this.lbl_Rol.AutoSize = true;
@@ -148,6 +155,7 @@ namespace PetShop
             this.txt_Sueldo.Name = "txt_Sueldo";
             this.txt_Sueldo.Size = new System.Drawing.Size(319, 23);
             this.txt_Sueldo.TabIndex = 21;
+            this.txt_Sueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Sueldo_KeyPress);
             // 
             // lbl_Sueldo
             // 
@@ -183,6 +191,7 @@ namespace PetShop
             this.txt_Dni.Name = "txt_Dni";
             this.txt_Dni.Size = new System.Drawing.Size(319, 23);
             this.txt_Dni.TabIndex = 17;
+            this.txt_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dni_KeyPress);
             // 
             // lbl_Dni
             // 
@@ -199,6 +208,7 @@ namespace PetShop
             this.txt_Apellido.Name = "txt_Apellido";
             this.txt_Apellido.Size = new System.Drawing.Size(319, 23);
             this.txt_Apellido.TabIndex = 15;
+            this.txt_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellido_KeyPress);
             // 
             // lbl_Apellido
             // 
@@ -208,13 +218,6 @@ namespace PetShop
             this.lbl_Apellido.Size = new System.Drawing.Size(51, 15);
             this.lbl_Apellido.TabIndex = 14;
             this.lbl_Apellido.Text = "Apellido";
-            // 
-            // txt_Stock
-            // 
-            this.txt_Stock.Location = new System.Drawing.Point(31, 378);
-            this.txt_Stock.Name = "txt_Stock";
-            this.txt_Stock.Size = new System.Drawing.Size(135, 23);
-            this.txt_Stock.TabIndex = 13;
             // 
             // lbl_Stock
             // 
@@ -264,6 +267,7 @@ namespace PetShop
             this.txt_Precio.Name = "txt_Precio";
             this.txt_Precio.Size = new System.Drawing.Size(135, 23);
             this.txt_Precio.TabIndex = 7;
+            this.txt_Precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Precio_KeyPress);
             // 
             // lbl_Precio
             // 
@@ -336,16 +340,6 @@ namespace PetShop
             this.btn_Limpiar.UseVisualStyleBackColor = true;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
-            // btn_Listar
-            // 
-            this.btn_Listar.Location = new System.Drawing.Point(813, 546);
-            this.btn_Listar.Name = "btn_Listar";
-            this.btn_Listar.Size = new System.Drawing.Size(83, 23);
-            this.btn_Listar.TabIndex = 29;
-            this.btn_Listar.Text = "Listar";
-            this.btn_Listar.UseVisualStyleBackColor = true;
-            this.btn_Listar.Click += new System.EventHandler(this.btn_Listar_Click);
-            // 
             // Frm_abmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -353,7 +347,6 @@ namespace PetShop
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1035, 630);
             this.Controls.Add(this.btn_Limpiar);
-            this.Controls.Add(this.btn_Listar);
             this.Controls.Add(this.txt_Editar);
             this.Controls.Add(this.gpb_Datos);
             this.Controls.Add(this.btn_Agregar);
@@ -366,6 +359,7 @@ namespace PetShop
             this.TransparencyKey = System.Drawing.Color.Transparent;
             this.gpb_Datos.ResumeLayout(false);
             this.gpb_Datos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Stock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,7 +372,6 @@ namespace PetShop
         public System.Windows.Forms.GroupBox gpb_Lista;
         public System.Windows.Forms.GroupBox gpb_Datos;
         public System.Windows.Forms.Button btn_Limpiar;
-        public System.Windows.Forms.Button btn_Listar;
         public System.Windows.Forms.Label lbl_Nombre;
         public System.Windows.Forms.TextBox txt_Id;
         public System.Windows.Forms.Label lbl_Id;
@@ -391,7 +384,6 @@ namespace PetShop
         public System.Windows.Forms.Label lbl_Marca;
         public System.Windows.Forms.TextBox txt_Descripcion;
         public System.Windows.Forms.Label lbl_Descripcion;
-        public System.Windows.Forms.TextBox txt_Stock;
         public System.Windows.Forms.Label lbl_Stock;
         public System.Windows.Forms.TextBox txt_Apellido;
         public System.Windows.Forms.Label lbl_Apellido;
@@ -402,5 +394,6 @@ namespace PetShop
         public System.Windows.Forms.TextBox txt_Dni;
         public System.Windows.Forms.Label lbl_Dni;
         public System.Windows.Forms.Label lbl_Rol;
+        public System.Windows.Forms.NumericUpDown nud_Stock;
     }
 }

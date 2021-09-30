@@ -11,36 +11,25 @@ using EntidadesPetShop;
 
 namespace PetShop
 {
-    public abstract partial class Frm_abmBase : Form
+    public  partial class Frm_abmBase : Form
     {
         public Frm_abmBase()
         {
             InitializeComponent();
         }
 
-        public abstract void ListarBase();
-
-        public abstract void txt_Editar_Click(object sender, EventArgs e);
-
-        public abstract void btn_Eliminar_Click(object sender, EventArgs e);
-
-        public abstract void btn_Agregar_Click(object sender, EventArgs e);
-
-        public abstract void btn_Limpiar_Click(object sender, EventArgs e);
-
-        public abstract void Limpiar();
-
-        public abstract void btn_Listar_Click(object sender, EventArgs e);
-
-        private void txt_Cuil_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            SoloNumeros(e);
+        public virtual void ListarBase() {
         }
 
-        private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            SoloLetras(e);
-        }
+        public virtual void txt_Editar_Click(object sender, EventArgs e) { }
+
+        public virtual void btn_Eliminar_Click(object sender, EventArgs e) { }
+
+        public virtual void btn_Agregar_Click(object sender, EventArgs e) { }
+
+        public virtual void btn_Limpiar_Click(object sender, EventArgs e) { }
+
+        public virtual void Limpiar() { }
 
         private void SoloLetras(KeyPressEventArgs e)
         {
@@ -58,6 +47,36 @@ namespace PetShop
                 MessageBox.Show("Sólo números", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
             }
+        }               
+
+        private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void txt_Apellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void txt_Dni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void txt_Cuil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void txt_Sueldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
+        }
+
+        private void txt_Precio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloNumeros(e);
         }
     }
 }

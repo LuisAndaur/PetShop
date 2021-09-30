@@ -109,11 +109,6 @@ namespace PetShop
             this.lbl_Descripcion.Location = new System.Drawing.Point(31, 461);
             this.lbl_Descripcion.Visible = false;
             // 
-            // txt_Stock
-            // 
-            this.txt_Stock.Location = new System.Drawing.Point(31, 479);
-            this.txt_Stock.Visible = false;
-            // 
             // lbl_Stock
             // 
             this.lbl_Stock.Location = new System.Drawing.Point(31, 461);

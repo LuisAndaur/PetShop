@@ -15,7 +15,7 @@ namespace EntidadesPetShop
         private ECategoria categoria;
         private string descripcion;
         private string marca;
-        private int stock;
+        private decimal stock;
         private static int ultimoIdGenerado;        
         #endregion
 
@@ -23,7 +23,6 @@ namespace EntidadesPetShop
         public int IdProducto
         {
             get { return idProducto; }
-            set { idProducto = value; }
         }
 
         public string Nombre
@@ -31,7 +30,7 @@ namespace EntidadesPetShop
             get { return nombre; }
             set 
             {
-                if (string.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value))
                 {
                     nombre = value;
                 }                 
@@ -61,7 +60,7 @@ namespace EntidadesPetShop
             get { return descripcion; }
             set 
             {
-                if (string.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value))
                 {
                     descripcion = value;
                 }                
@@ -73,14 +72,14 @@ namespace EntidadesPetShop
             get { return marca; }
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value))
                 {
                     marca = value;
                 }
             }
         }
 
-        public int Stock
+        public decimal Stock
         {
             get { return stock; }
             set
@@ -99,10 +98,10 @@ namespace EntidadesPetShop
             ultimoIdGenerado = 19999;
         }
 
-        public Producto(string nombre, double precio, ECategoria categoria, string descripcion, string marca, int stock)
+        public Producto(string nombre, double precio, ECategoria categoria, string descripcion, string marca, decimal stock)
         {
             ultimoIdGenerado++;
-            this.IdProducto = ultimoIdGenerado;
+            this.idProducto = ultimoIdGenerado;
             this.Nombre = nombre;
             this.Precio = precio;
             this.Categoria = categoria;

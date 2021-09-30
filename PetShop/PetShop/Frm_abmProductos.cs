@@ -55,7 +55,7 @@ namespace PetShop
                 txt_Precio.Text = dgv_Lista.Rows[indice].Cells[3].Value.ToString();
                 txt_Descripcion.Text = dgv_Lista.Rows[indice].Cells[4].Value.ToString();
                 txt_Marca.Text = dgv_Lista.Rows[indice].Cells[5].Value.ToString();
-                txt_Stock.Text = dgv_Lista.Rows[indice].Cells[6].Value.ToString();
+                nud_Stock.Text = dgv_Lista.Rows[indice].Cells[6].Value.ToString();
             }
         }
 
@@ -70,9 +70,9 @@ namespace PetShop
             cmb_Enumerado.SelectedIndex = -1;
             txt_Nombre.Text = string.Empty;
             txt_Descripcion.Text = string.Empty;
-            txt_Stock.Text = string.Empty;
             txt_Precio.Text = string.Empty;
             txt_Marca.Text = string.Empty;
+            nud_Stock.Value = 0;
         }
 
         public override void txt_Editar_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace PetShop
                 {
                     item.Nombre = txt_Nombre.Text;
                     item.Descripcion = txt_Descripcion.Text;
-                    item.Stock = int.Parse(txt_Stock.Text);
+                    item.Stock = nud_Stock.Value;
                     item.Precio = double.Parse(txt_Precio.Text);
                     item.Marca = txt_Marca.Text;
                     item.Categoria = Enum.Parse<ECategoria>(cmb_Enumerado.Text);
@@ -141,16 +141,10 @@ namespace PetShop
             if (!existe)
             {
                 double.TryParse(txt_Precio.Text, out double precio);
-                int.TryParse(txt_Stock.Text, out int stock);
 
-                productos.Add(new Producto(txt_Nombre.Text, precio, (ECategoria)cmb_Enumerado.SelectedItem, txt_Descripcion.Text, txt_Marca.Text, stock));
+                productos.Add(new Producto(txt_Nombre.Text, precio, (ECategoria)cmb_Enumerado.SelectedItem, txt_Descripcion.Text, txt_Marca.Text, nud_Stock.Value));
                 MessageBox.Show("Nuevo producto agregado");
             }
-            ListarBase();
-        }
-
-        public override void btn_Listar_Click(object sender, EventArgs e)
-        {
             ListarBase();
         }
 

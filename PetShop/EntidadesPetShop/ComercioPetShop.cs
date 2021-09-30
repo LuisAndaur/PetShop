@@ -19,6 +19,17 @@ namespace EntidadesPetShop
         private static List<VentasHistoricas> ventasHistoricas;
         #endregion
 
+        private static double caja;
+
+        public static double MiCaja
+        {
+            get { return caja; }
+            set 
+            { 
+                caja = value; }
+        }
+
+
         public static string Nombre { get; }
         public static string Direccion { get; }
         public static double Cuit { get; }
