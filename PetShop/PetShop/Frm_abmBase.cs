@@ -18,8 +18,7 @@ namespace PetShop
             InitializeComponent();
         }
 
-        public virtual void ListarBase() {
-        }
+        public virtual void ListarBase() { }
 
         public virtual void txt_Editar_Click(object sender, EventArgs e) { }
 
@@ -27,9 +26,19 @@ namespace PetShop
 
         public virtual void btn_Agregar_Click(object sender, EventArgs e) { }
 
-        public virtual void btn_Limpiar_Click(object sender, EventArgs e) { }
+        public virtual void btn_Limpiar_Click(object sender, EventArgs e) 
+        {
 
-        public virtual void Limpiar() { }
+        }
+
+        public virtual void Limpiar()
+        {
+            txt_Id.Text = string.Empty;
+            txt_Nombre.Text = string.Empty;
+            txt_Apellido.Text = string.Empty;
+            txt_Dni.Text = string.Empty;
+            txt_Cuil.Text = string.Empty;
+        }
 
         private void SoloLetras(KeyPressEventArgs e)
         {

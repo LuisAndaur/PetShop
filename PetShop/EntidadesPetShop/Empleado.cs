@@ -12,8 +12,7 @@ namespace EntidadesPetShop
         private static int ultimoIdGenerado;
         private int id;
         private string nombreUsuario;
-        private string pass;
-        private ERol rol;
+        private string pass;        
         private double sueldo;
         #endregion
 
@@ -59,11 +58,6 @@ namespace EntidadesPetShop
             }
         }
 
-        public ERol Rol
-        {
-            get { return rol; }
-            set { rol = value; }
-        }
 
         #endregion
 
@@ -73,28 +67,32 @@ namespace EntidadesPetShop
             ultimoIdGenerado = 99999;
         }
 
+        public Empleado() : base()
+        {
+
+        }
+
         public Empleado(string nombre, string apellido, string dni, double cuil) : base(nombre, apellido, dni, cuil)
         {
 
         }
 
-        public Empleado(string nombre, string apellido, string dni, double cuil, string nombreUsuario, string pass, ERol rol, double sueldo) : this (nombre, apellido, dni, cuil)
+        public Empleado(string nombre, string apellido, string dni, double cuil, string nombreUsuario, string pass, double sueldo) : this (nombre, apellido, dni, cuil)
         {
             ultimoIdGenerado++;
             this.id = ultimoIdGenerado;
             this.Sueldo = sueldo;
             this.NombreUsuario = nombreUsuario;
             this.Pass = pass;
-            this.Rol = rol;
         }
         #endregion
 
-        public virtual double LiquidarSueldos(double sueldoActualizado)
-        {            
-            return this.Sueldo = sueldoActualizado;
+        public virtual double AumentarSueldos(double sueldoActualizado)
+        {
+            return this.Sueldo * sueldoActualizado;
         }
 
-        public string GenerarNombreUsuario(string nombre, string apellido)
+        public static string GenerarNombreUsuario(string nombre, string apellido)
         {
             return $"{nombre[0]}{apellido}".ToLower();
         }

@@ -23,8 +23,6 @@ C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\n
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmClientes.resources
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmEmpleados.resources
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmProductos.resources
-C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVender.resources
-C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVentas.resources
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_Home.resources
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_MenuBase.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\bin\Debug\net5.0-windows\PetShop.exe
@@ -56,3 +54,5 @@ D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetSh
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.genruntimeconfig.cache
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVentasHistorico.resources
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_Vender.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVentasHistorico.resources
+C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_Vender.resources

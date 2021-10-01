@@ -14,7 +14,8 @@ namespace PetShop
     public partial class Frm_abmEmpleados : Frm_abmBase
     {
         private int indice = 0;
-        List<Empleado> empleados = new List<Empleado>();
+        List<Administrador> administradores = new List<Administrador>();
+        List<Staff> staffer = new List<Staff>();
         public Frm_abmEmpleados() 
         {
             InitializeComponent();
@@ -24,14 +25,28 @@ namespace PetShop
 
         private void Frm_abmEmpleados_Load(object sender, EventArgs e)
         {
-            empleados = ComercioPetShop.ListaEmpleados;
+            administradores = ComercioPetShop.ListaAdministradores;
+            staffer = ComercioPetShop.ListaStaff;
             ListarBase();
         }
 
         public override void ListarBase()
         {
             dgv_Lista.Rows.Clear();
-            foreach (Empleado item in empleados)
+
+            foreach (Administrador item in administradores)
+            {
+                int indice = dgv_Lista.Rows.Add();
+                dgv_Lista.Rows[indice].Cells[0].Value = item.Id;
+                dgv_Lista.Rows[indice].Cells[1].Value = item.Rol;
+                dgv_Lista.Rows[indice].Cells[2].Value = item.Nombre;
+                dgv_Lista.Rows[indice].Cells[3].Value = item.Apellido;
+                dgv_Lista.Rows[indice].Cells[4].Value = item.Dni;
+                dgv_Lista.Rows[indice].Cells[5].Value = item.Cuil;
+                dgv_Lista.Rows[indice].Cells[6].Value = item.Sueldo;
+            }
+
+            foreach (Staff item in staffer)
             {
                 int indice = dgv_Lista.Rows.Add();
                 dgv_Lista.Rows[indice].Cells[0].Value = item.Id;
@@ -61,24 +76,50 @@ namespace PetShop
 
         public override void txt_Editar_Click(object sender, EventArgs e)
         {
-            bool existe = false;
-            int.TryParse(txt_Id.Text, out int auxId);
-            foreach (Empleado item in empleados)
+            Administrador admin = new Administrador();
+            Staff staff = new Staff();
+
+            if (!string.IsNullOrEmpty(txt_Id.Text))
             {
-                if (item.Id == auxId)
+                int.TryParse(txt_Id.Text, out int auxId);
+                if ((ERol)cmb_Enumerado.SelectedItem == ERol.Administrador)
                 {
-                    item.Nombre = txt_Nombre.Text;
-                    item.Apellido = txt_Apellido.Text;
-                    item.Dni = txt_Dni.Text;
-                    item.Cuil = double.Parse(txt_Cuil.Text);
-                    item.Sueldo = double.Parse(txt_Sueldo.Text);
-                    item.Rol = Enum.Parse<ERol>(cmb_Enumerado.Text);
-                    MessageBox.Show("Datos del empleado modificados");
-                    existe = true;
+                    
+                    admin = ComercioPetShop.ObtenerAdmin(auxId);
+
+                    if (admin != null)
+                    {
+                        ComercioPetShop.EditarAdmin(auxId, txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text, txt_Sueldo.Text);
+                    }
+                    else
+                    {
+                        ComercioPetShop.EditarStaff(auxId, txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text, txt_Sueldo.Text);
+                        staff = ComercioPetShop.ObtenerStaff(auxId);
+                        admin = (Administrador)staff;
+                        administradores.Add(admin);
+                        ComercioPetShop.EliminarStaff(auxId);
+                    }
                 }
+                else
+                {
+                    staff = ComercioPetShop.ObtenerStaff(auxId);
+                    if (staff != null)
+                    {
+                        ComercioPetShop.EditarStaff(auxId, txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text, txt_Sueldo.Text);
+                    }
+                    else
+                    {
+                        ComercioPetShop.EditarAdmin(auxId, txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text, txt_Sueldo.Text);
+                        admin = ComercioPetShop.ObtenerAdmin(auxId);
+                        staff = (Staff)admin;
+                        staffer.Add(staff);
+                        ComercioPetShop.EliminarAdmin(auxId);
+                    }
+                }
+               
             }
 
-            if (!existe)
+            if (admin == null && staff == null)
             {
                 MessageBox.Show("El empleado es nuevo. Agreguelo.");
             }
@@ -88,70 +129,83 @@ namespace PetShop
         public override void btn_Eliminar_Click(object sender, EventArgs e)
         {
             bool existe = false;
-            int.TryParse(txt_Id.Text, out int auxId);
-            if (indice != -1)
+            if (!string.IsNullOrEmpty(txt_Id.Text))
             {
-                foreach (Empleado item in empleados)
+                int.TryParse(txt_Id.Text, out int auxId);
+                if (indice != -1)
                 {
-                    if (item.Id == auxId)
+                    if ((ERol)cmb_Enumerado.SelectedItem == ERol.Administrador)
                     {
-                        dgv_Lista.Rows.RemoveAt(indice);
-                        empleados.Remove(item);
-                        existe = true;
-                        MessageBox.Show("El empleado fue eliminado");
-                        break;
+                        existe = ComercioPetShop.ExisteAdmin(auxId);
+                        if (existe)
+                        {
+                            dgv_Lista.Rows.RemoveAt(indice);
+                            ComercioPetShop.EliminarAdmin(auxId);
+                        }
                     }
-                }
-                if (!existe)
-                {
-                    MessageBox.Show("El empleado no existe en la lista, no se puede eliminar");
-                }
+                    else
+                    {
+                        existe = ComercioPetShop.ExisteStaff(auxId);
+                        if (existe)
+                        {
+                            dgv_Lista.Rows.RemoveAt(indice);
+                            ComercioPetShop.EliminarStaff(auxId);                            
+                        }
+                    }                    
+                }                
+            }
+            if (!existe)
+            {
+                MessageBox.Show("El empleado no existe en la lista, no se puede eliminar");
+            }
+            else
+            {
+
             }
         }
 
         public override void btn_Agregar_Click(object sender, EventArgs e)
         {
             bool existe = false;
-            int.TryParse(txt_Id.Text, out int auxId);
-            foreach (Empleado item in empleados)
+
+            if (!string.IsNullOrEmpty(txt_Id.Text))
             {
-                if (item.Id == auxId)
+                int.TryParse(txt_Id.Text, out int auxId);
+
+                if ((ERol)cmb_Enumerado.SelectedItem == ERol.Administrador)
                 {
-                    MessageBox.Show("El empleado ya existe");
-                    existe = true;
+                    existe = ComercioPetShop.ExisteAdmin(auxId);
+                    if (!existe)
+                    {
+                        administradores.Add(Administrador.CrearAdmin(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text, txt_Sueldo.Text));
+                        MessageBox.Show("Nuevo empleado agregado");
+                    }
                 }
-            }
+                else
+                {
+                    existe = ComercioPetShop.ExisteStaff(auxId);
+                    if (!existe)
+                    {
+                        staffer.Add(Staff.CrearStaff(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text, txt_Sueldo.Text));
+                        MessageBox.Show("Nuevo empleado agregado");
+                    }
+                }
+            }            
 
-            if (!existe)
+            if (existe)
             {
-                double.TryParse(txt_Cuil.Text, out double cuil);
-                Empleado newEmpleado = new Empleado(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil);
-                string nombreUsuario = newEmpleado.GenerarNombreUsuario(txt_Nombre.Text, txt_Apellido.Text);
-                double.TryParse(txt_Sueldo.Text, out double sueldo);
-
-                empleados.Add(new Empleado(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil, nombreUsuario, txt_Dni.Text, (ERol)cmb_Enumerado.SelectedItem, sueldo));
-                MessageBox.Show("Nuevo empleado agregado");
+                MessageBox.Show("El empleado ya existe");
             }
+            
             ListarBase();
         }
 
         public override void btn_Limpiar_Click(object sender, EventArgs e)
         {
-            Limpiar();
-        }
-
-        public override void Limpiar()
-        {
-            txt_Id.Text = string.Empty;
+            base.Limpiar();
             cmb_Enumerado.SelectedIndex = -1;
-            txt_Nombre.Text = string.Empty;
-            txt_Apellido.Text = string.Empty;
-            txt_Dni.Text = string.Empty;
-            txt_Cuil.Text = string.Empty;
             txt_Sueldo.Text = string.Empty;
         }
 
-
-        
     }
 }

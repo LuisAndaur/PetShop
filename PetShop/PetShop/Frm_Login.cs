@@ -13,7 +13,8 @@ namespace PetShop
 {
     public partial class Frm_Login : Form
     {
-        List<Empleado> empleados = new List<Empleado>();
+        public List<Administrador> administradores = new List<Administrador>();
+        public List<Staff> staff = new List<Staff>();
         
         
         /// <summary>
@@ -26,7 +27,8 @@ namespace PetShop
 
         private void Frm_Login_Load(object sender, EventArgs e)
         {
-            empleados = ComercioPetShop.ListaEmpleados;
+            administradores = ComercioPetShop.ListaAdministradores;
+            staff = ComercioPetShop.ListaStaff;
         }
 
         /// <summary>
@@ -36,30 +38,33 @@ namespace PetShop
         /// <param name="e"></param>
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
+           
             bool coincide = false;
-            Empleado auxEmpleado = ComercioPetShop.LoguearEmpleados(txt_Usuario.Text, txt_Password.Text);
-            if (auxEmpleado != null)
+            if (!string.IsNullOrEmpty(txt_Usuario.Text) || !string.IsNullOrEmpty(txt_Password.Text))
             {
-                if (auxEmpleado.Rol == ERol.Administrador)
+                Administrador auxAdministrador = ComercioPetShop.LoguearAdministrador(txt_Usuario.Text, txt_Password.Text);
+                Staff auxStaff = ComercioPetShop.LoguearStaff(txt_Usuario.Text, txt_Password.Text);
+                if (auxAdministrador != null)
                 {
-                    Frm_MenuBase menuBase = new Frm_MenuBase(auxEmpleado);
+                    Frm_MenuBase menuBase = new Frm_MenuBase(auxAdministrador);
                     menuBase.Show();
                     menuBase.BackColor = Color.LightCoral;
                     this.Hide();
+                    coincide = true;
                 }
                 else
                 {
-                    Frm_MenuBase menuBase = new Frm_MenuBase(auxEmpleado);
+                    Frm_MenuBase menuBase = new Frm_MenuBase(auxStaff);
                     menuBase.Show();
                     menuBase.BackColor = Color.Lavender;
                     menuBase.btn_Empleados.Visible = false;
                     menuBase.btn_Ventas.Visible = false;
                     this.Hide();
-                }                    
-                coincide = true;
-            }                
+                    coincide = true;
+                }
+            }            
 
-            if(!coincide)
+            if (!coincide)
             {
                 txt_Usuario.Text = string.Empty;
                 txt_Password.Text = string.Empty;
@@ -71,20 +76,20 @@ namespace PetShop
         {
             int numero;
             Random random = new Random();
-            numero = random.Next(0, 2);
+            numero = random.Next(0, administradores.Count);
 
-            txt_Usuario.Text = empleados[numero].NombreUsuario;
-            txt_Password.Text = empleados[numero].Pass;
+            txt_Usuario.Text = administradores[numero].NombreUsuario;
+            txt_Password.Text = administradores[numero].Pass;
         }
 
         private void btn_Empleado_Click(object sender, EventArgs e)
         {
             int numero;
             Random random = new Random();
-            numero = random.Next(2, 5);
+            numero = random.Next(0, staff.Count);
 
-            txt_Usuario.Text = empleados[numero].NombreUsuario;
-            txt_Password.Text = empleados[numero].Pass;
+            txt_Usuario.Text = staff[numero].NombreUsuario;
+            txt_Password.Text = staff[numero].Pass;
         }
 
         

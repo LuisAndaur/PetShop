@@ -14,7 +14,8 @@ namespace EntidadesPetShop
         private static double cuit;
         private static string razonSocial;
         private static List<Cliente> clientes;
-        private static List<Empleado> empleados;
+        private static List<Administrador> administradores;
+        private static List<Staff> staff;
         private static List<Producto> productos;
         private static List<VentasHistoricas> ventasHistoricas;
         #endregion
@@ -42,10 +43,24 @@ namespace EntidadesPetShop
             get { return clientes; }
             set { clientes = value; }
         }
-        public static List<Empleado> ListaEmpleados
+
+
+        public static List<Administrador> ListaAdministradores
         {
-            get { return empleados; }
-            set { empleados = value; }
+            get { return administradores; }
+            set
+            {
+                if (value != null)
+                {
+                    administradores = value;
+                }                 
+            }
+        }
+
+        public static List<Staff> ListaStaff
+        {
+            get { return staff; }
+            set { staff = value; }
         }
         public static List<Producto> ListaProductos
         {
@@ -69,14 +84,17 @@ namespace EntidadesPetShop
             cuit = 30987665314;
             razonSocial = "Pet Shop";
             clientes = new List<Cliente>();
-            empleados = new List<Empleado>();
+            administradores = new List<Administrador>();
+            staff = new List<Staff>();
             productos = new List<Producto>();
             ventasHistoricas = new List<VentasHistoricas>();
 
             CargarListaClientes();
-            CargarListaEmpleados();
+            CargarListaAdministradores();
+            CargarListaStaff();
             CargarProductos();
-            CargarVentas();
+            //CargarVentas();
+            
         }
         #endregion
 
@@ -102,13 +120,18 @@ namespace EntidadesPetShop
             clientes.Add(new Cliente("Carla", "Olmedo", "42217764", 26422177649));
         }
 
-        private static void CargarListaEmpleados()
+        private static void CargarListaAdministradores()
         {
-            empleados.Add(new Empleado("Ezequiel", "Oggioni", "42217620", 20422176209, "eoggioni", "42217620", ERol.Administrador, 250000));
-            empleados.Add(new Empleado("Lucas", "Rodriguez", "42385648", 20423856484, "lrodriguez", "42385648", ERol.Administrador, 250000));
-            empleados.Add(new Empleado("Juan", "Santos", "41481920", 20414819207, "jsantos", "41481920", ERol.Staff, 150000));
-            empleados.Add(new Empleado("Carolina", "Scrofani", "42385227", 27423852270, "cscrofani", "42385227", ERol.Staff, 150000));
-            empleados.Add(new Empleado("Luis", "Andaur", "33009897", 20330098979, "landaur", "33009897", ERol.Staff, 150000));
+            administradores.Add(new Administrador("Ezequiel", "Oggioni", "42217620", 20422176209, "eoggioni", "42217620", 250000));
+            administradores.Add(new Administrador("Lucas", "Rodriguez", "42385648", 20423856484, "lrodriguez", "42385648", 250000));
+            
+        }
+
+        private static void CargarListaStaff()
+        {
+            staff.Add(new Staff("Juan", "Santos", "41481920", 20414819207, "jsantos", "41481920", 150000));
+            staff.Add(new Staff("Carolina", "Scrofani", "42385227", 27423852270, "cscrofani", "42385227", 150000));
+            staff.Add(new Staff("Luis", "Andaur", "33009897", 20330098979, "landaur", "33009897", 150000));
         }
         #endregion
 
@@ -136,24 +159,39 @@ namespace EntidadesPetShop
 
         private static void CargarVentas()
         {
-            ventasHistoricas.Add(new VentasHistoricas(empleados[3], clientes[2], productos[4], 2, productos[4].Precio*2));
-            ventasHistoricas.Add(new VentasHistoricas(empleados[0], clientes[5], productos[12], 1, productos[12].Precio));
-            ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[7], productos[7], 3, productos[7].Precio*3));
-            ventasHistoricas.Add(new VentasHistoricas(empleados[2], clientes[10], productos[5], 2, productos[5].Precio*2));
-            ventasHistoricas.Add(new VentasHistoricas(empleados[3], clientes[8], productos[2], 2, productos[2].Precio*2));
-            ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[5], productos[10], 1, productos[10].Precio));
-            ventasHistoricas.Add(new VentasHistoricas(empleados[4], clientes[1], productos[14], 2, productos[14].Precio*2));
-            ventasHistoricas.Add(new VentasHistoricas(empleados[2], clientes[12], productos[9], 1, productos[9].Precio));
-            ventasHistoricas.Add(new VentasHistoricas(empleados[0], clientes[15], productos[16], 1, productos[16].Precio));
-            ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[4], productos[3], 2, productos[3].Precio*2));
+            //ventasHistoricas.Add(new VentasHistoricas(empleados[3], clientes[2], productos[4], 2, productos[4].Precio*2));
+            //ventasHistoricas.Add(new VentasHistoricas(empleados[0], clientes[5], productos[12], 1, productos[12].Precio));
+            //ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[7], productos[7], 3, productos[7].Precio*3));
+            //ventasHistoricas.Add(new VentasHistoricas(empleados[2], clientes[10], productos[5], 2, productos[5].Precio*2));
+            //ventasHistoricas.Add(new VentasHistoricas(empleados[3], clientes[8], productos[2], 2, productos[2].Precio*2));
+            //ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[5], productos[10], 1, productos[10].Precio));
+            //ventasHistoricas.Add(new VentasHistoricas(empleados[4], clientes[1], productos[14], 2, productos[14].Precio*2));
+            //ventasHistoricas.Add(new VentasHistoricas(empleados[2], clientes[12], productos[9], 1, productos[9].Precio));
+            //ventasHistoricas.Add(new VentasHistoricas(empleados[0], clientes[15], productos[16], 1, productos[16].Precio));
+            //ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[4], productos[3], 2, productos[3].Precio*2));
         }
 
         
-        public static Empleado LoguearEmpleados(string nombreUsuario, string pass)
+        public static Administrador LoguearAdministrador(string nombreUsuario, string pass)
         {
             if (ValidarCamposIngresados(nombreUsuario, pass))
             {
-                foreach (Empleado item in empleados)
+                foreach (Administrador item in administradores)
+                {
+                    if (item.NombreUsuario.Trim().ToLower() == nombreUsuario.Trim().ToLower() && item.Pass.Trim() == pass.Trim())
+                    {
+                        return item;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public static Staff LoguearStaff(string nombreUsuario, string pass)
+        {
+            if (ValidarCamposIngresados(nombreUsuario, pass))
+            {
+                foreach (Staff item in staff)
                 {
                     if (item.NombreUsuario.Trim().ToLower() == nombreUsuario.Trim().ToLower() && item.Pass.Trim() == pass.Trim())
                     {
@@ -174,5 +212,128 @@ namespace EntidadesPetShop
             return true;
         }
 
+        public static bool ExisteAdmin(int id)
+        {
+            foreach (Administrador item in administradores)
+            {
+                if (item.Id == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static Administrador ObtenerAdmin(int id)
+        {
+            foreach (Administrador item in administradores)
+            {
+                if (item.Id == id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        public static bool ExisteStaff(int id)
+        {
+            foreach (Staff item in staff)
+            {
+                if (item.Id == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static Staff ObtenerStaff(int id)
+        {
+            foreach (Staff item in staff)
+            {
+                if (item.Id == id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        public static void EliminarStaff(int id)
+        {
+            foreach (Staff item in staff)
+            {
+                if (item.Id == id)
+                {
+                    staff.Remove(item);
+                    break;
+                }
+            }
+        }
+
+        public static void EliminarAdmin(int id)
+        {
+            foreach (Administrador item in administradores)
+            {
+                if (item.Id == id)
+                {
+                    administradores.Remove(item);
+                    break;
+                }
+            }
+        }
+
+        public static void EditarAdmin(int id, string nombre, string apellido, string dni, string cuil, string sueldo)
+        {
+            string nombreUsuario;
+            if (id > 0 && nombre != null && apellido != null && dni != null && cuil != null && sueldo != null)
+            {                
+                double.TryParse(cuil, out double auxCuil);
+                double.TryParse(sueldo, out double auxSueldo);
+                nombreUsuario = Empleado.GenerarNombreUsuario(nombre, apellido);
+
+                foreach (Administrador item in administradores)
+                {
+                    if (item.Id == id)
+                    {
+                        item.Nombre = nombre;
+                        item.Apellido = apellido;
+                        item.Dni = dni;
+                        item.Cuil = auxCuil;
+                        item.Sueldo = auxSueldo;
+                        item.NombreUsuario = nombreUsuario;
+                        item.Pass = dni;
+                    }
+                }
+            }
+        }
+
+        public static void EditarStaff(int id, string nombre, string apellido, string dni, string cuil, string sueldo)
+        {
+            string nombreUsuario;
+            if (id > 0 && nombre != null && apellido != null && dni != null && cuil != null && sueldo != null)
+            {
+                double.TryParse(cuil, out double auxCuil);
+                double.TryParse(sueldo, out double auxSueldo);
+                nombreUsuario = Empleado.GenerarNombreUsuario(nombre, apellido);
+
+                foreach (Staff item in staff)
+                {
+                    if (item.Id == id)
+                    {
+                        item.Nombre = nombre;
+                        item.Apellido = apellido;
+                        item.Dni = dni;
+                        item.Cuil = auxCuil;
+                        item.Sueldo = auxSueldo;
+                        item.NombreUsuario = nombreUsuario;
+                        item.Pass = dni;
+                    }
+                }
+            }
+
+
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace EntidadesPetShop
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    nombre = value;
+                    this.nombre = value;
                 }                
             }
         }
@@ -31,7 +31,7 @@ namespace EntidadesPetShop
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    apellido = value;
+                    this.apellido = value;
                 }                
             }
         }
@@ -43,7 +43,7 @@ namespace EntidadesPetShop
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-                    dni = value;
+                    this.dni = value;
                 }                 
             }
         }
@@ -55,14 +55,19 @@ namespace EntidadesPetShop
             {
                 if (value > 0)
                 {
-                    cuil = value;
+                    this.cuil = value;
                 }                 
             }
         }
         #endregion
 
         #region Constructor
-        protected Persona(string nombre, string apellido, string dni, double cuil)
+        public Persona()
+        {
+
+        }
+
+        public Persona(string nombre, string apellido, string dni, double cuil) : this()
         {
             this.Nombre = nombre;
             this.Apellido = apellido;

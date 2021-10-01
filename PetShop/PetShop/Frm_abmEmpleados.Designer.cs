@@ -37,8 +37,12 @@ namespace PetShop
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Aumentar = new System.Windows.Forms.Button();
+            this.txt_Porcentaje = new System.Windows.Forms.TextBox();
+            this.lbl_Porcentaje = new System.Windows.Forms.Label();
             this.gpb_Lista.SuspendLayout();
             this.gpb_Datos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Lista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +65,36 @@ namespace PetShop
             // 
             // gpb_Datos
             // 
+            this.gpb_Datos.Controls.Add(this.lbl_Porcentaje);
+            this.gpb_Datos.Controls.Add(this.txt_Porcentaje);
+            this.gpb_Datos.Controls.Add(this.btn_Aumentar);
             this.gpb_Datos.Text = "Datos de empleados";
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Id, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Id, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Nombre, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Nombre, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Categoria, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.cmb_Enumerado, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Precio, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Precio, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Marca, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Marca, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Descripcion, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Descripcion, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Stock, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Apellido, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Apellido, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Dni, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Dni, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Cuil, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Cuil, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Sueldo, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Sueldo, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Rol, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.nud_Stock, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.btn_Aumentar, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.txt_Porcentaje, 0);
+            this.gpb_Datos.Controls.SetChildIndex(this.lbl_Porcentaje, 0);
             // 
             // btn_Limpiar
             // 
@@ -111,6 +144,11 @@ namespace PetShop
             // 
             this.lbl_Stock.Location = new System.Drawing.Point(34, 473);
             this.lbl_Stock.Visible = false;
+            // 
+            // nud_Stock
+            // 
+            this.nud_Stock.Location = new System.Drawing.Point(31, 491);
+            this.nud_Stock.Visible = false;
             // 
             // dgv_Lista
             // 
@@ -172,6 +210,31 @@ namespace PetShop
             this.Sueldo.Name = "Sueldo";
             this.Sueldo.Width = 90;
             // 
+            // btn_Aumentar
+            // 
+            this.btn_Aumentar.Location = new System.Drawing.Point(275, 462);
+            this.btn_Aumentar.Name = "btn_Aumentar";
+            this.btn_Aumentar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Aumentar.TabIndex = 29;
+            this.btn_Aumentar.Text = "Aumentar";
+            this.btn_Aumentar.UseVisualStyleBackColor = true;
+            // 
+            // txt_Porcentaje
+            // 
+            this.txt_Porcentaje.Location = new System.Drawing.Point(160, 463);
+            this.txt_Porcentaje.Name = "txt_Porcentaje";
+            this.txt_Porcentaje.Size = new System.Drawing.Size(100, 23);
+            this.txt_Porcentaje.TabIndex = 30;
+            // 
+            // lbl_Porcentaje
+            // 
+            this.lbl_Porcentaje.AutoSize = true;
+            this.lbl_Porcentaje.Location = new System.Drawing.Point(160, 445);
+            this.lbl_Porcentaje.Name = "lbl_Porcentaje";
+            this.lbl_Porcentaje.Size = new System.Drawing.Size(63, 15);
+            this.lbl_Porcentaje.TabIndex = 31;
+            this.lbl_Porcentaje.Text = "Porcentaje";
+            // 
             // Frm_abmEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -183,6 +246,7 @@ namespace PetShop
             this.gpb_Lista.ResumeLayout(false);
             this.gpb_Datos.ResumeLayout(false);
             this.gpb_Datos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Lista)).EndInit();
             this.ResumeLayout(false);
 
@@ -198,5 +262,8 @@ namespace PetShop
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
+        private System.Windows.Forms.Label lbl_Porcentaje;
+        private System.Windows.Forms.TextBox txt_Porcentaje;
+        private System.Windows.Forms.Button btn_Aumentar;
     }
 }
