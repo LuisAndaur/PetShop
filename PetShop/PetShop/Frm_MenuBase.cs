@@ -76,13 +76,13 @@ namespace PetShop
 
         private void btn_Ventas_Click(object sender, EventArgs e)
         {
-            Frm_abmVentas formVentas = new Frm_abmVentas();
+            Frm_abmVentasHistorico formVentas = new Frm_abmVentasHistorico();
             AbrirFormDentro(formVentas);
         }
 
         private void btn_Vender_Click(object sender, EventArgs e)
         {
-            Frm_abmVender formVender = new Frm_abmVender();
+            Frm_Vender formVender = new Frm_Vender();
             AbrirFormDentro(formVender);
         }
 

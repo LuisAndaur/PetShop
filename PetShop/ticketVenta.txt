@@ -1,5 +1,3 @@
-Empleado: Juan
-Cliente: Sandra
-Producto: Grava gris
-Cantidad: 1
-Precio final: $1251,65
+ 0 
+ numero:  Fecha: jueves, 30 de septiembre de 2021Precio final:  $System.Windows.Forms.Label, Text: $0.00
+

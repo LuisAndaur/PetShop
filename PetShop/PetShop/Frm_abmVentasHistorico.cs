@@ -7,19 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using EntidadesPetShop;
 
 namespace PetShop
 {
-    public partial class Frm_abmVender
+    public partial class Frm_abmVentasHistorico : Form
     {
-        List<VentasHistoricas> ventas = new List<VentasHistoricas>();
-        List<Cliente> clientes = new List<Cliente>();
-        List<Producto> productos = new List<Producto>();
-        public Frm_abmVender()
+        public Frm_abmVentasHistorico()
         {
             InitializeComponent();
         }
-
     }
 }
