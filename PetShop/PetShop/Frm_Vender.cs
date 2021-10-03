@@ -17,7 +17,7 @@ namespace PetShop
         private int indice = 0;
         private int auxIdProducto = -1;
         private int auxIdCliente = -1;
-        private double iva = 0.21;
+        private double iva = 1.21;
         private double acumuladorVenta = 0;
         private double acumuladorVentaConIva = 0;
         Empleado empleadoActivo = new Empleado();        
@@ -85,6 +85,7 @@ namespace PetShop
         private void dgv_Facturacion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indice = e.RowIndex;
+            auxIdProducto = int.Parse(dgv_Facturacion.Rows[indice].Cells[0].Value.ToString());
         }
 
         private void dgv_ListaProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -116,13 +117,12 @@ namespace PetShop
                             dgv_Facturacion.Rows[indice].Cells[3].Value = item.Descripcion;
                             dgv_Facturacion.Rows[indice].Cells[4].Value = item.Precio;
                             dgv_Facturacion.Rows[indice].Cells[5].Value = (item.Precio * (double)npd_Cantidad.Value).ToString("N2");
-                            acumuladorVenta += item.Precio * (double)npd_Cantidad.Value;
-                            acumuladorVentaConIva += item.Precio * (double)npd_Cantidad.Value;
+                            acumuladorVenta += (item.Precio * (double)npd_Cantidad.Value);
+                            acumuladorVentaConIva += ((item.Precio * (double)npd_Cantidad.Value) * iva);
                             carrito += ComercioPetShop.ObtenerProducto(auxIdProducto);
-                            cantidad.Add(npd_Cantidad.Value);
+                            cantidad.Add(npd_Cantidad.Value);                            
 
                             lbl_PrecioFinal.Text = acumuladorVenta.ToString("N2");
-                            acumuladorVentaConIva += (acumuladorVentaConIva *= iva);
                             lbl_masIva.Text = acumuladorVentaConIva.ToString("N2");
                             break;
                         }
@@ -149,21 +149,18 @@ namespace PetShop
         {            
             if (indice > -1 && indice < dgv_Facturacion.RowCount)
             {
-                dgv_Facturacion.Rows.RemoveAt(indice);
-                carrito.RemoveAt(indice);
-                cantidad.RemoveAt(indice);
-
                 foreach (Producto item in productos)
                 {
                     if (item.IdProducto == auxIdProducto)
                     {
-                        double aux = 0;
-                        acumuladorVenta -= item.Precio * (double)npd_Cantidad.Value;
-                        aux = item.Precio * (double)npd_Cantidad.Value;
-                        acumuladorVentaConIva -= (aux *= iva);
-                        acumuladorVentaConIva -= item.Precio * (double)npd_Cantidad.Value;
+                        acumuladorVenta -= (item.Precio * (double)cantidad[indice]);
+                        acumuladorVentaConIva -=  ((item.Precio * (double)cantidad[indice]) * iva);                    
+                        break;
                     }
                 }
+                dgv_Facturacion.Rows.RemoveAt(indice);
+                carrito.RemoveAt(indice);
+                cantidad.RemoveAt(indice);
                 lbl_PrecioFinal.Text = acumuladorVenta.ToString("N2");                
                 lbl_masIva.Text = acumuladorVentaConIva.ToString("N2");
             }
@@ -197,7 +194,9 @@ namespace PetShop
             npd_Cantidad.Value = 0;
             lbl_PrecioFinal.Text = "0.00";
             dgv_Facturacion.Rows.Clear();
-            lbl_masIva.Text = string.Empty;
+            lbl_masIva.Text = "0.00";
+            acumuladorVenta = 0;
+            acumuladorVentaConIva = 0;
         }
 
 
