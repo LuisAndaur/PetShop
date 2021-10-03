@@ -90,12 +90,20 @@ namespace EntidadesPetShop
         public virtual void AumentarSueldos(double sueldoActualizado)
         {
             this.Sueldo *= sueldoActualizado;
+            this.Sueldo -= Descontar();
         }
 
         public static string GenerarNombreUsuario(string nombre, string apellido)
         {
             return $"{nombre[0]}{apellido}".ToLower();
         }
+
+        public override double Descontar()
+        {
+            double ganancias = 0.35;
+            return Sueldo * ganancias;
+        }
+
         #endregion
     }
 }

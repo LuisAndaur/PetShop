@@ -47,16 +47,16 @@ namespace PetShop
                 if (auxAdministrador != null)
                 {
                     Frm_MenuBase menuBase = new Frm_MenuBase(auxAdministrador);
-                    menuBase.Show();
                     menuBase.BackColor = Color.LightCoral;
+                    menuBase.Show();                    
                     this.Hide();
                     coincide = true;
                 }
                 else
                 {
                     Frm_MenuBase menuBase = new Frm_MenuBase(auxStaff);
-                    menuBase.Show();
                     menuBase.BackColor = Color.Lavender;
+                    menuBase.Show();                    
                     menuBase.btn_Empleados.Visible = false;
                     menuBase.btn_Ventas.Visible = false;
                     this.Hide();

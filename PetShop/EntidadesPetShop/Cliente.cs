@@ -55,7 +55,7 @@ namespace EntidadesPetShop
         private double SaldoRandom()
         {
             Random random = new Random();
-            return (double)random.Next(0, 5500);
+            return (double)random.Next(0, 60000);
         }
 
         public static List<Cliente> operator +(List<Cliente> clientes, Cliente cliente)
@@ -72,6 +72,12 @@ namespace EntidadesPetShop
                 return new Cliente(nombre, apellido, dni, auxCuil);
             }
             return null;
+        }
+
+        public override double Descontar()
+        {
+            double cuotaPet = 250;
+            return Saldo -= cuotaPet;
         }
 
         #endregion

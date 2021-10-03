@@ -39,7 +39,7 @@ namespace PetShop
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_Facturacion = new System.Windows.Forms.GroupBox();
             this.dgv_Facturacion = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +76,8 @@ namespace PetShop
             this.lbl_Fecha = new System.Windows.Forms.Label();
             this.btn_Ticket = new System.Windows.Forms.Button();
             this.lbl_numFecha = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_masIva = new System.Windows.Forms.Label();
             this.gpb_Clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaClientes)).BeginInit();
             this.gpb_Productos.SuspendLayout();
@@ -113,13 +115,14 @@ namespace PetShop
             this.dgv_ListaClientes.RowTemplate.Height = 25;
             this.dgv_ListaClientes.Size = new System.Drawing.Size(280, 275);
             this.dgv_ListaClientes.TabIndex = 0;
+            this.dgv_ListaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaClientes_CellClick);
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 50;
+            this.ID.Width = 55;
             // 
             // Nombre
             // 
@@ -132,6 +135,7 @@ namespace PetShop
             this.DNI.HeaderText = "DNI";
             this.DNI.Name = "DNI";
             this.DNI.ReadOnly = true;
+            this.DNI.Width = 80;
             // 
             // gpb_Productos
             // 
@@ -152,7 +156,7 @@ namespace PetShop
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.Categoria,
-            this.Descripcion});
+            this.dataGridViewTextBoxColumn4});
             this.dgv_ListaProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_ListaProductos.Location = new System.Drawing.Point(3, 19);
             this.dgv_ListaProductos.Name = "dgv_ListaProductos";
@@ -160,6 +164,7 @@ namespace PetShop
             this.dgv_ListaProductos.RowTemplate.Height = 25;
             this.dgv_ListaProductos.Size = new System.Drawing.Size(378, 275);
             this.dgv_ListaProductos.TabIndex = 0;
+            this.dgv_ListaProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaProductos_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -179,14 +184,13 @@ namespace PetShop
             this.Categoria.HeaderText = "Categoria";
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
-            this.Categoria.Width = 70;
             // 
-            // Descripcion
+            // dataGridViewTextBoxColumn4
             // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 120;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Precio";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 83;
             // 
             // gpb_Facturacion
             // 
@@ -217,6 +221,7 @@ namespace PetShop
             this.dgv_Facturacion.RowTemplate.Height = 25;
             this.dgv_Facturacion.Size = new System.Drawing.Size(668, 297);
             this.dgv_Facturacion.TabIndex = 0;
+            this.dgv_Facturacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Facturacion_CellClick);
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -257,6 +262,7 @@ namespace PetShop
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
+            this.Total.Width = 93;
             // 
             // gpb_Detalle
             // 
@@ -359,7 +365,7 @@ namespace PetShop
             // 
             this.lbl_Empleado.AutoSize = true;
             this.lbl_Empleado.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Empleado.Location = new System.Drawing.Point(710, 159);
+            this.lbl_Empleado.Location = new System.Drawing.Point(710, 157);
             this.lbl_Empleado.Name = "lbl_Empleado";
             this.lbl_Empleado.Size = new System.Drawing.Size(72, 19);
             this.lbl_Empleado.TabIndex = 0;
@@ -369,7 +375,7 @@ namespace PetShop
             // 
             this.lbl_NombreEmpleado.AutoSize = true;
             this.lbl_NombreEmpleado.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_NombreEmpleado.Location = new System.Drawing.Point(780, 159);
+            this.lbl_NombreEmpleado.Location = new System.Drawing.Point(780, 157);
             this.lbl_NombreEmpleado.Name = "lbl_NombreEmpleado";
             this.lbl_NombreEmpleado.Size = new System.Drawing.Size(14, 19);
             this.lbl_NombreEmpleado.TabIndex = 1;
@@ -377,24 +383,23 @@ namespace PetShop
             // 
             // lbl_PrecioFinal
             // 
-            this.lbl_PrecioFinal.AutoSize = true;
             this.lbl_PrecioFinal.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_PrecioFinal.Location = new System.Drawing.Point(872, 442);
+            this.lbl_PrecioFinal.Location = new System.Drawing.Point(780, 405);
             this.lbl_PrecioFinal.Name = "lbl_PrecioFinal";
-            this.lbl_PrecioFinal.Size = new System.Drawing.Size(126, 54);
+            this.lbl_PrecioFinal.Size = new System.Drawing.Size(226, 54);
             this.lbl_PrecioFinal.TabIndex = 2;
-            this.lbl_PrecioFinal.Text = "$0.00";
+            this.lbl_PrecioFinal.Text = "0.00";
             this.lbl_PrecioFinal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_Cliente
             // 
             this.lbl_Cliente.AutoSize = true;
             this.lbl_Cliente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Cliente.Location = new System.Drawing.Point(710, 196);
+            this.lbl_Cliente.Location = new System.Drawing.Point(867, 157);
             this.lbl_Cliente.Name = "lbl_Cliente";
-            this.lbl_Cliente.Size = new System.Drawing.Size(51, 19);
+            this.lbl_Cliente.Size = new System.Drawing.Size(54, 19);
             this.lbl_Cliente.TabIndex = 3;
-            this.lbl_Cliente.Text = "Cliente";
+            this.lbl_Cliente.Text = "Cliente:";
             // 
             // npd_Cantidad
             // 
@@ -408,11 +413,10 @@ namespace PetShop
             // 
             this.lbl_NombreCliente.AutoSize = true;
             this.lbl_NombreCliente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_NombreCliente.Location = new System.Drawing.Point(771, 196);
+            this.lbl_NombreCliente.Location = new System.Drawing.Point(920, 157);
             this.lbl_NombreCliente.Name = "lbl_NombreCliente";
-            this.lbl_NombreCliente.Size = new System.Drawing.Size(14, 19);
+            this.lbl_NombreCliente.Size = new System.Drawing.Size(0, 19);
             this.lbl_NombreCliente.TabIndex = 5;
-            this.lbl_NombreCliente.Text = "/";
             // 
             // lbl_Producto
             // 
@@ -445,14 +449,13 @@ namespace PetShop
             // 
             // lbl_Importe
             // 
-            this.lbl_Importe.AutoSize = true;
-            this.lbl_Importe.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Importe.Location = new System.Drawing.Point(713, 465);
+            this.lbl_Importe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Importe.Location = new System.Drawing.Point(713, 468);
             this.lbl_Importe.Name = "lbl_Importe";
-            this.lbl_Importe.Size = new System.Drawing.Size(85, 25);
+            this.lbl_Importe.Size = new System.Drawing.Size(132, 25);
             this.lbl_Importe.TabIndex = 9;
-            this.lbl_Importe.Text = "Importe";
-            this.lbl_Importe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_Importe.Text = "Importe + IVA    $";
+            this.lbl_Importe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_Cantidad
             // 
@@ -475,56 +478,60 @@ namespace PetShop
             // 
             // btn_Agregar
             // 
-            this.btn_Agregar.Location = new System.Drawing.Point(713, 375);
+            this.btn_Agregar.Location = new System.Drawing.Point(713, 366);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(91, 35);
             this.btn_Agregar.TabIndex = 12;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // btn_Limpiar
             // 
-            this.btn_Limpiar.Location = new System.Drawing.Point(814, 375);
+            this.btn_Limpiar.Location = new System.Drawing.Point(814, 366);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(91, 35);
             this.btn_Limpiar.TabIndex = 13;
             this.btn_Limpiar.Text = "Limpiar";
             this.btn_Limpiar.UseVisualStyleBackColor = true;
+            this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
             // 
             // btn_Eliminar
             // 
-            this.btn_Eliminar.Location = new System.Drawing.Point(915, 375);
+            this.btn_Eliminar.Location = new System.Drawing.Point(915, 366);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(91, 35);
             this.btn_Eliminar.TabIndex = 14;
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = true;
+            this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
             // 
             // btn_Vender
             // 
             this.btn_Vender.Location = new System.Drawing.Point(713, 508);
             this.btn_Vender.Name = "btn_Vender";
-            this.btn_Vender.Size = new System.Drawing.Size(285, 67);
+            this.btn_Vender.Size = new System.Drawing.Size(293, 67);
             this.btn_Vender.TabIndex = 15;
             this.btn_Vender.Text = "Vender";
             this.btn_Vender.UseVisualStyleBackColor = true;
+            this.btn_Vender.Click += new System.EventHandler(this.btn_Vender_Click);
             // 
             // lbl_Fecha
             // 
             this.lbl_Fecha.AutoSize = true;
             this.lbl_Fecha.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Fecha.Location = new System.Drawing.Point(903, 159);
+            this.lbl_Fecha.Location = new System.Drawing.Point(710, 194);
             this.lbl_Fecha.Name = "lbl_Fecha";
-            this.lbl_Fecha.Size = new System.Drawing.Size(44, 19);
+            this.lbl_Fecha.Size = new System.Drawing.Size(55, 19);
             this.lbl_Fecha.TabIndex = 17;
-            this.lbl_Fecha.Text = "Fecha";
+            this.lbl_Fecha.Text = "Fecha : ";
             this.lbl_Fecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btn_Ticket
             // 
             this.btn_Ticket.Location = new System.Drawing.Point(713, 585);
             this.btn_Ticket.Name = "btn_Ticket";
-            this.btn_Ticket.Size = new System.Drawing.Size(285, 32);
+            this.btn_Ticket.Size = new System.Drawing.Size(293, 32);
             this.btn_Ticket.TabIndex = 18;
             this.btn_Ticket.Text = "Generar Ticket";
             this.btn_Ticket.UseVisualStyleBackColor = true;
@@ -534,18 +541,41 @@ namespace PetShop
             // 
             this.lbl_numFecha.AutoSize = true;
             this.lbl_numFecha.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_numFecha.Location = new System.Drawing.Point(903, 183);
+            this.lbl_numFecha.Location = new System.Drawing.Point(767, 194);
             this.lbl_numFecha.Name = "lbl_numFecha";
             this.lbl_numFecha.Size = new System.Drawing.Size(44, 19);
             this.lbl_numFecha.TabIndex = 19;
             this.lbl_numFecha.Text = "Fecha";
             this.lbl_numFecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(710, 405);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 54);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "$";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_masIva
+            // 
+            this.lbl_masIva.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_masIva.Location = new System.Drawing.Point(851, 472);
+            this.lbl_masIva.Name = "lbl_masIva";
+            this.lbl_masIva.Size = new System.Drawing.Size(143, 21);
+            this.lbl_masIva.TabIndex = 21;
+            this.lbl_masIva.Text = "0.00";
+            this.lbl_masIva.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Frm_Vender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 630);
+            this.Controls.Add(this.lbl_masIva);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_numFecha);
             this.Controls.Add(this.btn_Ticket);
             this.Controls.Add(this.lbl_Fecha);
@@ -591,9 +621,6 @@ namespace PetShop
 
         private System.Windows.Forms.GroupBox gpb_Clientes;
         private System.Windows.Forms.DataGridView dgv_ListaClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.GroupBox gpb_Productos;
         private System.Windows.Forms.DataGridView dgv_ListaProductos;
         private System.Windows.Forms.GroupBox gpb_Facturacion;
@@ -625,16 +652,21 @@ namespace PetShop
         private System.Windows.Forms.Label lbl_NombreComercio;
         private System.Windows.Forms.Label lbl_Fecha;
         private System.Windows.Forms.Button btn_Ticket;
+        private System.Windows.Forms.Label lbl_numFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.Label lbl_numFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_masIva;
     }
 }

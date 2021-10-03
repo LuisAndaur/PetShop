@@ -29,17 +29,28 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Caja = new System.Windows.Forms.Label();
+            this.lbl_ImporteCaja = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_Caja
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(180, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Home";
+            this.lbl_Caja.AutoSize = true;
+            this.lbl_Caja.Location = new System.Drawing.Point(87, 362);
+            this.lbl_Caja.Name = "lbl_Caja";
+            this.lbl_Caja.Size = new System.Drawing.Size(73, 15);
+            this.lbl_Caja.TabIndex = 0;
+            this.lbl_Caja.Text = "Importe caja";
+            // 
+            // lbl_ImporteCaja
+            // 
+            this.lbl_ImporteCaja.AutoSize = true;
+            this.lbl_ImporteCaja.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ImporteCaja.Location = new System.Drawing.Point(87, 387);
+            this.lbl_ImporteCaja.Name = "lbl_ImporteCaja";
+            this.lbl_ImporteCaja.Size = new System.Drawing.Size(39, 54);
+            this.lbl_ImporteCaja.TabIndex = 1;
+            this.lbl_ImporteCaja.Text = "/";
             // 
             // Frm_Home
             // 
@@ -47,12 +58,14 @@ namespace PetShop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1035, 630);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_ImporteCaja);
+            this.Controls.Add(this.lbl_Caja);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Home";
             this.Opacity = 0D;
             this.Text = "Frm_Home";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.Frm_Home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -60,6 +73,7 @@ namespace PetShop
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Caja;
+        private System.Windows.Forms.Label lbl_ImporteCaja;
     }
 }

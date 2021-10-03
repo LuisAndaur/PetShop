@@ -57,7 +57,7 @@ namespace EntidadesPetShop
 
         public override void AumentarSueldos(double sueldoActualizado)
         {
-            double bonoAdmin = 1.3;
+            double bonoAdmin = 0.15;
             sueldoActualizado += bonoAdmin;
             base.AumentarSueldos(sueldoActualizado);
         }

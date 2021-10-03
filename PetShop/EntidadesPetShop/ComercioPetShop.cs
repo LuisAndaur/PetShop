@@ -100,6 +100,7 @@ namespace EntidadesPetShop
             direccion = "Av. Siempre Viva 742";
             cuit = 30987665314;
             razonSocial = "Pet Shop";
+            caja = 0;
             clientes = new List<Cliente>();
             administradores = new List<Administrador>();
             staff = new List<Staff>();
@@ -110,7 +111,8 @@ namespace EntidadesPetShop
             CargarListaAdministradores();
             CargarListaStaff();
             CargarProductos();
-            //CargarVentas();
+            CargarVentasHistoricas();
+            ActualizarCaja();
         }
         #endregion
 
@@ -169,19 +171,90 @@ namespace EntidadesPetShop
             productos.Add(new Producto("Baño arena", 486.85, ECategoria.Higiene, "Baños de polvo imprescindibles para su pelaje suelto y esponjoso", "Zootec", 1));
         }
 
-        private static void CargarVentas()
+        private static void CargarVentasHistoricas()
         {
-            //ventasHistoricas.Add(new VentasHistoricas(empleados[3], clientes[2], productos[4], 2, productos[4].Precio*2));
-            //ventasHistoricas.Add(new VentasHistoricas(empleados[0], clientes[5], productos[12], 1, productos[12].Precio));
-            //ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[7], productos[7], 3, productos[7].Precio*3));
-            //ventasHistoricas.Add(new VentasHistoricas(empleados[2], clientes[10], productos[5], 2, productos[5].Precio*2));
-            //ventasHistoricas.Add(new VentasHistoricas(empleados[3], clientes[8], productos[2], 2, productos[2].Precio*2));
-            //ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[5], productos[10], 1, productos[10].Precio));
-            //ventasHistoricas.Add(new VentasHistoricas(empleados[4], clientes[1], productos[14], 2, productos[14].Precio*2));
-            //ventasHistoricas.Add(new VentasHistoricas(empleados[2], clientes[12], productos[9], 1, productos[9].Precio));
-            //ventasHistoricas.Add(new VentasHistoricas(empleados[0], clientes[15], productos[16], 1, productos[16].Precio));
-            //ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[4], productos[3], 2, productos[3].Precio*2));
+            ventasHistoricas.Add(new VentasHistoricas(administradores[0], clientes[2], new List<Producto>(){{productos[0] }, {productos[6]}},
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "04/09/2021",
+                                                                                       productos[0].Precio*2 + productos[6].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(staff[2], clientes[15], new List<Producto>() { { productos[16] }, { productos[9] } },
+                                                                                       new List<decimal>() { { 1 }, { 1 } },
+                                                                                       "09/09/2021",
+                                                                                       productos[16].Precio + productos[9].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(administradores[0], clientes[3], new List<Producto>() { { productos[4] }, { productos[6] }, { productos[7] }, { productos[3] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 }, { 1 }, { 1 } },
+                                                                                       "12/09/2021",
+                                                                                       productos[4].Precio*2 + productos[6].Precio + productos[7].Precio + productos[3].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(staff[2], clientes[7], new List<Producto>() { { productos[6] }, { productos[4] }, { productos[3] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 },{ 2 } },
+                                                                                       "12/09/2021",
+                                                                                       productos[6].Precio * 2 + productos[4].Precio + productos[3].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(staff[0], clientes[12], new List<Producto>() { { productos[11] }, { productos[4] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "15/09/2021",
+                                                                                       productos[11].Precio * 2 + productos[4].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(staff[1], clientes[4], new List<Producto>() { { productos[10] }, { productos[3] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "18/09/2021",
+                                                                                       productos[10].Precio * 2 + productos[3].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(administradores[1], clientes[7], new List<Producto>() { { productos[14] }, { productos[7] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "21/09/2021",
+                                                                                       productos[14].Precio * 2 + productos[7].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(staff[0], clientes[2], new List<Producto>() { { productos[1] }, { productos[9] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "21/09/2021",
+                                                                                       productos[1].Precio * 2 + productos[9].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(administradores[0], clientes[10], new List<Producto>() { { productos[13] }, { productos[5] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "24/09/2021",
+                                                                                       productos[13].Precio * 2 + productos[5].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(administradores[1], clientes[8], new List<Producto>() { { productos[12] }, { productos[6] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "25/09/2021",
+                                                                                       productos[12].Precio * 2 + productos[6].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(staff[1], clientes[2], new List<Producto>() { { productos[15] }, { productos[16] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "27/09/2021",
+                                                                                       productos[15].Precio * 2 + productos[16].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(staff[2], clientes[0], new List<Producto>() { { productos[2] }, { productos[17] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "27/09/2021",
+                                                                                       productos[2].Precio * 2 + productos[17].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(staff[0], clientes[7], new List<Producto>() { { productos[11] }, { productos[14] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "27/09/2021",
+                                                                                       productos[11].Precio * 2 + productos[14].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(staff[1], clientes[11], new List<Producto>() { { productos[1] }, { productos[3] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "28/09/2021",
+                                                                                       productos[1].Precio * 2 + productos[3].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(administradores[1], clientes[13], new List<Producto>() { { productos[10] }, { productos[16] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "29/09/2021",
+                                                                                       productos[10].Precio * 2 + productos[16].Precio));
+
+            ventasHistoricas.Add(new VentasHistoricas(administradores[0], clientes[5], new List<Producto>() { { productos[8] }, { productos[17] } },
+                                                                                       new List<decimal>() { { 2 }, { 1 } },
+                                                                                       "30/09/2021",
+                                                                                       productos[8].Precio * 2 + productos[17].Precio));
+
         }
+
         #endregion
 
         #region Metodos
@@ -463,7 +536,13 @@ namespace EntidadesPetShop
 
         #endregion
 
-
+        public static void ActualizarCaja()
+        {
+            foreach (VentasHistoricas item in ventasHistoricas)
+            {
+                MiCaja += item.PrecioTotal;
+            }
+        }
 
 
         #endregion

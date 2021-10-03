@@ -203,6 +203,7 @@ namespace PetShop
             base.Limpiar();
             cmb_Enumerado.SelectedIndex = -1;
             txt_Sueldo.Text = string.Empty;
+            txt_Porcentaje.Text = string.Empty;
         }
 
         private void btn_Aumentar_Click(object sender, EventArgs e)

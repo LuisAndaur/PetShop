@@ -58,24 +58,24 @@ namespace PetShop
             // lbl_Fecha
             // 
             this.lbl_Fecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Fecha.AutoSize = true;
             this.lbl_Fecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Fecha.Location = new System.Drawing.Point(497, 12);
+            this.lbl_Fecha.Location = new System.Drawing.Point(292, 10);
             this.lbl_Fecha.Name = "lbl_Fecha";
-            this.lbl_Fecha.Size = new System.Drawing.Size(50, 21);
+            this.lbl_Fecha.Size = new System.Drawing.Size(609, 25);
             this.lbl_Fecha.TabIndex = 2;
             this.lbl_Fecha.Text = "Fecha";
+            this.lbl_Fecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Hora
             // 
             this.lbl_Hora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Hora.AutoSize = true;
-            this.lbl_Hora.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Hora.Location = new System.Drawing.Point(1016, 9);
+            this.lbl_Hora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Hora.Location = new System.Drawing.Point(996, 10);
             this.lbl_Hora.Name = "lbl_Hora";
-            this.lbl_Hora.Size = new System.Drawing.Size(53, 25);
+            this.lbl_Hora.Size = new System.Drawing.Size(186, 25);
             this.lbl_Hora.TabIndex = 3;
             this.lbl_Hora.Text = "Hora";
+            this.lbl_Hora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // timer1
             // 
@@ -161,13 +161,13 @@ namespace PetShop
             // 
             // lbl_UsuarioActivo
             // 
-            this.lbl_UsuarioActivo.AutoSize = true;
             this.lbl_UsuarioActivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UsuarioActivo.Location = new System.Drawing.Point(12, 12);
+            this.lbl_UsuarioActivo.Location = new System.Drawing.Point(12, 10);
             this.lbl_UsuarioActivo.Name = "lbl_UsuarioActivo";
-            this.lbl_UsuarioActivo.Size = new System.Drawing.Size(116, 21);
+            this.lbl_UsuarioActivo.Size = new System.Drawing.Size(260, 25);
             this.lbl_UsuarioActivo.TabIndex = 12;
             this.lbl_UsuarioActivo.Text = "Usuario activo: ";
+            this.lbl_UsuarioActivo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Frm_MenuBase
             // 
@@ -186,7 +186,7 @@ namespace PetShop
             this.Controls.Add(this.lbl_Hora);
             this.Controls.Add(this.lbl_Fecha);
             this.Controls.Add(this.btn_Clientes);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_MenuBase";
@@ -195,7 +195,6 @@ namespace PetShop
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_MenuBase_FormClosing);
             this.Load += new System.EventHandler(this.Frm_MenuPrincipal_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

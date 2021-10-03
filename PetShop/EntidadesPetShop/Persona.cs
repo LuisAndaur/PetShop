@@ -76,5 +76,11 @@ namespace EntidadesPetShop
         }
 
         #endregion
+
+        #region Metodos
+        public abstract double Descontar();
+
+        #endregion
+
     }
 }

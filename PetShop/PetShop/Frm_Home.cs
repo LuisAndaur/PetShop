@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EntidadesPetShop;
 
 namespace PetShop
 {
@@ -15,8 +16,11 @@ namespace PetShop
         public Frm_Home()
         {
             InitializeComponent();
-            this.BackColor = Color.LightGray;
-            this.TransparencyKey = Color.LightGray;
+        }
+
+        private void Frm_Home_Load(object sender, EventArgs e)
+        {
+            lbl_ImporteCaja.Text = ComercioPetShop.MiCaja.ToString("N2");
         }
     }
 }

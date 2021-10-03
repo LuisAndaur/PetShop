@@ -12,8 +12,9 @@ namespace EntidadesPetShop
         private int idVenta;
         private Empleado empleado;
         private Cliente cliente;
-        private Producto producto;
-        private int cantidad;
+        private List<Producto> carrito;
+        private List<decimal> cantidad;
+        private string fecha;
         private double precioTotal;
         private static int ultimoIdGenerado;
         #endregion
@@ -22,37 +23,78 @@ namespace EntidadesPetShop
         public int IdVenta
         {
             get { return idVenta; }
-            set { idVenta = value; }
         }
 
         public Empleado Empleado
         {
             get { return empleado; }
-            set { empleado = value; }
+            set
+            {
+                if (value != null)
+                {
+                    empleado = value;
+                }
+            }
         }
 
         public Cliente Cliente
         {
             get { return cliente; }
-            set { cliente = value; }
+            set
+            {
+                if (value != null)
+                {
+                    cliente = value;
+                }
+            }
         }
 
-        public Producto Producto
+        public List<Producto> Carrito
         {
-            get { return producto; }
-            set { producto = value; }
+            get { return carrito; }
+            set
+            {
+                if (value != null)
+                {
+                    carrito = value;
+                }
+            }
         }
 
-        public int Cantidad
+        public List<decimal> Cantidad
         {
             get { return cantidad; }
-            set { cantidad = value; }
+            set 
+            {
+                if (value != null)
+                {
+                    cantidad = value;
+                }                 
+            }
+        }
+
+        public string Fecha
+        {
+            get { return fecha; }
+            set 
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    fecha = value;
+                }
+            }
         }
 
         public double PrecioTotal
         {
             get { return precioTotal; }
-            set { precioTotal = value; }
+            set
+            {
+                if (value > 0)
+                {
+                    precioTotal = value;
+                }
+            }
         }
         #endregion
 
@@ -62,19 +104,38 @@ namespace EntidadesPetShop
             ultimoIdGenerado = 0;
         }
 
-        public VentasHistoricas(Empleado empleado, Cliente cliente, Producto producto, int cantidad, double precioTotal)
+        public VentasHistoricas(Empleado empleado, Cliente cliente, List<Producto> carrito, List<decimal> cantidad, string fecha, double precioTotal)
         {
             ultimoIdGenerado++;
-            this.IdVenta = ultimoIdGenerado;
+            this.idVenta = ultimoIdGenerado;
             this.Empleado = empleado;
             this.Cliente = cliente;
-            this.Producto = producto;
-            this.Cantidad = cantidad;
+            this.Carrito = new List<Producto>();
+            this.Cantidad = new List<decimal>();
+            this.Fecha = fecha;
             this.PrecioTotal = precioTotal;
         }
         #endregion
 
-        
+        #region Metodos
+
+        public static List<VentasHistoricas> operator +(List<VentasHistoricas> ventasHistoricas, VentasHistoricas venta)
+        {
+            ventasHistoricas.Add(venta);
+            return ventasHistoricas;
+        }
+
+        public static VentasHistoricas CargarVenta(Empleado empleado, Cliente cliente, List<Producto> carrito, List<decimal> cantidad, string fecha, double precioTotal)
+        {
+            if (empleado != null && cliente != null && carrito != null && cantidad != null && !string.IsNullOrEmpty(fecha) && precioTotal>0)
+            {
+                return new VentasHistoricas(empleado, cliente, carrito, cantidad, fecha, precioTotal);
+            }
+            return null;
+        }
+
+
+        #endregion
 
     }
 }
