@@ -16,7 +16,6 @@ namespace EntidadesPetShop
         private double sueldo;
         #endregion
 
-
         #region Propiedades
         public int Id
         {
@@ -87,16 +86,16 @@ namespace EntidadesPetShop
         }
         #endregion
 
-        public virtual double AumentarSueldos(double sueldoActualizado)
+        #region Metodos
+        public virtual void AumentarSueldos(double sueldoActualizado)
         {
-            return this.Sueldo * sueldoActualizado;
+            this.Sueldo *= sueldoActualizado;
         }
 
         public static string GenerarNombreUsuario(string nombre, string apellido)
         {
             return $"{nombre[0]}{apellido}".ToLower();
         }
-
-  
+        #endregion
     }
 }

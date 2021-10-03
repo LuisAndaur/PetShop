@@ -57,22 +57,16 @@ namespace PetShop
 
         public override void txt_Editar_Click(object sender, EventArgs e)
         {
-            bool existe = false;
             int.TryParse(txt_Id.Text, out int auxId);
-            foreach (Cliente item in clientes)
+            if (ComercioPetShop.ObtenerCliente(auxId) != null)
             {
-                if (item.Id == auxId)
-                {                    
-                    item.Nombre = txt_Nombre.Text;
-                    item.Apellido = txt_Apellido.Text;
-                    item.Dni = txt_Dni.Text;
-                    item.Cuil = double.Parse(txt_Cuil.Text);
-                    MessageBox.Show("Datos del cliente modificados");
-                    existe = true;
+                if (!string.IsNullOrEmpty(txt_Id.Text) && !string.IsNullOrEmpty(txt_Nombre.Text) && !string.IsNullOrEmpty(txt_Apellido.Text) && !string.IsNullOrEmpty(txt_Dni.Text) && !string.IsNullOrEmpty(txt_Cuil.Text))
+                {
+                    ComercioPetShop.EditarCliente(auxId, txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text);
+                    MessageBox.Show("Nuevo cliente editado con éxito.");
                 }
             }
-
-            if (!existe)
+            else
             {
                 MessageBox.Show("El cliente es nuevo. Agreguelo.");
             }
@@ -81,64 +75,43 @@ namespace PetShop
 
         public override void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            bool existe = false;
             int.TryParse(txt_Id.Text, out int auxId);
-            if (indice != -1)
-            {                
-                foreach (Cliente item in clientes)
+            if (ComercioPetShop.ObtenerCliente(auxId) != null)
+            {
+                if (!string.IsNullOrEmpty(txt_Id.Text) && !string.IsNullOrEmpty(txt_Nombre.Text) && !string.IsNullOrEmpty(txt_Apellido.Text) && !string.IsNullOrEmpty(txt_Dni.Text) && !string.IsNullOrEmpty(txt_Cuil.Text))
                 {
-                    if (item.Id == auxId)
-                    {                        
-                        dgv_Lista.Rows.RemoveAt(indice);
-                        clientes.Remove(item);
-                        existe = true;
-                        MessageBox.Show("El cliente fue eliminado");
-                        break;
-                    }
-                }
-                if (!existe)
-                {
-                    MessageBox.Show("El cliente no existe en la lista, no se puede eliminar");
+                    ComercioPetShop.EliminarCliente(auxId);
+                    MessageBox.Show("Cliente eliminado con éxito.");
                 }
             }
+            else
+            {
+                MessageBox.Show("El cliente no existe. No se puede eliminar.");
+            }
+            ListarBase();
         }
 
         public override void btn_Agregar_Click(object sender, EventArgs e)
         {
-            bool existe = false;
             int.TryParse(txt_Id.Text, out int auxId);
-            foreach (Cliente item in clientes)
+            if (ComercioPetShop.ObtenerProducto(auxId) == null)
             {
-                if (item.Id == auxId)
+                if (string.IsNullOrEmpty(txt_Id.Text) && !string.IsNullOrEmpty(txt_Nombre.Text) && !string.IsNullOrEmpty(txt_Apellido.Text) && !string.IsNullOrEmpty(txt_Dni.Text) && !string.IsNullOrEmpty(txt_Cuil.Text))
                 {
-                    MessageBox.Show("El cliente ya existe");
-                    existe = true;
+                    clientes += Cliente.CrearCliente(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text);
+                    MessageBox.Show("Nuevo cliente agregado con éxito.");
                 }
             }
-
-            if (!existe)
+            else
             {
-                MessageBox.Show("Nuevo cliente agregado");
-                double.TryParse(txt_Cuil.Text, out double cuil);
-                clientes.Add(new Cliente(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, cuil));                               
+                MessageBox.Show("El cliente ya existe.");
             }
             ListarBase();
         }
 
         public override void btn_Limpiar_Click(object sender, EventArgs e)
         {
-            Limpiar();
-        }
-
-        public override void Limpiar()
-        {
-            txt_Id.Text = string.Empty;
-            txt_Nombre.Text = string.Empty;
-            txt_Apellido.Text = string.Empty;
-            txt_Dni.Text = string.Empty;
-            txt_Cuil.Text = string.Empty;
-        }
-
- 
+            base.Limpiar();
+        } 
     }
 }

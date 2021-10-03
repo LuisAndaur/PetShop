@@ -35,13 +35,19 @@ namespace PetShop
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_Productos = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_ListaProductos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_Facturacion = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgv_Facturacion = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_Detalle = new System.Windows.Forms.GroupBox();
             this.lbl_NumCuit = new System.Windows.Forms.Label();
             this.lbl_Cuit = new System.Windows.Forms.Label();
@@ -70,18 +76,12 @@ namespace PetShop
             this.lbl_Fecha = new System.Windows.Forms.Label();
             this.btn_Ticket = new System.Windows.Forms.Button();
             this.lbl_numFecha = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_Clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaClientes)).BeginInit();
             this.gpb_Productos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaProductos)).BeginInit();
             this.gpb_Facturacion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Facturacion)).BeginInit();
             this.gpb_Detalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npd_Cantidad)).BeginInit();
             this.SuspendLayout();
@@ -135,7 +135,7 @@ namespace PetShop
             // 
             // gpb_Productos
             // 
-            this.gpb_Productos.Controls.Add(this.dataGridView1);
+            this.gpb_Productos.Controls.Add(this.dgv_ListaProductos);
             this.gpb_Productos.Location = new System.Drawing.Point(295, 5);
             this.gpb_Productos.Name = "gpb_Productos";
             this.gpb_Productos.Size = new System.Drawing.Size(384, 297);
@@ -143,23 +143,23 @@ namespace PetShop
             this.gpb_Productos.TabStop = false;
             this.gpb_Productos.Text = "Lista de productos";
             // 
-            // dataGridView1
+            // dgv_ListaProductos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_ListaProductos.AllowUserToAddRows = false;
+            this.dgv_ListaProductos.AllowUserToDeleteRows = false;
+            this.dgv_ListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.Categoria,
             this.Descripcion});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(378, 275);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_ListaProductos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_ListaProductos.Location = new System.Drawing.Point(3, 19);
+            this.dgv_ListaProductos.Name = "dgv_ListaProductos";
+            this.dgv_ListaProductos.ReadOnly = true;
+            this.dgv_ListaProductos.RowTemplate.Height = 25;
+            this.dgv_ListaProductos.Size = new System.Drawing.Size(378, 275);
+            this.dgv_ListaProductos.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -186,10 +186,11 @@ namespace PetShop
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 120;
             // 
             // gpb_Facturacion
             // 
-            this.gpb_Facturacion.Controls.Add(this.dataGridView2);
+            this.gpb_Facturacion.Controls.Add(this.dgv_Facturacion);
             this.gpb_Facturacion.Location = new System.Drawing.Point(5, 308);
             this.gpb_Facturacion.Name = "gpb_Facturacion";
             this.gpb_Facturacion.Size = new System.Drawing.Size(674, 319);
@@ -197,25 +198,65 @@ namespace PetShop
             this.gpb_Facturacion.TabStop = false;
             this.gpb_Facturacion.Text = "Facturación";
             // 
-            // dataGridView2
+            // dgv_Facturacion
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_Facturacion.AllowUserToAddRows = false;
+            this.dgv_Facturacion.AllowUserToDeleteRows = false;
+            this.dgv_Facturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Facturacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.Cant,
             this.Producto,
             this.dataGridViewTextBoxColumn5,
             this.Precio,
             this.Total});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 19);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(668, 297);
-            this.dataGridView2.TabIndex = 0;
+            this.dgv_Facturacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Facturacion.Location = new System.Drawing.Point(3, 19);
+            this.dgv_Facturacion.Name = "dgv_Facturacion";
+            this.dgv_Facturacion.ReadOnly = true;
+            this.dgv_Facturacion.RowTemplate.Height = 25;
+            this.dgv_Facturacion.Size = new System.Drawing.Size(668, 297);
+            this.dgv_Facturacion.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 50;
+            // 
+            // Cant
+            // 
+            this.Cant.HeaderText = "Cant";
+            this.Cant.Name = "Cant";
+            this.Cant.ReadOnly = true;
+            this.Cant.Width = 50;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            this.Producto.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 210;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
             // gpb_Detalle
             // 
@@ -238,7 +279,7 @@ namespace PetShop
             // 
             this.lbl_NumCuit.AutoSize = true;
             this.lbl_NumCuit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_NumCuit.Location = new System.Drawing.Point(198, 91);
+            this.lbl_NumCuit.Location = new System.Drawing.Point(182, 91);
             this.lbl_NumCuit.Name = "lbl_NumCuit";
             this.lbl_NumCuit.Size = new System.Drawing.Size(14, 19);
             this.lbl_NumCuit.TabIndex = 9;
@@ -248,7 +289,7 @@ namespace PetShop
             // 
             this.lbl_Cuit.AutoSize = true;
             this.lbl_Cuit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Cuit.Location = new System.Drawing.Point(194, 72);
+            this.lbl_Cuit.Location = new System.Drawing.Point(178, 72);
             this.lbl_Cuit.Name = "lbl_Cuit";
             this.lbl_Cuit.Size = new System.Drawing.Size(34, 19);
             this.lbl_Cuit.TabIndex = 8;
@@ -258,7 +299,7 @@ namespace PetShop
             // 
             this.lbl_NombreDireccion.AutoSize = true;
             this.lbl_NombreDireccion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_NombreDireccion.Location = new System.Drawing.Point(198, 46);
+            this.lbl_NombreDireccion.Location = new System.Drawing.Point(182, 46);
             this.lbl_NombreDireccion.Name = "lbl_NombreDireccion";
             this.lbl_NombreDireccion.Size = new System.Drawing.Size(14, 19);
             this.lbl_NombreDireccion.TabIndex = 7;
@@ -268,7 +309,7 @@ namespace PetShop
             // 
             this.lbl_Direccion.AutoSize = true;
             this.lbl_Direccion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Direccion.Location = new System.Drawing.Point(194, 27);
+            this.lbl_Direccion.Location = new System.Drawing.Point(178, 27);
             this.lbl_Direccion.Name = "lbl_Direccion";
             this.lbl_Direccion.Size = new System.Drawing.Size(65, 19);
             this.lbl_Direccion.TabIndex = 6;
@@ -388,6 +429,7 @@ namespace PetShop
             this.txt_NombreProducto.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_NombreProducto.Location = new System.Drawing.Point(710, 257);
             this.txt_NombreProducto.Name = "txt_NombreProducto";
+            this.txt_NombreProducto.ReadOnly = true;
             this.txt_NombreProducto.Size = new System.Drawing.Size(296, 25);
             this.txt_NombreProducto.TabIndex = 7;
             // 
@@ -427,6 +469,7 @@ namespace PetShop
             this.txt_Precio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Precio.Location = new System.Drawing.Point(710, 328);
             this.txt_Precio.Name = "txt_Precio";
+            this.txt_Precio.ReadOnly = true;
             this.txt_Precio.Size = new System.Drawing.Size(174, 25);
             this.txt_Precio.TabIndex = 11;
             // 
@@ -470,11 +513,12 @@ namespace PetShop
             // 
             this.lbl_Fecha.AutoSize = true;
             this.lbl_Fecha.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Fecha.Location = new System.Drawing.Point(883, 159);
+            this.lbl_Fecha.Location = new System.Drawing.Point(903, 159);
             this.lbl_Fecha.Name = "lbl_Fecha";
             this.lbl_Fecha.Size = new System.Drawing.Size(44, 19);
             this.lbl_Fecha.TabIndex = 17;
             this.lbl_Fecha.Text = "Fecha";
+            this.lbl_Fecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btn_Ticket
             // 
@@ -490,51 +534,12 @@ namespace PetShop
             // 
             this.lbl_numFecha.AutoSize = true;
             this.lbl_numFecha.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_numFecha.Location = new System.Drawing.Point(883, 178);
+            this.lbl_numFecha.Location = new System.Drawing.Point(903, 183);
             this.lbl_numFecha.Name = "lbl_numFecha";
             this.lbl_numFecha.Size = new System.Drawing.Size(44, 19);
             this.lbl_numFecha.TabIndex = 19;
             this.lbl_numFecha.Text = "Fecha";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 50;
-            // 
-            // Cant
-            // 
-            this.Cant.HeaderText = "Cant";
-            this.Cant.Name = "Cant";
-            this.Cant.ReadOnly = true;
-            this.Cant.Width = 50;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            this.Producto.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Descripcion";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 210;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
+            this.lbl_numFecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Frm_Vender
             // 
@@ -567,12 +572,13 @@ namespace PetShop
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_Vender";
             this.Text = "Frm_Vender";
+            this.Load += new System.EventHandler(this.Frm_Vender_Load);
             this.gpb_Clientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaClientes)).EndInit();
             this.gpb_Productos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaProductos)).EndInit();
             this.gpb_Facturacion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Facturacion)).EndInit();
             this.gpb_Detalle.ResumeLayout(false);
             this.gpb_Detalle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.npd_Cantidad)).EndInit();
@@ -589,13 +595,9 @@ namespace PetShop
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.GroupBox gpb_Productos;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridView dgv_ListaProductos;
         private System.Windows.Forms.GroupBox gpb_Facturacion;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgv_Facturacion;
         private System.Windows.Forms.GroupBox gpb_Detalle;
         private System.Windows.Forms.Label lbl_PrecioFinal;
         private System.Windows.Forms.Label lbl_NombreEmpleado;
@@ -630,5 +632,9 @@ namespace PetShop
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.Label lbl_numFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }

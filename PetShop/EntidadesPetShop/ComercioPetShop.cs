@@ -13,6 +13,8 @@ namespace EntidadesPetShop
         private static string direccion;
         private static double cuit;
         private static string razonSocial;
+        private static double caja;
+
         private static List<Cliente> clientes;
         private static List<Administrador> administradores;
         private static List<Staff> staff;
@@ -20,30 +22,28 @@ namespace EntidadesPetShop
         private static List<VentasHistoricas> ventasHistoricas;
         #endregion
 
-        private static double caja;
-
+        #region Propiedades
+        public static string Nombre { get { return nombre; } }
+        public static string Direccion { get { return direccion; } }
+        public static double Cuit { get { return cuit; } }
+        public static string RazonSocial { get { return razonSocial; } }
         public static double MiCaja
         {
             get { return caja; }
-            set 
-            { 
-                caja = value; }
+            set
+            {
+                if (value > 0)
+                {
+                    caja = value;
+                }
+            }
         }
-
-
-        public static string Nombre { get; }
-        public static string Direccion { get; }
-        public static double Cuit { get; }
-        public static string RazonSocial { get; }
-
-
 
         public static List<Cliente> ListaClientes
         {
             get { return clientes; }
             set { clientes = value; }
         }
-
 
         public static List<Administrador> ListaAdministradores
         {
@@ -53,28 +53,45 @@ namespace EntidadesPetShop
                 if (value != null)
                 {
                     administradores = value;
-                }                 
+                }
             }
         }
 
         public static List<Staff> ListaStaff
         {
             get { return staff; }
-            set { staff = value; }
+            set
+            {
+                if (value != null)
+                {
+                    staff = value;
+                }
+            }
         }
         public static List<Producto> ListaProductos
         {
             get { return productos; }
-            set { productos = value; }
+            set
+            {
+                if (value != null)
+                {
+                    productos = value;
+                }
+            }
         }
 
         public static List<VentasHistoricas> ListaVentasHistoricas
         {
             get { return ventasHistoricas; }
-            set { ventasHistoricas = value; }
+            set
+            {
+                if (value != null)
+                {
+                    ventasHistoricas = value;
+                }
+            }
         }
-
-
+        #endregion
 
         #region Constructor
         static ComercioPetShop()
@@ -94,12 +111,10 @@ namespace EntidadesPetShop
             CargarListaStaff();
             CargarProductos();
             //CargarVentas();
-            
         }
         #endregion
 
-        
-        #region Metodos
+        #region ListasHardcode
         private static void CargarListaClientes()
         {
             clientes.Add(new Cliente("Maria", "Noriega", "33694911", 27336949114));
@@ -124,7 +139,6 @@ namespace EntidadesPetShop
         {
             administradores.Add(new Administrador("Ezequiel", "Oggioni", "42217620", 20422176209, "eoggioni", "42217620", 250000));
             administradores.Add(new Administrador("Lucas", "Rodriguez", "42385648", 20423856484, "lrodriguez", "42385648", 250000));
-            
         }
 
         private static void CargarListaStaff()
@@ -133,8 +147,6 @@ namespace EntidadesPetShop
             staff.Add(new Staff("Carolina", "Scrofani", "42385227", 27423852270, "cscrofani", "42385227", 150000));
             staff.Add(new Staff("Luis", "Andaur", "33009897", 20330098979, "landaur", "33009897", 150000));
         }
-        #endregion
-
         private static void CargarProductos()
         {
             productos.Add(new Producto("Monaco Cuadrille L", 2899.90, ECategoria.Cama, "Casita acolchada y desarmable", "Puppy", 5));
@@ -170,8 +182,18 @@ namespace EntidadesPetShop
             //ventasHistoricas.Add(new VentasHistoricas(empleados[0], clientes[15], productos[16], 1, productos[16].Precio));
             //ventasHistoricas.Add(new VentasHistoricas(empleados[1], clientes[4], productos[3], 2, productos[3].Precio*2));
         }
+        #endregion
 
-        
+        #region Metodos
+
+        #region Empleados
+
+        /// <summary>
+        /// Verifica si los datos ingresados pertenecen a empleados administradores
+        /// </summary>
+        /// <param name="nombreUsuario">Nombre de usuario</param>
+        /// <param name="pass">Contraseña</param>
+        /// <returns></returns>
         public static Administrador LoguearAdministrador(string nombreUsuario, string pass)
         {
             if (ValidarCamposIngresados(nombreUsuario, pass))
@@ -186,7 +208,12 @@ namespace EntidadesPetShop
             }
             return null;
         }
-
+        /// <summary>
+        /// Verifica si los datos ingresados pertenecen a empleados staff
+        /// </summary>
+        /// <param name="nombreUsuario">Nombre de usuario</param>
+        /// <param name="pass">Contraseña</param>
+        /// <returns></returns>
         public static Staff LoguearStaff(string nombreUsuario, string pass)
         {
             if (ValidarCamposIngresados(nombreUsuario, pass))
@@ -288,7 +315,7 @@ namespace EntidadesPetShop
         {
             string nombreUsuario;
             if (id > 0 && nombre != null && apellido != null && dni != null && cuil != null && sueldo != null)
-            {                
+            {
                 double.TryParse(cuil, out double auxCuil);
                 double.TryParse(sueldo, out double auxSueldo);
                 nombreUsuario = Empleado.GenerarNombreUsuario(nombre, apellido);
@@ -332,8 +359,115 @@ namespace EntidadesPetShop
                     }
                 }
             }
-
-
         }
+
+        #endregion
+
+        #region Clientes
+
+        public static Cliente ObtenerCliente(int id)
+        {
+            foreach (Cliente item in clientes)
+            {
+                if (item.Id == id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+
+        public static void EditarCliente(int id, string nombre, string apellido, string dni, string cuil)
+        {
+            if (id > 0 && nombre != null && apellido != null && dni != null && cuil != null)
+            {
+                double.TryParse(cuil, out double auxCuil);
+
+                foreach (Cliente item in clientes)
+                {
+                    if (item.Id == id)
+                    {
+                        item.Nombre = nombre;
+                        item.Apellido = apellido;
+                        item.Dni = dni;
+                        item.Cuil = auxCuil;                       
+                    }
+                }
+            }
+        }
+
+        public static void EliminarCliente(int id)
+        {
+            foreach (Cliente item in clientes)
+            {
+                if (item.Id == id)
+                {
+                    clientes.Remove(item);
+                    break;
+                }
+            }
+        }
+
+
+        #endregion
+
+
+        #region Productos
+
+        public static Producto ObtenerProducto(int id)
+        {
+            foreach (Producto item in productos)
+            {
+                if (item.IdProducto == id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }       
+
+
+        public static void EditarProducto(int id, string nombre, string descripcion, decimal stock, string precio, string marca, string categoria)
+        {
+            if (id > 0 && nombre != null && descripcion != null && stock > 0 && precio != null && marca != null && categoria != null)
+            {
+                double.TryParse(precio, out double auxPrecio);
+
+                foreach (Producto item in productos)
+                {
+                    if (item.IdProducto == id)
+                    {
+                        item.Nombre = nombre;
+                        item.Descripcion = descripcion;
+                        item.Stock = stock;
+                        item.Precio = auxPrecio;
+                        item.Marca = marca;
+                        item.Categoria = Enum.Parse<ECategoria>(categoria);
+                    }
+                }
+            }
+        }
+
+        public static void EliminarProducto(int id)
+        {
+            foreach (Producto item in productos)
+            {
+                if (item.IdProducto == id)
+                {
+                    productos.Remove(item);
+                    break;
+                }
+            }
+        }
+
+        #endregion
+
+
+
+
+        #endregion
     }
-}
+
+}   
+

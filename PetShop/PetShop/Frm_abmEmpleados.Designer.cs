@@ -218,6 +218,7 @@ namespace PetShop
             this.btn_Aumentar.TabIndex = 29;
             this.btn_Aumentar.Text = "Aumentar";
             this.btn_Aumentar.UseVisualStyleBackColor = true;
+            this.btn_Aumentar.Click += new System.EventHandler(this.btn_Aumentar_Click);
             // 
             // txt_Porcentaje
             // 

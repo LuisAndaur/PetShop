@@ -44,6 +44,7 @@ namespace PetShop
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_Lista.SuspendLayout();
             this.gpb_Datos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Lista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,6 +129,11 @@ namespace PetShop
             // 
             this.lbl_Rol.Location = new System.Drawing.Point(35, 461);
             this.lbl_Rol.Visible = false;
+            // 
+            // nud_Stock
+            // 
+            this.nud_Stock.Location = new System.Drawing.Point(33, 480);
+            this.nud_Stock.Visible = false;
             // 
             // ID
             // 
@@ -236,6 +242,7 @@ namespace PetShop
             this.gpb_Lista.ResumeLayout(false);
             this.gpb_Datos.ResumeLayout(false);
             this.gpb_Datos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Lista)).EndInit();
             this.ResumeLayout(false);
 

@@ -49,16 +49,35 @@ namespace EntidadesPetShop
             this.Saldo = SaldoRandom();
         }
         #endregion
-        
+
+        #region Metodos
+
         private double SaldoRandom()
         {
             Random random = new Random();
-            return (double)random.Next(0,5500);
+            return (double)random.Next(0, 5500);
         }
 
-        public static void ResetearIdCliente()
+        public static List<Cliente> operator +(List<Cliente> clientes, Cliente cliente)
         {
-            ultimoIdGenerado = 999;
+            clientes.Add(cliente);
+            return clientes;
         }
+
+        public static Cliente CrearCliente(string nombre, string apellido, string dni, string cuil)
+        {
+            if (nombre != null && apellido != null && dni != null && cuil != null)
+            {
+                double.TryParse(cuil, out double auxCuil);
+                return new Cliente(nombre, apellido, dni, auxCuil);
+            }
+            return null;
+        }
+
+        #endregion
+
+
+
+
     }
 }

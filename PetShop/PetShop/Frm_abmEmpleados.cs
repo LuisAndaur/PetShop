@@ -16,6 +16,8 @@ namespace PetShop
         private int indice = 0;
         List<Administrador> administradores = new List<Administrador>();
         List<Staff> staffer = new List<Staff>();
+
+
         public Frm_abmEmpleados() 
         {
             InitializeComponent();
@@ -166,37 +168,33 @@ namespace PetShop
 
         public override void btn_Agregar_Click(object sender, EventArgs e)
         {
-            bool existe = false;
+            int.TryParse(txt_Id.Text, out int auxId);
 
-            if (!string.IsNullOrEmpty(txt_Id.Text))
+            if (string.IsNullOrEmpty(txt_Id.Text))
             {
-                int.TryParse(txt_Id.Text, out int auxId);
-
-                if ((ERol)cmb_Enumerado.SelectedItem == ERol.Administrador)
+                if (!string.IsNullOrEmpty(txt_Nombre.Text) && !string.IsNullOrEmpty(txt_Apellido.Text) && !string.IsNullOrEmpty(txt_Dni.Text) && !string.IsNullOrEmpty(txt_Cuil.Text) && !string.IsNullOrEmpty(txt_Sueldo.Text) && cmb_Enumerado.SelectedIndex != -1)
                 {
-                    existe = ComercioPetShop.ExisteAdmin(auxId);
-                    if (!existe)
+                    if ((ERol)cmb_Enumerado.SelectedItem == ERol.Administrador)
                     {
                         administradores.Add(Administrador.CrearAdmin(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text, txt_Sueldo.Text));
-                        MessageBox.Show("Nuevo empleado agregado");
                     }
+                    else
+                    {
+                        staffer.Add(Staff.CrearStaff(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text, txt_Sueldo.Text));
+                    }
+                    MessageBox.Show("Nuevo empleado agregado");
                 }
                 else
                 {
-                    existe = ComercioPetShop.ExisteStaff(auxId);
-                    if (!existe)
-                    {
-                        staffer.Add(Staff.CrearStaff(txt_Nombre.Text, txt_Apellido.Text, txt_Dni.Text, txt_Cuil.Text, txt_Sueldo.Text));
-                        MessageBox.Show("Nuevo empleado agregado");
-                    }
+                    MessageBox.Show("Debe completar todos los campos", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            }            
-
-            if (existe)
-            {
-                MessageBox.Show("El empleado ya existe");
             }
             
+
+            if (ComercioPetShop.ExisteAdmin(auxId) || ComercioPetShop.ExisteStaff(auxId))
+            {
+                MessageBox.Show("El empleado ya existe");
+            }        
             ListarBase();
         }
 
@@ -207,5 +205,29 @@ namespace PetShop
             txt_Sueldo.Text = string.Empty;
         }
 
+        private void btn_Aumentar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_Porcentaje.Text))
+            {
+                Administrador admin = new Administrador();
+                Staff staff = new Staff();
+                double.TryParse(txt_Porcentaje.Text, out double aumento);
+                foreach (Administrador item in administradores)
+                {
+                    item.AumentarSueldos(aumento);
+                }
+
+                foreach (Staff item in staffer)
+                {
+                    item.AumentarSueldos(aumento);
+                }
+                ListarBase();
+            }
+            else
+            {
+                MessageBox.Show("Debe cargar el porcentaje");
+            }
+            
+        }
     }
 }

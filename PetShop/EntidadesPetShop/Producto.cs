@@ -111,5 +111,21 @@ namespace EntidadesPetShop
         }
         #endregion
 
+        public static List<Producto> operator +(List<Producto> productos, Producto producto)
+        {
+            productos.Add(producto);
+            return productos;
+        }
+
+        public static Producto CrearProducto(string nombre, string precio, decimal stock, string descripcion, string marca, string categoria)
+        {
+            if (nombre != null && descripcion != null && stock>0 && precio != null && marca != null && categoria != null)
+            {
+                double.TryParse(precio, out double auxPrecio);
+                return new Producto(nombre, auxPrecio, Enum.Parse<ECategoria>(categoria), descripcion, marca, stock);
+            }
+            return null;
+        }
+
     }
 }

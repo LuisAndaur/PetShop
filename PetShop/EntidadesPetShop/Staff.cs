@@ -43,10 +43,11 @@ namespace EntidadesPetShop
             return null;
         }
 
-        public override double AumentarSueldos(double sueldoActualizado)
+        public override void AumentarSueldos(double sueldoActualizado)
         {
             double bonoStaff = 0.3;
-            return base.AumentarSueldos(sueldoActualizado) * bonoStaff;
+            sueldoActualizado += bonoStaff;
+            base.AumentarSueldos(sueldoActualizado);
         }
     }
 }

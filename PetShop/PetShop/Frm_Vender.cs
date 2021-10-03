@@ -14,10 +14,67 @@ namespace PetShop
 {
     public partial class Frm_Vender : Form
     {
+        private int indice = 0;
+        List<Cliente> clientes = new List<Cliente>();
+        List<Producto> productos = new List<Producto>();
         public Frm_Vender()
         {
             InitializeComponent();
         }
+
+        private void Frm_Vender_Load(object sender, EventArgs e)
+        {
+            lbl_NombreComercio.Text = ComercioPetShop.Nombre;
+            lbl_NombreDireccion.Text = ComercioPetShop.Direccion;
+            lbl_NombreRazonSoc.Text = ComercioPetShop.RazonSocial;
+            lbl_NumCuit.Text = ComercioPetShop.Cuit.ToString();
+            lbl_numFecha.Text = DateTime.Now.ToShortDateString();
+            clientes = ComercioPetShop.ListaClientes;
+            productos = ComercioPetShop.ListaProductos;
+            ListarBases();
+        }
+
+        public void ListarBases()
+        {
+            dgv_ListaClientes.Rows.Clear();
+            dgv_ListaProductos.Rows.Clear();
+            foreach (Cliente item in clientes)
+            {
+                indice = dgv_ListaClientes.Rows.Add();
+                dgv_ListaClientes .Rows[indice].Cells[0].Value = item.Id;
+                dgv_ListaClientes.Rows[indice].Cells[1].Value = item.Nombre;
+                dgv_ListaClientes.Rows[indice].Cells[2].Value = item.Dni;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void btn_Ticket_Click(object sender, EventArgs e)
         {
@@ -46,5 +103,7 @@ namespace PetShop
             //    }
             MessageBox.Show("Ticket generado con exito");
         }
+
+        
     }
 }

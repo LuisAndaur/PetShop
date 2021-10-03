@@ -16,7 +16,6 @@ namespace PetShop
         public Frm_MenuBase()
         {
             InitializeComponent();
-
         }
 
 
@@ -29,9 +28,6 @@ namespace PetShop
         {
             timer1.Enabled = true;
             AbrirFormDentro(new Frm_Home());
-            //pnl_Contenedor.BackColor = Color.Red;
-
-
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)

@@ -26,10 +26,7 @@ namespace PetShop
 
         public virtual void btn_Agregar_Click(object sender, EventArgs e) { }
 
-        public virtual void btn_Limpiar_Click(object sender, EventArgs e) 
-        {
-
-        }
+        public virtual void btn_Limpiar_Click(object sender, EventArgs e) { }
 
         public virtual void Limpiar()
         {

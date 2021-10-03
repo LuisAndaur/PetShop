@@ -61,40 +61,27 @@ namespace PetShop
 
         public override void btn_Limpiar_Click(object sender, EventArgs e)
         {
-            Limpiar();
-        }
-
-        public override void Limpiar()
-        {
-            txt_Id.Text = string.Empty;
+            base.Limpiar();
             cmb_Enumerado.SelectedIndex = -1;
-            txt_Nombre.Text = string.Empty;
             txt_Descripcion.Text = string.Empty;
             txt_Precio.Text = string.Empty;
             txt_Marca.Text = string.Empty;
             nud_Stock.Value = 0;
         }
-
+     
         public override void txt_Editar_Click(object sender, EventArgs e)
         {
-            bool existe = false;
             int.TryParse(txt_Id.Text, out int auxId);
-            foreach (Producto item in productos)
+            if (ComercioPetShop.ObtenerProducto(auxId) != null)
             {
-                if (item.IdProducto == auxId)
+                if (!string.IsNullOrEmpty(txt_Nombre.Text) && !string.IsNullOrEmpty(txt_Descripcion.Text) && !string.IsNullOrEmpty(txt_Precio.Text) && !string.IsNullOrEmpty(txt_Marca.Text)
+                && nud_Stock.Value > 0 && cmb_Enumerado.SelectedIndex != -1 && !string.IsNullOrEmpty(txt_Id.Text))
                 {
-                    item.Nombre = txt_Nombre.Text;
-                    item.Descripcion = txt_Descripcion.Text;
-                    item.Stock = nud_Stock.Value;
-                    item.Precio = double.Parse(txt_Precio.Text);
-                    item.Marca = txt_Marca.Text;
-                    item.Categoria = Enum.Parse<ECategoria>(cmb_Enumerado.Text);
-                    MessageBox.Show("Datos del producto modificados");
-                    existe = true;
+                    ComercioPetShop.EditarProducto(auxId, txt_Nombre.Text, txt_Descripcion.Text, nud_Stock.Value, txt_Precio.Text, txt_Marca.Text, cmb_Enumerado.Text);
+                    MessageBox.Show("Nuevo producto editado con éxito.");
                 }
             }
-
-            if (!existe)
+            else
             {
                 MessageBox.Show("El producto es nuevo. Agreguelo.");
             }
@@ -103,51 +90,40 @@ namespace PetShop
 
         public override void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            bool existe = false;
             int.TryParse(txt_Id.Text, out int auxId);
-            if (indice != -1)
+            if (ComercioPetShop.ObtenerProducto(auxId) != null)
             {
-                foreach (Producto item in productos)
+                if (!string.IsNullOrEmpty(txt_Nombre.Text) && !string.IsNullOrEmpty(txt_Descripcion.Text) && !string.IsNullOrEmpty(txt_Precio.Text) && !string.IsNullOrEmpty(txt_Marca.Text)
+                && nud_Stock.Value > 0 && cmb_Enumerado.SelectedIndex != -1 && !string.IsNullOrEmpty(txt_Id.Text))
                 {
-                    if (item.IdProducto == auxId)
-                    {
-                        dgv_Lista.Rows.RemoveAt(indice);
-                        productos.Remove(item);
-                        existe = true;
-                        MessageBox.Show("El producto fue eliminado");
-                        break;
-                    }
-                }
-                if (!existe)
-                {
-                    MessageBox.Show("El producto no existe en la lista, no se puede eliminar");
+                    ComercioPetShop.EliminarProducto(auxId);
+                    MessageBox.Show("Producto eliminado con éxito.");
                 }
             }
-        }
-
-        public override void btn_Agregar_Click(object sender, EventArgs e)
-        {
-            bool existe = false;
-            int.TryParse(txt_Id.Text, out int auxId);
-            foreach (Producto item in productos)
+            else
             {
-                if (item.IdProducto == auxId)
-                {
-                    MessageBox.Show("El producto ya existe");
-                    existe = true;
-                }
-            }
-
-            if (!existe)
-            {
-                double.TryParse(txt_Precio.Text, out double precio);
-
-                productos.Add(new Producto(txt_Nombre.Text, precio, (ECategoria)cmb_Enumerado.SelectedItem, txt_Descripcion.Text, txt_Marca.Text, nud_Stock.Value));
-                MessageBox.Show("Nuevo producto agregado");
+                MessageBox.Show("El producto no existe. No se puede eliminar.");
             }
             ListarBase();
         }
 
-
+        public override void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            int.TryParse(txt_Id.Text, out int auxId);
+            if (ComercioPetShop.ObtenerProducto(auxId) == null)
+            {
+                if (!string.IsNullOrEmpty(txt_Nombre.Text) && !string.IsNullOrEmpty(txt_Descripcion.Text) && !string.IsNullOrEmpty(txt_Precio.Text) && !string.IsNullOrEmpty(txt_Marca.Text)
+                && nud_Stock.Value > 0 && cmb_Enumerado.SelectedIndex != -1 && string.IsNullOrEmpty(txt_Id.Text))
+                {
+                    productos += Producto.CrearProducto(txt_Nombre.Text, txt_Precio.Text, nud_Stock.Value, txt_Descripcion.Text, txt_Marca.Text, cmb_Enumerado.Text);
+                    MessageBox.Show("Nuevo producto agregado con éxito.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("El producto ya existe.");
+            }
+            ListarBase();
+        }
     }
 }
