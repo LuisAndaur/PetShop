@@ -25,6 +25,11 @@ namespace PetShop
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga los listados de empleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_Login_Load(object sender, EventArgs e)
         {
             administradores = ComercioPetShop.ListaAdministradores;
@@ -72,6 +77,11 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Genera numeros random y completa los datos del adm segun el nuemro que toque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Administrador_Click(object sender, EventArgs e)
         {
             int numero;
@@ -82,6 +92,11 @@ namespace PetShop
             txt_Password.Text = administradores[numero].Pass;
         }
 
+        /// <summary>
+        /// Genera numeros random y completa los datos del staff segun el nuemro que toque
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Empleado_Click(object sender, EventArgs e)
         {
             int numero;

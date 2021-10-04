@@ -26,16 +26,26 @@ namespace PetShop
         List<VentasHistoricas> ventasHistoricas = new List<VentasHistoricas>();
         List<Producto> carrito = new List<Producto>();
         List<decimal> cantidad = new List<decimal>();
+
         public Frm_Vender()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Sobrecarga del constructor que adquiere el empleado activo
+        /// </summary>
+        /// <param name="empleadoActivo"></param>
         public Frm_Vender(Empleado empleadoActivo) : this()
         {
             this.empleadoActivo = empleadoActivo;
         }
 
+        /// <summary>
+        /// Carga los campos en pantalla lista las bases y las muestra
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_Vender_Load(object sender, EventArgs e)
         {
             lbl_NombreComercio.Text = ComercioPetShop.Nombre;
@@ -50,6 +60,9 @@ namespace PetShop
             ListarBases();
         }
 
+        /// <summary>
+        /// Lista las bases necesarias
+        /// </summary>
         public void ListarBases()
         {
             dgv_ListaClientes.Rows.Clear();
@@ -99,6 +112,11 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Agrega un nuevo producto a la lista de compra
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(lbl_NombreCliente.Text) && !string.IsNullOrEmpty(txt_NombreProducto.Text) && npd_Cantidad.Value > 0)
@@ -139,12 +157,17 @@ namespace PetShop
                 MessageBox.Show("Elegir cliente y/o producto y cargar cantidad", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
+        
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
+        /// <summary>
+        /// Elimina un producto de la lista de compras
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {            
             if (indice > -1 && indice < dgv_Facturacion.RowCount)
@@ -170,6 +193,11 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Realiza la venta completa de todos los productos y actualiza el saldo del comercio
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Vender_Click(object sender, EventArgs e)
         {
             if (dgv_Facturacion.RowCount > 0 && ComercioPetShop.ObtenerCliente(auxIdCliente).Saldo > acumuladorVenta)
@@ -184,6 +212,11 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Liampia todos los campos del form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Limpiar()
         {
             lbl_NombreCliente.Text = string.Empty;
@@ -197,6 +230,11 @@ namespace PetShop
             acumuladorVentaConIva = 0;
         }
 
+        /// <summary>
+        /// Genera un ticket de la compra realizada
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Ticket_Click(object sender, EventArgs e)
         {          
             //StreamWriter outputFile = new StreamWriter("D:\\TUP\\2do Cuatrimestre 2021\\Programación y Laboratorio 2\\PetShop\\PetShop\\ticketVenta.txt");

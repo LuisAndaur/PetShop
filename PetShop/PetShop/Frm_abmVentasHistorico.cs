@@ -23,6 +23,11 @@ namespace PetShop
             cmb_Empleados.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// Carga la lista de ventas, los empleados que vendieron y los lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_abmVentasHistorico_Load(object sender, EventArgs e)
         {
             ventasHistoricas = ComercioPetShop.ListaVentasHistoricas;
@@ -33,6 +38,9 @@ namespace PetShop
             ListarBases();
         }
 
+        /// <summary>
+        /// Lista la base de ventas
+        /// </summary>
         public void ListarBases()
         {
             dgv_VentasHistorico.Rows.Clear();
@@ -50,6 +58,11 @@ namespace PetShop
             }            
         }
 
+        /// <summary>
+        /// Filtra de ventas que hizo el vendedor seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Filtrar_Click(object sender, EventArgs e)
         {
             if (cmb_Empleados.SelectedIndex != -1)
@@ -72,8 +85,14 @@ namespace PetShop
             }            
         }
 
+        /// <summary>
+        /// Refresca y muestra todas las ventas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Historico_Click(object sender, EventArgs e)
         {
+            cmb_Empleados.SelectedIndex = -1;
             ListarBases();
         }        
     }

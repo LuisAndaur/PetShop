@@ -6,12 +6,18 @@ using System.Threading.Tasks;
 
 namespace EntidadesPetShop
 {
+    /// <summary>
+    /// Enumerado tipo rol de empleados
+    /// </summary>
     public enum ERol
     {
         Administrador,
         Staff
     }
 
+    /// <summary>
+    /// enumerado tipo categoria de productos
+    /// </summary>
     public enum ECategoria
     {
         Alimento,

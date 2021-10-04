@@ -21,11 +21,18 @@ namespace EntidadesPetShop
         #endregion
 
         #region Propiedades
+
+        /// <summary>
+        /// Propiedad readonly id
+        /// </summary>
         public int IdVenta
         {
             get { return idVenta; }
         }
 
+        /// <summary>
+        /// empleado que vendió
+        /// </summary>
         public Empleado Empleado
         {
             get { return empleado; }
@@ -38,6 +45,9 @@ namespace EntidadesPetShop
             }
         }
 
+        /// <summary>
+        /// cliente que compro
+        /// </summary>
         public Cliente Cliente
         {
             get { return cliente; }
@@ -50,6 +60,9 @@ namespace EntidadesPetShop
             }
         }
 
+        /// <summary>
+        /// Carrito de productos
+        /// </summary>
         public List<Producto> Carrito
         {
             get { return carrito; }
@@ -62,6 +75,9 @@ namespace EntidadesPetShop
             }
         }
 
+        /// <summary>
+        /// Lista de cantidad
+        /// </summary>
         public List<decimal> Cantidad
         {
             get { return cantidad; }
@@ -74,6 +90,9 @@ namespace EntidadesPetShop
             }
         }
 
+        /// <summary>
+        /// Dictionary de empelados que vendieron
+        /// </summary>
         public static Dictionary<int, string> Empleados
         {
             get { return empleados; }
@@ -86,6 +105,9 @@ namespace EntidadesPetShop
             }
         }
 
+        /// <summary>
+        /// Fecha de venta
+        /// </summary>
         public string Fecha
         {
             get { return fecha; }
@@ -98,6 +120,9 @@ namespace EntidadesPetShop
             }
         }
 
+        /// <summary>
+        /// Precio total de la venta
+        /// </summary>
         public double PrecioTotal
         {
             get { return precioTotal; }
@@ -112,12 +137,24 @@ namespace EntidadesPetShop
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Constructor static que inicializa id y empleados que vendieron
+        /// </summary>
         static VentasHistoricas()
         {
             ultimoIdGenerado = 0;
             empleados = new Dictionary<int, string>();
         }
 
+        /// <summary>
+        /// Constructor completo de ventas
+        /// </summary>
+        /// <param name="empleado">vendedor</param>
+        /// <param name="cliente">comprador</param>
+        /// <param name="carrito">lista de productos</param>
+        /// <param name="cantidad">lista de cantidades</param>
+        /// <param name="fecha">fecha de venta</param>
+        /// <param name="precioTotal">precio de la venta</param>
         public VentasHistoricas(Empleado empleado, Cliente cliente, List<Producto> carrito, List<decimal> cantidad, string fecha, double precioTotal)
         {
             ultimoIdGenerado++;
@@ -134,12 +171,28 @@ namespace EntidadesPetShop
 
         #region Metodos
 
+        /// <summary>
+        /// Sobrecarga del operador +, añade una venta a la lista de ventas
+        /// </summary>
+        /// <param name="ventasHistoricas">lista de ventas</param>
+        /// <param name="venta">venta actual</param>
+        /// <returns>lista actualizada</returns>
         public static List<VentasHistoricas> operator +(List<VentasHistoricas> ventasHistoricas, VentasHistoricas venta)
         {
             ventasHistoricas.Add(venta);
             return ventasHistoricas;
         }
 
+        /// <summary>
+        /// Carga una nueva venta con los datos pasados por parametro
+        /// </summary>
+        /// <param name="empleado">vendedor</param>
+        /// <param name="cliente">comprador</param>
+        /// <param name="carrito">lista de compra</param>
+        /// <param name="cantidad">cantidades</param>
+        /// <param name="fecha">fecha venta</param>
+        /// <param name="precioTotal">precio total de venta</param>
+        /// <returns>new venta</returns>
         public static VentasHistoricas CargarVenta(Empleado empleado, Cliente cliente, List<Producto> carrito, List<decimal> cantidad, string fecha, double precioTotal)
         {
             if (empleado != null && cliente != null && carrito != null && cantidad != null && !string.IsNullOrEmpty(fecha) && precioTotal>0)
@@ -149,8 +202,10 @@ namespace EntidadesPetShop
             return null;
         }
 
-
-
+        /// <summary>
+        /// Dictionary con los empleados que vendieron
+        /// </summary>
+        /// <param name="empleado">empleado</param>
         public static void ListaEmpleados(Empleado empleado)
         {
             if (!empleados.ContainsKey(empleado.Id))

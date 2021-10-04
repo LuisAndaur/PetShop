@@ -18,6 +18,9 @@ namespace PetShop
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Lista la base para mostrar
+        /// </summary>
         public virtual void ListarBase() { }
 
         public virtual void txt_Editar_Click(object sender, EventArgs e) { }
@@ -28,6 +31,9 @@ namespace PetShop
 
         public virtual void btn_Limpiar_Click(object sender, EventArgs e) { }
 
+        /// <summary>
+        /// Resetea los campos
+        /// </summary>
         public virtual void Limpiar()
         {
             txt_Id.Text = string.Empty;
@@ -37,6 +43,10 @@ namespace PetShop
             txt_Cuil.Text = string.Empty;
         }
 
+        /// <summary>
+        /// Permite ingresar solo letras
+        /// </summary>
+        /// <param name="e"></param>
         private void SoloLetras(KeyPressEventArgs e)
         {
             if ((e.KeyChar > 31 && e.KeyChar < 65) || (e.KeyChar > 90 && e.KeyChar < 97) || (e.KeyChar > 122 && e.KeyChar < 256))
@@ -46,6 +56,10 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Permite ingresar solo numeros
+        /// </summary>
+        /// <param name="e"></param>
         private void SoloNumeros(KeyPressEventArgs e)
         {
             if ((e.KeyChar > 31 && e.KeyChar < 48) || (e.KeyChar > 57 && e.KeyChar < 256))

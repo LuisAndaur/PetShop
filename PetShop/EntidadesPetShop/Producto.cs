@@ -20,11 +20,17 @@ namespace EntidadesPetShop
         #endregion
 
         #region Propiedades
+        /// <summary>
+        /// Propiedad redonly id
+        /// </summary>
         public int IdProducto
         {
             get { return idProducto; }
         }
 
+        /// <summary>
+        /// Propiedad nombre producto
+        /// </summary>
         public string Nombre
         {
             get { return nombre; }
@@ -37,6 +43,9 @@ namespace EntidadesPetShop
             }
         }
 
+        /// <summary>
+        /// Propiedad precio producto
+        /// </summary>
         public double Precio
         {
             get { return precio; }
@@ -49,12 +58,18 @@ namespace EntidadesPetShop
             }
         }
 
+        /// <summary>
+        /// Propiedad categoria producto
+        /// </summary>
         public ECategoria Categoria
         {
             get { return categoria; }
             set { categoria = value; }
         }
 
+        /// <summary>
+        /// Propiedad descripcion producto
+        /// </summary>
         public string Descripcion
         {
             get { return descripcion; }
@@ -67,6 +82,9 @@ namespace EntidadesPetShop
             }
         }
 
+        /// <summary>
+        /// Propiedad marca producto
+        /// </summary>
         public string Marca
         {
             get { return marca; }
@@ -79,6 +97,9 @@ namespace EntidadesPetShop
             }
         }
 
+        /// <summary>
+        /// Propiedad stock producto
+        /// </summary>
         public decimal Stock
         {
             get { return stock; }
@@ -93,11 +114,23 @@ namespace EntidadesPetShop
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Constructor static que inicializa el id
+        /// </summary>
         static Producto()
         {
             ultimoIdGenerado = 19999;
         }
 
+        /// <summary>
+        /// Constructor completo de producto
+        /// </summary>
+        /// <param name="nombre">nombre producto</param>
+        /// <param name="precio">precio producto</param>
+        /// <param name="categoria">categoria producto</param>
+        /// <param name="descripcion">descripcion producto</param>
+        /// <param name="marca">marca producto</param>
+        /// <param name="stock">stock producto</param>
         public Producto(string nombre, double precio, ECategoria categoria, string descripcion, string marca, decimal stock)
         {
             ultimoIdGenerado++;
@@ -111,21 +144,40 @@ namespace EntidadesPetShop
         }
         #endregion
 
+        #region Metodos
+        /// <summary>
+        /// Sobrecarga operador + carga un new producto a la lista de productos
+        /// </summary>
+        /// <param name="productos">lista productos</param>
+        /// <param name="producto">new producto</param>
+        /// <returns>lista actualizada</returns>
         public static List<Producto> operator +(List<Producto> productos, Producto producto)
         {
             productos.Add(producto);
             return productos;
         }
 
+        /// <summary>
+        /// Crea un nuevo producto a partir de los datos pasados por parametros
+        /// </summary>
+        /// <param name="nombre">nombre producto</param>
+        /// <param name="precio">precio producto</param>
+        /// <param name="stock">stock producto</param>
+        /// <param name="descripcion">descripcion producto</param>
+        /// <param name="marca">marca producto</param>
+        /// <param name="categoria">categoria producto</param>
+        /// <returns>new producto</returns>
         public static Producto CrearProducto(string nombre, string precio, decimal stock, string descripcion, string marca, string categoria)
         {
-            if (nombre != null && descripcion != null && stock>0 && precio != null && marca != null && categoria != null)
+            if (nombre != null && descripcion != null && stock > 0 && precio != null && marca != null && categoria != null)
             {
                 double.TryParse(precio, out double auxPrecio);
                 return new Producto(nombre, auxPrecio, Enum.Parse<ECategoria>(categoria), descripcion, marca, stock);
             }
             return null;
         }
+
+        #endregion
 
     }
 }

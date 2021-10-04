@@ -22,12 +22,20 @@ namespace PetShop
             cmb_Enumerado.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// Carga la lista de productos y los lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_abmProductos_Load(object sender, EventArgs e)
         {
             productos = ComercioPetShop.ListaProductos;
             ListarBase();
         }
 
+        /// <summary>
+        /// Lista la base de productos
+        /// </summary>
         public override void ListarBase()
         {
             dgv_Lista.Rows.Clear();
@@ -59,6 +67,11 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Limpia todos los campos del formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void btn_Limpiar_Click(object sender, EventArgs e)
         {
             base.Limpiar();
@@ -69,6 +82,11 @@ namespace PetShop
             nud_Stock.Value = 0;
         }
      
+        /// <summary>
+        /// Edita los campos del producto seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void txt_Editar_Click(object sender, EventArgs e)
         {
             int.TryParse(txt_Id.Text, out int auxId);
@@ -88,6 +106,11 @@ namespace PetShop
             ListarBase();
         }
 
+        /// <summary>
+        /// Elimina el producto seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void btn_Eliminar_Click(object sender, EventArgs e)
         {
             int.TryParse(txt_Id.Text, out int auxId);
@@ -107,6 +130,11 @@ namespace PetShop
             ListarBase();
         }
 
+        /// <summary>
+        /// Agrega un nuevo producto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void btn_Agregar_Click(object sender, EventArgs e)
         {
             int.TryParse(txt_Id.Text, out int auxId);

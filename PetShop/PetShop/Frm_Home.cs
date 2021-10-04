@@ -18,6 +18,11 @@ namespace PetShop
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga datos para mostrar en pantalla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_Home_Load(object sender, EventArgs e)
         {
             lbl_ImporteCaja.Text = ComercioPetShop.MiCaja.ToString("N2");

@@ -25,6 +25,11 @@ namespace PetShop
             cmb_Enumerado.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// Carga los listados de admin y staff y los lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_abmEmpleados_Load(object sender, EventArgs e)
         {
             administradores = ComercioPetShop.ListaAdministradores;
@@ -32,6 +37,9 @@ namespace PetShop
             ListarBase();
         }
 
+        /// <summary>
+        /// Lista la lista de admin y staff
+        /// </summary>
         public override void ListarBase()
         {
             dgv_Lista.Rows.Clear();
@@ -76,6 +84,11 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Edita el empleado solicitado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void txt_Editar_Click(object sender, EventArgs e)
         {
             Administrador admin = new Administrador();
@@ -128,6 +141,11 @@ namespace PetShop
             ListarBase();
         }
 
+        /// <summary>
+        /// Elimina el empleado solicitado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void btn_Eliminar_Click(object sender, EventArgs e)
         {
             bool existe = false;
@@ -166,6 +184,11 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Agrega un nuevo empleado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void btn_Agregar_Click(object sender, EventArgs e)
         {
             int.TryParse(txt_Id.Text, out int auxId);
@@ -206,6 +229,11 @@ namespace PetShop
             txt_Porcentaje.Text = string.Empty;
         }
 
+        /// <summary>
+        /// Aumenta el sueldo de todos los empleados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Aumentar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txt_Porcentaje.Text))

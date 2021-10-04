@@ -21,12 +21,20 @@ namespace PetShop
             InitializeComponent();            
         }
 
+        /// <summary>
+        /// Carga la lista de clientes y los lista 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Frm_abmClientes_Load(object sender, EventArgs e)
         {
             clientes = ComercioPetShop.ListaClientes;
             ListarBase();
         }
 
+        /// <summary>
+        /// Lista la base de clientes
+        /// </summary>
         public override void ListarBase()
         {
             dgv_Lista.Rows.Clear();
@@ -55,6 +63,11 @@ namespace PetShop
             }
         }
 
+        /// <summary>
+        /// Edita los datos del cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void txt_Editar_Click(object sender, EventArgs e)
         {
             int.TryParse(txt_Id.Text, out int auxId);
@@ -73,6 +86,11 @@ namespace PetShop
             ListarBase();
         }
 
+        /// <summary>
+        /// Elimina el cliente seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void btn_Eliminar_Click(object sender, EventArgs e)
         {
             int.TryParse(txt_Id.Text, out int auxId);
@@ -91,6 +109,11 @@ namespace PetShop
             ListarBase();
         }
 
+        /// <summary>
+        /// Agrega un nuevo cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void btn_Agregar_Click(object sender, EventArgs e)
         {
             int.TryParse(txt_Id.Text, out int auxId);
@@ -109,6 +132,11 @@ namespace PetShop
             ListarBase();
         }
 
+        /// <summary>
+        /// Limpia todos los campos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public override void btn_Limpiar_Click(object sender, EventArgs e)
         {
             base.Limpiar();
