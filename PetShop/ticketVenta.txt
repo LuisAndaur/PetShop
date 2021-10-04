@@ -1,3 +1,20 @@
- 0 
- numero:  Fecha: jueves, 30 de septiembre de 2021Precio final:  $System.Windows.Forms.Label, Text: $0.00
+----------------------------------
+Razon social: Pet Shop
+Nombre: Piluso
+Direccion: Av. Siempre Viva 742
+Cuit: 30987665314
+Fecha: 4/10/2021
+----------------------------------
+Vendedor: Ezequiel
+Cliente: Patricia
+----------------------------------
+Cant Nombre            Precio
+1     Super Ranch               422,80
+1     Antiparasitario plus               403,20
+1     Bife gigante               288,45
+----------------------------------
+Total:  $1.114,45
+Total c/IVA:  $1.348,48
+Precio final:  $1.348,48
+----------------------------------
 

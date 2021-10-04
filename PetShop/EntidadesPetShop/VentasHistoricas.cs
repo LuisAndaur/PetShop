@@ -14,6 +14,7 @@ namespace EntidadesPetShop
         private Cliente cliente;
         private List<Producto> carrito;
         private List<decimal> cantidad;
+        private static Dictionary<int, string> empleados;
         private string fecha;
         private double precioTotal;
         private static int ultimoIdGenerado;
@@ -73,6 +74,18 @@ namespace EntidadesPetShop
             }
         }
 
+        public static Dictionary<int, string> Empleados
+        {
+            get { return empleados; }
+            set
+            {
+                if (value != null)
+                {
+                    empleados = value;
+                }
+            }
+        }
+
         public string Fecha
         {
             get { return fecha; }
@@ -102,6 +115,7 @@ namespace EntidadesPetShop
         static VentasHistoricas()
         {
             ultimoIdGenerado = 0;
+            empleados = new Dictionary<int, string>();
         }
 
         public VentasHistoricas(Empleado empleado, Cliente cliente, List<Producto> carrito, List<decimal> cantidad, string fecha, double precioTotal)
@@ -114,6 +128,7 @@ namespace EntidadesPetShop
             this.Cantidad = new List<decimal>();
             this.Fecha = fecha;
             this.PrecioTotal = precioTotal;
+            ListaEmpleados(empleado);
         }
         #endregion
 
@@ -132,6 +147,16 @@ namespace EntidadesPetShop
                 return new VentasHistoricas(empleado, cliente, carrito, cantidad, fecha, precioTotal);
             }
             return null;
+        }
+
+
+
+        public static void ListaEmpleados(Empleado empleado)
+        {
+            if (!empleados.ContainsKey(empleado.Id))
+            {
+                empleados.Add(empleado.Id, empleado.Nombre);
+            }            
         }
 
 

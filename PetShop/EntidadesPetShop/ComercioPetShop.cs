@@ -178,7 +178,7 @@ namespace EntidadesPetShop
                                                                                        "04/09/2021",
                                                                                        productos[0].Precio*2 + productos[6].Precio));
 
-            ventasHistoricas.Add(new VentasHistoricas(staff[2], clientes[15], new List<Producto>() { { productos[16] }, { productos[9] } },
+            ventasHistoricas.Add(new VentasHistoricas(staff[1], clientes[15], new List<Producto>() { { productos[16] }, { productos[9] } },
                                                                                        new List<decimal>() { { 1 }, { 1 } },
                                                                                        "09/09/2021",
                                                                                        productos[16].Precio + productos[9].Precio));
@@ -188,7 +188,7 @@ namespace EntidadesPetShop
                                                                                        "12/09/2021",
                                                                                        productos[4].Precio*2 + productos[6].Precio + productos[7].Precio + productos[3].Precio));
 
-            ventasHistoricas.Add(new VentasHistoricas(staff[2], clientes[7], new List<Producto>() { { productos[6] }, { productos[4] }, { productos[3] } },
+            ventasHistoricas.Add(new VentasHistoricas(staff[1], clientes[7], new List<Producto>() { { productos[6] }, { productos[4] }, { productos[3] } },
                                                                                        new List<decimal>() { { 2 }, { 1 },{ 2 } },
                                                                                        "12/09/2021",
                                                                                        productos[6].Precio * 2 + productos[4].Precio + productos[3].Precio));
@@ -218,7 +218,7 @@ namespace EntidadesPetShop
                                                                                        "24/09/2021",
                                                                                        productos[13].Precio * 2 + productos[5].Precio));
 
-            ventasHistoricas.Add(new VentasHistoricas(administradores[1], clientes[8], new List<Producto>() { { productos[12] }, { productos[6] } },
+            ventasHistoricas.Add(new VentasHistoricas(administradores[0], clientes[8], new List<Producto>() { { productos[12] }, { productos[6] } },
                                                                                        new List<decimal>() { { 2 }, { 1 } },
                                                                                        "25/09/2021",
                                                                                        productos[12].Precio * 2 + productos[6].Precio));
@@ -233,7 +233,7 @@ namespace EntidadesPetShop
                                                                                        "27/09/2021",
                                                                                        productos[2].Precio * 2 + productos[17].Precio));
 
-            ventasHistoricas.Add(new VentasHistoricas(staff[0], clientes[7], new List<Producto>() { { productos[11] }, { productos[14] } },
+            ventasHistoricas.Add(new VentasHistoricas(staff[1], clientes[7], new List<Producto>() { { productos[11] }, { productos[14] } },
                                                                                        new List<decimal>() { { 2 }, { 1 } },
                                                                                        "27/09/2021",
                                                                                        productos[11].Precio * 2 + productos[14].Precio));
@@ -542,6 +542,11 @@ namespace EntidadesPetShop
             {
                 MiCaja += item.PrecioTotal;
             }
+        }
+
+        public static void CargarCaja(double venta)
+        {
+            MiCaja += venta;
         }
 
 

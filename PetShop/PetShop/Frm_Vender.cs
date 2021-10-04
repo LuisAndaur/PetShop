@@ -120,7 +120,7 @@ namespace PetShop
                             acumuladorVenta += (item.Precio * (double)npd_Cantidad.Value);
                             acumuladorVentaConIva += ((item.Precio * (double)npd_Cantidad.Value) * iva);
                             carrito += ComercioPetShop.ObtenerProducto(auxIdProducto);
-                            cantidad.Add(npd_Cantidad.Value);                            
+                            cantidad.Add(npd_Cantidad.Value);
 
                             lbl_PrecioFinal.Text = acumuladorVenta.ToString("N2");
                             lbl_masIva.Text = acumuladorVentaConIva.ToString("N2");
@@ -174,7 +174,8 @@ namespace PetShop
         {
             if (dgv_Facturacion.RowCount > 0 && ComercioPetShop.ObtenerCliente(auxIdCliente).Saldo > acumuladorVenta)
             {                
-                ventasHistoricas += VentasHistoricas.CargarVenta(empleadoActivo, ComercioPetShop.ObtenerCliente(auxIdCliente), carrito, cantidad, lbl_numFecha.Text, acumuladorVenta);                
+                ventasHistoricas += VentasHistoricas.CargarVenta(empleadoActivo, ComercioPetShop.ObtenerCliente(auxIdCliente), carrito, cantidad, lbl_numFecha.Text, acumuladorVenta);
+                ComercioPetShop.CargarCaja(acumuladorVentaConIva);
                 MessageBox.Show("Venta exitosa!");
             }
             else
@@ -182,9 +183,6 @@ namespace PetShop
                 MessageBox.Show("El carrito esta vacío o su saldo es insuficiente para realizar la compra");
             }
         }
-
-
-
 
         private void Limpiar()
         {
@@ -199,58 +197,36 @@ namespace PetShop
             acumuladorVentaConIva = 0;
         }
 
-
-
-
-
-
-
-
-
-
-
-
         private void btn_Ticket_Click(object sender, EventArgs e)
-        {
-            //string[] lineas = { $"Empleado: {lbl_NombreEmpleado.Text}\nCliente: {lbl_NombreCliente.Text}\nProducto: {txt_NombreProducto.Text}\nCantidad: {npd_Cantidad.Text}\nPrecio final: ${lbl_PrecioFinal.Text}" };
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append(ComercioPetShop.Nombre);
-            stringBuilder.Append(" " + ComercioPetShop.Cuit.ToString());
-            stringBuilder.AppendLine(" " + ComercioPetShop.Direccion);
-            stringBuilder.AppendFormat($" numero:  Fecha: {DateTime.Now.ToLongDateString()}");
+        {          
+            //StreamWriter outputFile = new StreamWriter("D:\\TUP\\2do Cuatrimestre 2021\\Programación y Laboratorio 2\\PetShop\\PetShop\\ticketVenta.txt");
+            StreamWriter outputFile = new StreamWriter("");
+            StringBuilder ticket = new StringBuilder();
+            ticket.AppendLine("----------------------------------");
+            ticket.AppendLine($"Razon social: {ComercioPetShop.RazonSocial}");
+            ticket.AppendLine($"Nombre: {ComercioPetShop.Nombre}");
+            ticket.AppendLine($"Direccion: {ComercioPetShop.Direccion}");
+            ticket.AppendLine($"Cuit: {ComercioPetShop.Cuit}");
+            ticket.AppendLine($"Fecha: {lbl_numFecha.Text}");
+            ticket.AppendLine("----------------------------------");
+            ticket.AppendLine($"Vendedor: {lbl_NombreEmpleado.Text}");
+            ticket.AppendLine($"Cliente: {lbl_NombreCliente.Text}");
+            ticket.AppendLine("----------------------------------");
+            ticket.AppendLine("Cant Nombre            Precio");
 
-            stringBuilder.AppendLine($"Precio final:  ${lbl_PrecioFinal}");
-            //string[] detalles = new[] { stringBuilder.ToString() };
-            using (StreamWriter outputFile = new StreamWriter("D:\\TUP\\2do Cuatrimestre 2021\\Programación y Laboratorio 2\\PetShop\\PetShop\\ticketVenta.txt"))
-                //{
-                //    foreach (string linea in detalles)
-                //    {
-                //        outputFile.WriteLine(linea);
-                //        outputFile.WriteLine(detalles);
-                //    }
+            for (int i = 0; i < dgv_Facturacion.Rows.Count; i++)
+            {
+                ticket.AppendLine($"{dgv_Facturacion.Rows[i].Cells[1].Value}     {dgv_Facturacion.Rows[i].Cells[2].Value}               {dgv_Facturacion.Rows[i].Cells[5].Value}");
+            }
 
-                outputFile.WriteLine(stringBuilder.ToString());
-
-            //foreach (string linea in lineas)
-            //    {
-            //        outputFile.WriteLine(linea);
-            //    }
-            MessageBox.Show("Ticket generado con exito");
-
-
-
-    //        dgv_Facturacion.Rows[indice].Cells[0].Value = item.IdProducto;
-    //        dgv_Facturacion.Rows[indice].Cells[1].Value = npd_Cantidad.Value;
-    //        dgv_Facturacion.Rows[indice].Cells[2].Value = item.Nombre;
-    //        dgv_Facturacion.Rows[indice].Cells[3].Value = item.Descripcion;
-    //        dgv_Facturacion.Rows[indice].Cells[4].Value = item.Precio;
-    //        dgv_Facturacion.Rows[indice].Cells[5].Value = (item.Precio * (double)npd_Cantidad.Value).ToString("N2");
-    //        acumuladorVenta += item.Precio * (double)npd_Cantidad.Value;
-    //    }
-    //}
-    //lbl_PrecioFinal.Text = acumuladorVenta.ToString("N2");
-
-
+            ticket.AppendLine("----------------------------------");
+            ticket.AppendLine($"Total:  ${lbl_PrecioFinal.Text}");
+            ticket.AppendLine($"Total c/IVA:  ${lbl_masIva.Text}");
+            ticket.AppendLine($"Precio final:  ${lbl_masIva.Text}");
+            ticket.AppendLine("----------------------------------");
+            outputFile.WriteLine(ticket.ToString());
+            outputFile.Close();
+            MessageBox.Show("Ticket generado con éxito");
         }
 
         
