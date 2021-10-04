@@ -29,6 +29,8 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpv_ListaVentas = new System.Windows.Forms.GroupBox();
             this.dgv_VentasHistorico = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +72,7 @@ namespace PetShop
             // gpv_ListaVentas
             // 
             this.gpv_ListaVentas.Controls.Add(this.dgv_VentasHistorico);
+            this.gpv_ListaVentas.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gpv_ListaVentas.Location = new System.Drawing.Point(2, 102);
             this.gpv_ListaVentas.Name = "gpv_ListaVentas";
             this.gpv_ListaVentas.Size = new System.Drawing.Size(1029, 516);
@@ -81,7 +84,16 @@ namespace PetShop
             // 
             this.dgv_VentasHistorico.AllowUserToAddRows = false;
             this.dgv_VentasHistorico.AllowUserToDeleteRows = false;
-            this.dgv_VentasHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_VentasHistorico.AllowUserToResizeColumns = false;
+            this.dgv_VentasHistorico.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.dgv_VentasHistorico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_VentasHistorico.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_VentasHistorico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_VentasHistorico.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_VentasHistorico.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_VentasHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_VentasHistorico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19,
@@ -91,11 +103,20 @@ namespace PetShop
             this.DNI,
             this.Importe});
             this.dgv_VentasHistorico.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_VentasHistorico.Location = new System.Drawing.Point(3, 19);
+            this.dgv_VentasHistorico.EnableHeadersVisualStyles = false;
+            this.dgv_VentasHistorico.GridColor = System.Drawing.Color.DarkSlateGray;
+            this.dgv_VentasHistorico.Location = new System.Drawing.Point(3, 17);
             this.dgv_VentasHistorico.Name = "dgv_VentasHistorico";
             this.dgv_VentasHistorico.ReadOnly = true;
+            this.dgv_VentasHistorico.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_VentasHistorico.RowHeadersVisible = false;
+            this.dgv_VentasHistorico.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.dgv_VentasHistorico.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_VentasHistorico.RowTemplate.Height = 25;
-            this.dgv_VentasHistorico.Size = new System.Drawing.Size(1023, 494);
+            this.dgv_VentasHistorico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_VentasHistorico.Size = new System.Drawing.Size(1023, 496);
             this.dgv_VentasHistorico.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn18
@@ -150,18 +171,20 @@ namespace PetShop
             // cmb_Empleados
             // 
             this.cmb_Empleados.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Empleados.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmb_Empleados.FormattingEnabled = true;
             this.cmb_Empleados.Location = new System.Drawing.Point(18, 50);
             this.cmb_Empleados.Name = "cmb_Empleados";
-            this.cmb_Empleados.Size = new System.Drawing.Size(249, 23);
+            this.cmb_Empleados.Size = new System.Drawing.Size(249, 24);
             this.cmb_Empleados.TabIndex = 1;
             // 
             // lbl_Vendedor
             // 
             this.lbl_Vendedor.AutoSize = true;
+            this.lbl_Vendedor.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Vendedor.Location = new System.Drawing.Point(18, 32);
             this.lbl_Vendedor.Name = "lbl_Vendedor";
-            this.lbl_Vendedor.Size = new System.Drawing.Size(57, 15);
+            this.lbl_Vendedor.Size = new System.Drawing.Size(66, 16);
             this.lbl_Vendedor.TabIndex = 3;
             this.lbl_Vendedor.Text = "Vendedor";
             // 
@@ -276,9 +299,13 @@ namespace PetShop
             // 
             // btn_Filtrar
             // 
+            this.btn_Filtrar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Filtrar.FlatAppearance.BorderSize = 2;
+            this.btn_Filtrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Filtrar.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Filtrar.Location = new System.Drawing.Point(273, 49);
             this.btn_Filtrar.Name = "btn_Filtrar";
-            this.btn_Filtrar.Size = new System.Drawing.Size(86, 23);
+            this.btn_Filtrar.Size = new System.Drawing.Size(86, 25);
             this.btn_Filtrar.TabIndex = 4;
             this.btn_Filtrar.Text = "Filtrar";
             this.btn_Filtrar.UseVisualStyleBackColor = true;
@@ -286,9 +313,13 @@ namespace PetShop
             // 
             // btn_Historico
             // 
-            this.btn_Historico.Location = new System.Drawing.Point(850, 50);
+            this.btn_Historico.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Historico.FlatAppearance.BorderSize = 2;
+            this.btn_Historico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Historico.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Historico.Location = new System.Drawing.Point(821, 38);
             this.btn_Historico.Name = "btn_Historico";
-            this.btn_Historico.Size = new System.Drawing.Size(113, 23);
+            this.btn_Historico.Size = new System.Drawing.Size(167, 46);
             this.btn_Historico.TabIndex = 5;
             this.btn_Historico.Text = "Historico";
             this.btn_Historico.UseVisualStyleBackColor = true;

@@ -52,7 +52,7 @@ namespace PetShop
                 if (auxAdministrador != null)
                 {
                     Frm_MenuBase menuBase = new Frm_MenuBase(auxAdministrador);
-                    menuBase.BackColor = Color.LightCoral;
+                    menuBase.BackColor = Color.LightGoldenrodYellow;
                     menuBase.Show();                    
                     this.Hide();
                     coincide = true;
@@ -73,7 +73,7 @@ namespace PetShop
             {
                 txt_Usuario.Text = string.Empty;
                 txt_Password.Text = string.Empty;
-                lbl_ErrorLogin.Text = "ACCESO DENEGADO\nUsuario y/o contraseña incorrectos";
+                lbl_ErrorLogin.Text = "ACCESO DENEGADO: Usuario y/o contraseña incorrectos";
             }
         }
 

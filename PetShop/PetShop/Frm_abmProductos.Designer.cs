@@ -29,6 +29,8 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ID = new System.Windows.Forms.ColumnHeader();
             this.Nombre = new System.Windows.Forms.ColumnHeader();
             this.Categoria = new System.Windows.Forms.ColumnHeader();
@@ -52,15 +54,21 @@ namespace PetShop
             // 
             // btn_Eliminar
             // 
-            this.btn_Eliminar.Location = new System.Drawing.Point(813, 584);
+            this.btn_Eliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Eliminar.FlatAppearance.BorderSize = 2;
+            this.btn_Eliminar.Location = new System.Drawing.Point(861, 571);
             // 
             // txt_Editar
             // 
-            this.txt_Editar.Location = new System.Drawing.Point(719, 584);
+            this.txt_Editar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_Editar.FlatAppearance.BorderSize = 2;
+            this.txt_Editar.Location = new System.Drawing.Point(776, 571);
             // 
             // btn_Agregar
             // 
-            this.btn_Agregar.Location = new System.Drawing.Point(907, 584);
+            this.btn_Agregar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Agregar.FlatAppearance.BorderSize = 2;
+            this.btn_Agregar.Location = new System.Drawing.Point(947, 571);
             // 
             // gpb_Lista
             // 
@@ -77,7 +85,9 @@ namespace PetShop
             // 
             // btn_Limpiar
             // 
-            this.btn_Limpiar.Location = new System.Drawing.Point(719, 555);
+            this.btn_Limpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Limpiar.FlatAppearance.BorderSize = 2;
+            this.btn_Limpiar.Location = new System.Drawing.Point(690, 571);
             // 
             // lbl_Nombre
             // 
@@ -219,7 +229,22 @@ namespace PetShop
             // dgv_Lista
             // 
             this.dgv_Lista.AllowUserToAddRows = false;
-            this.dgv_Lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Lista.AllowUserToDeleteRows = false;
+            this.dgv_Lista.AllowUserToResizeColumns = false;
+            this.dgv_Lista.AllowUserToResizeRows = false;
+            this.dgv_Lista.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Lista.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Lista.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_Lista.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Lista.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_Lista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
@@ -228,10 +253,20 @@ namespace PetShop
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            this.dgv_Lista.Location = new System.Drawing.Point(6, 22);
+            this.dgv_Lista.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Lista.EnableHeadersVisualStyles = false;
+            this.dgv_Lista.GridColor = System.Drawing.Color.DarkSlateGray;
+            this.dgv_Lista.Location = new System.Drawing.Point(3, 17);
             this.dgv_Lista.Name = "dgv_Lista";
+            this.dgv_Lista.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Lista.RowHeadersVisible = false;
+            this.dgv_Lista.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.dgv_Lista.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Lista.RowTemplate.Height = 25;
-            this.dgv_Lista.Size = new System.Drawing.Size(670, 593);
+            this.dgv_Lista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Lista.Size = new System.Drawing.Size(674, 601);
             this.dgv_Lista.TabIndex = 1;
             this.dgv_Lista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Lista_CellClick);
             // 

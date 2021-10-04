@@ -64,9 +64,13 @@ namespace PetShop
             // 
             // btn_Eliminar
             // 
-            this.btn_Eliminar.Location = new System.Drawing.Point(813, 575);
+            this.btn_Eliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Eliminar.FlatAppearance.BorderSize = 2;
+            this.btn_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Eliminar.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Eliminar.Location = new System.Drawing.Point(842, 575);
             this.btn_Eliminar.Name = "btn_Eliminar";
-            this.btn_Eliminar.Size = new System.Drawing.Size(83, 23);
+            this.btn_Eliminar.Size = new System.Drawing.Size(83, 26);
             this.btn_Eliminar.TabIndex = 25;
             this.btn_Eliminar.Text = "Eliminar";
             this.btn_Eliminar.UseVisualStyleBackColor = true;
@@ -74,9 +78,13 @@ namespace PetShop
             // 
             // txt_Editar
             // 
-            this.txt_Editar.Location = new System.Drawing.Point(719, 575);
+            this.txt_Editar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.txt_Editar.FlatAppearance.BorderSize = 2;
+            this.txt_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.txt_Editar.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Editar.Location = new System.Drawing.Point(754, 575);
             this.txt_Editar.Name = "txt_Editar";
-            this.txt_Editar.Size = new System.Drawing.Size(83, 23);
+            this.txt_Editar.Size = new System.Drawing.Size(83, 26);
             this.txt_Editar.TabIndex = 24;
             this.txt_Editar.Text = "Editar";
             this.txt_Editar.UseVisualStyleBackColor = true;
@@ -84,9 +92,13 @@ namespace PetShop
             // 
             // btn_Agregar
             // 
-            this.btn_Agregar.Location = new System.Drawing.Point(902, 575);
+            this.btn_Agregar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Agregar.FlatAppearance.BorderSize = 2;
+            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Agregar.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Agregar.Location = new System.Drawing.Point(930, 575);
             this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(83, 23);
+            this.btn_Agregar.Size = new System.Drawing.Size(83, 26);
             this.btn_Agregar.TabIndex = 23;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = true;
@@ -94,6 +106,7 @@ namespace PetShop
             // 
             // gpb_Lista
             // 
+            this.gpb_Lista.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gpb_Lista.Location = new System.Drawing.Point(2, 5);
             this.gpb_Lista.Name = "gpb_Lista";
             this.gpb_Lista.Size = new System.Drawing.Size(644, 621);
@@ -126,6 +139,7 @@ namespace PetShop
             this.gpb_Datos.Controls.Add(this.lbl_Nombre);
             this.gpb_Datos.Controls.Add(this.txt_Id);
             this.gpb_Datos.Controls.Add(this.lbl_Id);
+            this.gpb_Datos.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gpb_Datos.Location = new System.Drawing.Point(652, 5);
             this.gpb_Datos.Name = "gpb_Datos";
             this.gpb_Datos.Size = new System.Drawing.Size(379, 530);
@@ -137,15 +151,17 @@ namespace PetShop
             // 
             this.nud_Stock.Location = new System.Drawing.Point(33, 378);
             this.nud_Stock.Name = "nud_Stock";
-            this.nud_Stock.Size = new System.Drawing.Size(120, 23);
+            this.nud_Stock.Size = new System.Drawing.Size(120, 21);
             this.nud_Stock.TabIndex = 25;
             // 
             // lbl_Rol
             // 
             this.lbl_Rol.AutoSize = true;
+            this.lbl_Rol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Rol.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Rol.Location = new System.Drawing.Point(186, 109);
             this.lbl_Rol.Name = "lbl_Rol";
-            this.lbl_Rol.Size = new System.Drawing.Size(24, 15);
+            this.lbl_Rol.Size = new System.Drawing.Size(23, 13);
             this.lbl_Rol.TabIndex = 24;
             this.lbl_Rol.Text = "Rol";
             // 
@@ -153,7 +169,7 @@ namespace PetShop
             // 
             this.txt_Sueldo.Location = new System.Drawing.Point(31, 407);
             this.txt_Sueldo.Name = "txt_Sueldo";
-            this.txt_Sueldo.Size = new System.Drawing.Size(319, 23);
+            this.txt_Sueldo.Size = new System.Drawing.Size(319, 21);
             this.txt_Sueldo.TabIndex = 21;
             this.txt_Sueldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Sueldo_KeyPress);
             // 
@@ -162,7 +178,7 @@ namespace PetShop
             this.lbl_Sueldo.AutoSize = true;
             this.lbl_Sueldo.Location = new System.Drawing.Point(33, 386);
             this.lbl_Sueldo.Name = "lbl_Sueldo";
-            this.lbl_Sueldo.Size = new System.Drawing.Size(43, 15);
+            this.lbl_Sueldo.Size = new System.Drawing.Size(39, 13);
             this.lbl_Sueldo.TabIndex = 20;
             this.lbl_Sueldo.Text = "Sueldo";
             // 
@@ -171,16 +187,18 @@ namespace PetShop
             this.txt_Cuil.Location = new System.Drawing.Point(33, 338);
             this.txt_Cuil.MaxLength = 11;
             this.txt_Cuil.Name = "txt_Cuil";
-            this.txt_Cuil.Size = new System.Drawing.Size(317, 23);
+            this.txt_Cuil.Size = new System.Drawing.Size(317, 21);
             this.txt_Cuil.TabIndex = 19;
             this.txt_Cuil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cuil_KeyPress);
             // 
             // lbl_Cuil
             // 
             this.lbl_Cuil.AutoSize = true;
+            this.lbl_Cuil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Cuil.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Cuil.Location = new System.Drawing.Point(33, 317);
             this.lbl_Cuil.Name = "lbl_Cuil";
-            this.lbl_Cuil.Size = new System.Drawing.Size(28, 15);
+            this.lbl_Cuil.Size = new System.Drawing.Size(25, 13);
             this.lbl_Cuil.TabIndex = 18;
             this.lbl_Cuil.Text = "Cuil";
             // 
@@ -189,16 +207,18 @@ namespace PetShop
             this.txt_Dni.Location = new System.Drawing.Point(31, 268);
             this.txt_Dni.MaxLength = 8;
             this.txt_Dni.Name = "txt_Dni";
-            this.txt_Dni.Size = new System.Drawing.Size(319, 23);
+            this.txt_Dni.Size = new System.Drawing.Size(319, 21);
             this.txt_Dni.TabIndex = 17;
             this.txt_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dni_KeyPress);
             // 
             // lbl_Dni
             // 
             this.lbl_Dni.AutoSize = true;
+            this.lbl_Dni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Dni.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Dni.Location = new System.Drawing.Point(33, 250);
             this.lbl_Dni.Name = "lbl_Dni";
-            this.lbl_Dni.Size = new System.Drawing.Size(27, 15);
+            this.lbl_Dni.Size = new System.Drawing.Size(26, 13);
             this.lbl_Dni.TabIndex = 16;
             this.lbl_Dni.Text = "DNI";
             // 
@@ -206,25 +226,29 @@ namespace PetShop
             // 
             this.txt_Apellido.Location = new System.Drawing.Point(31, 194);
             this.txt_Apellido.Name = "txt_Apellido";
-            this.txt_Apellido.Size = new System.Drawing.Size(319, 23);
+            this.txt_Apellido.Size = new System.Drawing.Size(319, 21);
             this.txt_Apellido.TabIndex = 15;
             this.txt_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellido_KeyPress);
             // 
             // lbl_Apellido
             // 
             this.lbl_Apellido.AutoSize = true;
+            this.lbl_Apellido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Apellido.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Apellido.Location = new System.Drawing.Point(31, 176);
             this.lbl_Apellido.Name = "lbl_Apellido";
-            this.lbl_Apellido.Size = new System.Drawing.Size(51, 15);
+            this.lbl_Apellido.Size = new System.Drawing.Size(47, 13);
             this.lbl_Apellido.TabIndex = 14;
             this.lbl_Apellido.Text = "Apellido";
             // 
             // lbl_Stock
             // 
             this.lbl_Stock.AutoSize = true;
+            this.lbl_Stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Stock.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Stock.Location = new System.Drawing.Point(31, 360);
             this.lbl_Stock.Name = "lbl_Stock";
-            this.lbl_Stock.Size = new System.Drawing.Size(36, 15);
+            this.lbl_Stock.Size = new System.Drawing.Size(33, 13);
             this.lbl_Stock.TabIndex = 12;
             this.lbl_Stock.Text = "Stock";
             // 
@@ -239,9 +263,11 @@ namespace PetShop
             // lbl_Descripcion
             // 
             this.lbl_Descripcion.AutoSize = true;
+            this.lbl_Descripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Descripcion.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Descripcion.Location = new System.Drawing.Point(31, 250);
             this.lbl_Descripcion.Name = "lbl_Descripcion";
-            this.lbl_Descripcion.Size = new System.Drawing.Size(69, 15);
+            this.lbl_Descripcion.Size = new System.Drawing.Size(63, 13);
             this.lbl_Descripcion.TabIndex = 10;
             this.lbl_Descripcion.Text = "Descripcion";
             // 
@@ -249,15 +275,17 @@ namespace PetShop
             // 
             this.txt_Marca.Location = new System.Drawing.Point(186, 194);
             this.txt_Marca.Name = "txt_Marca";
-            this.txt_Marca.Size = new System.Drawing.Size(164, 23);
+            this.txt_Marca.Size = new System.Drawing.Size(164, 21);
             this.txt_Marca.TabIndex = 9;
             // 
             // lbl_Marca
             // 
             this.lbl_Marca.AutoSize = true;
+            this.lbl_Marca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Marca.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Marca.Location = new System.Drawing.Point(186, 176);
             this.lbl_Marca.Name = "lbl_Marca";
-            this.lbl_Marca.Size = new System.Drawing.Size(40, 15);
+            this.lbl_Marca.Size = new System.Drawing.Size(36, 13);
             this.lbl_Marca.TabIndex = 8;
             this.lbl_Marca.Text = "Marca";
             // 
@@ -265,7 +293,7 @@ namespace PetShop
             // 
             this.txt_Precio.Location = new System.Drawing.Point(31, 194);
             this.txt_Precio.Name = "txt_Precio";
-            this.txt_Precio.Size = new System.Drawing.Size(135, 23);
+            this.txt_Precio.Size = new System.Drawing.Size(135, 21);
             this.txt_Precio.TabIndex = 7;
             this.txt_Precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Precio_KeyPress);
             // 
@@ -274,7 +302,7 @@ namespace PetShop
             this.lbl_Precio.AutoSize = true;
             this.lbl_Precio.Location = new System.Drawing.Point(31, 176);
             this.lbl_Precio.Name = "lbl_Precio";
-            this.lbl_Precio.Size = new System.Drawing.Size(40, 15);
+            this.lbl_Precio.Size = new System.Drawing.Size(39, 13);
             this.lbl_Precio.TabIndex = 6;
             this.lbl_Precio.Text = "Precio";
             // 
@@ -284,15 +312,17 @@ namespace PetShop
             this.cmb_Enumerado.FormattingEnabled = true;
             this.cmb_Enumerado.Location = new System.Drawing.Point(186, 127);
             this.cmb_Enumerado.Name = "cmb_Enumerado";
-            this.cmb_Enumerado.Size = new System.Drawing.Size(164, 23);
+            this.cmb_Enumerado.Size = new System.Drawing.Size(164, 21);
             this.cmb_Enumerado.TabIndex = 5;
             // 
             // lbl_Categoria
             // 
             this.lbl_Categoria.AutoSize = true;
+            this.lbl_Categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Categoria.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Categoria.Location = new System.Drawing.Point(186, 109);
             this.lbl_Categoria.Name = "lbl_Categoria";
-            this.lbl_Categoria.Size = new System.Drawing.Size(58, 15);
+            this.lbl_Categoria.Size = new System.Drawing.Size(54, 13);
             this.lbl_Categoria.TabIndex = 4;
             this.lbl_Categoria.Text = "Categoria";
             // 
@@ -300,16 +330,18 @@ namespace PetShop
             // 
             this.txt_Nombre.Location = new System.Drawing.Point(31, 127);
             this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(135, 23);
+            this.txt_Nombre.Size = new System.Drawing.Size(135, 21);
             this.txt_Nombre.TabIndex = 3;
             this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
             // 
             // lbl_Nombre
             // 
             this.lbl_Nombre.AutoSize = true;
+            this.lbl_Nombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Nombre.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Nombre.Location = new System.Drawing.Point(31, 109);
             this.lbl_Nombre.Name = "lbl_Nombre";
-            this.lbl_Nombre.Size = new System.Drawing.Size(51, 15);
+            this.lbl_Nombre.Size = new System.Drawing.Size(45, 13);
             this.lbl_Nombre.TabIndex = 2;
             this.lbl_Nombre.Text = "Nombre";
             // 
@@ -318,23 +350,29 @@ namespace PetShop
             this.txt_Id.Location = new System.Drawing.Point(226, 53);
             this.txt_Id.Name = "txt_Id";
             this.txt_Id.ReadOnly = true;
-            this.txt_Id.Size = new System.Drawing.Size(124, 23);
+            this.txt_Id.Size = new System.Drawing.Size(124, 21);
             this.txt_Id.TabIndex = 1;
             // 
             // lbl_Id
             // 
             this.lbl_Id.AutoSize = true;
+            this.lbl_Id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_Id.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Id.Location = new System.Drawing.Point(226, 34);
             this.lbl_Id.Name = "lbl_Id";
-            this.lbl_Id.Size = new System.Drawing.Size(18, 15);
+            this.lbl_Id.Size = new System.Drawing.Size(19, 13);
             this.lbl_Id.TabIndex = 0;
             this.lbl_Id.Text = "ID";
             // 
             // btn_Limpiar
             // 
-            this.btn_Limpiar.Location = new System.Drawing.Point(719, 546);
+            this.btn_Limpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Limpiar.FlatAppearance.BorderSize = 2;
+            this.btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Limpiar.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Limpiar.Location = new System.Drawing.Point(665, 575);
             this.btn_Limpiar.Name = "btn_Limpiar";
-            this.btn_Limpiar.Size = new System.Drawing.Size(83, 23);
+            this.btn_Limpiar.Size = new System.Drawing.Size(83, 26);
             this.btn_Limpiar.TabIndex = 28;
             this.btn_Limpiar.Text = "Limpiar";
             this.btn_Limpiar.UseVisualStyleBackColor = true;

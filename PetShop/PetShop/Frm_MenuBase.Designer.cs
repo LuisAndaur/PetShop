@@ -30,6 +30,7 @@ namespace PetShop
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_MenuBase));
             this.btn_Clientes = new System.Windows.Forms.Button();
             this.lbl_Fecha = new System.Windows.Forms.Label();
             this.lbl_Hora = new System.Windows.Forms.Label();
@@ -47,10 +48,14 @@ namespace PetShop
             // 
             // btn_Clientes
             // 
-            this.btn_Clientes.Location = new System.Drawing.Point(12, 180);
+            this.btn_Clientes.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Clientes.FlatAppearance.BorderSize = 2;
+            this.btn_Clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Clientes.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Clientes.Location = new System.Drawing.Point(-2, 180);
             this.btn_Clientes.Name = "btn_Clientes";
-            this.btn_Clientes.Size = new System.Drawing.Size(114, 35);
-            this.btn_Clientes.TabIndex = 0;
+            this.btn_Clientes.Size = new System.Drawing.Size(128, 35);
+            this.btn_Clientes.TabIndex = 4;
             this.btn_Clientes.Text = "Clientes";
             this.btn_Clientes.UseVisualStyleBackColor = true;
             this.btn_Clientes.Click += new System.EventHandler(this.btn_Clientes_Click);
@@ -58,7 +63,7 @@ namespace PetShop
             // lbl_Fecha
             // 
             this.lbl_Fecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Fecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Fecha.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Fecha.Location = new System.Drawing.Point(292, 10);
             this.lbl_Fecha.Name = "lbl_Fecha";
             this.lbl_Fecha.Size = new System.Drawing.Size(609, 25);
@@ -69,7 +74,7 @@ namespace PetShop
             // lbl_Hora
             // 
             this.lbl_Hora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_Hora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Hora.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Hora.Location = new System.Drawing.Point(996, 10);
             this.lbl_Hora.Name = "lbl_Hora";
             this.lbl_Hora.Size = new System.Drawing.Size(186, 25);
@@ -83,10 +88,14 @@ namespace PetShop
             // 
             // btn_Home
             // 
-            this.btn_Home.Location = new System.Drawing.Point(12, 70);
+            this.btn_Home.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Home.FlatAppearance.BorderSize = 2;
+            this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Home.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Home.Location = new System.Drawing.Point(-2, 70);
             this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(114, 35);
-            this.btn_Home.TabIndex = 4;
+            this.btn_Home.Size = new System.Drawing.Size(128, 35);
+            this.btn_Home.TabIndex = 0;
             this.btn_Home.Text = "Home";
             this.btn_Home.UseVisualStyleBackColor = true;
             this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
@@ -101,9 +110,13 @@ namespace PetShop
             // 
             // btn_Productos
             // 
-            this.btn_Productos.Location = new System.Drawing.Point(12, 235);
+            this.btn_Productos.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Productos.FlatAppearance.BorderSize = 2;
+            this.btn_Productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Productos.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Productos.Location = new System.Drawing.Point(-2, 235);
             this.btn_Productos.Name = "btn_Productos";
-            this.btn_Productos.Size = new System.Drawing.Size(114, 35);
+            this.btn_Productos.Size = new System.Drawing.Size(128, 35);
             this.btn_Productos.TabIndex = 6;
             this.btn_Productos.Text = "Productos";
             this.btn_Productos.UseVisualStyleBackColor = true;
@@ -111,9 +124,13 @@ namespace PetShop
             // 
             // btn_Ventas
             // 
-            this.btn_Ventas.Location = new System.Drawing.Point(12, 345);
+            this.btn_Ventas.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Ventas.FlatAppearance.BorderSize = 2;
+            this.btn_Ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ventas.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Ventas.Location = new System.Drawing.Point(-2, 345);
             this.btn_Ventas.Name = "btn_Ventas";
-            this.btn_Ventas.Size = new System.Drawing.Size(114, 35);
+            this.btn_Ventas.Size = new System.Drawing.Size(128, 35);
             this.btn_Ventas.TabIndex = 7;
             this.btn_Ventas.Text = "Ventas";
             this.btn_Ventas.UseVisualStyleBackColor = true;
@@ -121,9 +138,13 @@ namespace PetShop
             // 
             // btn_Empleados
             // 
-            this.btn_Empleados.Location = new System.Drawing.Point(12, 290);
+            this.btn_Empleados.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Empleados.FlatAppearance.BorderSize = 2;
+            this.btn_Empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Empleados.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Empleados.Location = new System.Drawing.Point(-2, 290);
             this.btn_Empleados.Name = "btn_Empleados";
-            this.btn_Empleados.Size = new System.Drawing.Size(114, 35);
+            this.btn_Empleados.Size = new System.Drawing.Size(128, 35);
             this.btn_Empleados.TabIndex = 8;
             this.btn_Empleados.Text = "Empleados";
             this.btn_Empleados.UseVisualStyleBackColor = true;
@@ -131,9 +152,13 @@ namespace PetShop
             // 
             // btn_Cerrar
             // 
-            this.btn_Cerrar.Location = new System.Drawing.Point(12, 644);
+            this.btn_Cerrar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Cerrar.FlatAppearance.BorderSize = 2;
+            this.btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cerrar.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Cerrar.Location = new System.Drawing.Point(-2, 644);
             this.btn_Cerrar.Name = "btn_Cerrar";
-            this.btn_Cerrar.Size = new System.Drawing.Size(114, 35);
+            this.btn_Cerrar.Size = new System.Drawing.Size(128, 35);
             this.btn_Cerrar.TabIndex = 9;
             this.btn_Cerrar.Text = "Cerrar";
             this.btn_Cerrar.UseVisualStyleBackColor = true;
@@ -141,9 +166,13 @@ namespace PetShop
             // 
             // btn_CambiarUsuario
             // 
-            this.btn_CambiarUsuario.Location = new System.Drawing.Point(12, 590);
+            this.btn_CambiarUsuario.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_CambiarUsuario.FlatAppearance.BorderSize = 2;
+            this.btn_CambiarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CambiarUsuario.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_CambiarUsuario.Location = new System.Drawing.Point(-2, 590);
             this.btn_CambiarUsuario.Name = "btn_CambiarUsuario";
-            this.btn_CambiarUsuario.Size = new System.Drawing.Size(114, 35);
+            this.btn_CambiarUsuario.Size = new System.Drawing.Size(128, 35);
             this.btn_CambiarUsuario.TabIndex = 10;
             this.btn_CambiarUsuario.Text = "Cambiar usuario";
             this.btn_CambiarUsuario.UseVisualStyleBackColor = true;
@@ -151,9 +180,13 @@ namespace PetShop
             // 
             // btn_Vender
             // 
-            this.btn_Vender.Location = new System.Drawing.Point(12, 125);
+            this.btn_Vender.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Vender.FlatAppearance.BorderSize = 2;
+            this.btn_Vender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Vender.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Vender.Location = new System.Drawing.Point(-2, 125);
             this.btn_Vender.Name = "btn_Vender";
-            this.btn_Vender.Size = new System.Drawing.Size(114, 35);
+            this.btn_Vender.Size = new System.Drawing.Size(128, 35);
             this.btn_Vender.TabIndex = 11;
             this.btn_Vender.Text = "Vender";
             this.btn_Vender.UseVisualStyleBackColor = true;
@@ -161,7 +194,7 @@ namespace PetShop
             // 
             // lbl_UsuarioActivo
             // 
-            this.lbl_UsuarioActivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_UsuarioActivo.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_UsuarioActivo.Location = new System.Drawing.Point(12, 10);
             this.lbl_UsuarioActivo.Name = "lbl_UsuarioActivo";
             this.lbl_UsuarioActivo.Size = new System.Drawing.Size(260, 25);
@@ -187,6 +220,7 @@ namespace PetShop
             this.Controls.Add(this.lbl_Fecha);
             this.Controls.Add(this.btn_Clientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_MenuBase";

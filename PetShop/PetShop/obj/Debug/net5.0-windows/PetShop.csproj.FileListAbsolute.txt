@@ -56,3 +56,4 @@ D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetSh
 D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_Vender.resources
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_abmVentasHistorico.resources
 C:\Users\LuisAndaur\Documents\Parcial LABOII\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Frm_Vender.resources
+D:\TUP\2do Cuatrimestre 2021\Programación y Laboratorio 2\PetShop\PetShop\PetShop\obj\Debug\net5.0-windows\PetShop.Properties.Resources.resources

@@ -29,6 +29,10 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpb_Clientes = new System.Windows.Forms.GroupBox();
             this.dgv_ListaClientes = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +46,12 @@ namespace PetShop
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_Facturacion = new System.Windows.Forms.GroupBox();
             this.dgv_Facturacion = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_Detalle = new System.Windows.Forms.GroupBox();
             this.lbl_NumCuit = new System.Windows.Forms.Label();
             this.lbl_Cuit = new System.Windows.Forms.Label();
@@ -89,12 +99,6 @@ namespace PetShop
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpb_Clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaClientes)).BeginInit();
             this.gpb_Productos.SuspendLayout();
@@ -108,6 +112,7 @@ namespace PetShop
             // gpb_Clientes
             // 
             this.gpb_Clientes.Controls.Add(this.dgv_ListaClientes);
+            this.gpb_Clientes.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gpb_Clientes.Location = new System.Drawing.Point(2, 5);
             this.gpb_Clientes.Name = "gpb_Clientes";
             this.gpb_Clientes.Size = new System.Drawing.Size(286, 297);
@@ -119,18 +124,35 @@ namespace PetShop
             // 
             this.dgv_ListaClientes.AllowUserToAddRows = false;
             this.dgv_ListaClientes.AllowUserToDeleteRows = false;
-            this.dgv_ListaClientes.AllowUserToOrderColumns = true;
-            this.dgv_ListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListaClientes.AllowUserToResizeColumns = false;
+            this.dgv_ListaClientes.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.dgv_ListaClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_ListaClientes.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_ListaClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_ListaClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_ListaClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_ListaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ListaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nombre,
             this.DNI});
             this.dgv_ListaClientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_ListaClientes.Location = new System.Drawing.Point(3, 19);
+            this.dgv_ListaClientes.EnableHeadersVisualStyles = false;
+            this.dgv_ListaClientes.GridColor = System.Drawing.Color.DarkSlateGray;
+            this.dgv_ListaClientes.Location = new System.Drawing.Point(3, 17);
             this.dgv_ListaClientes.Name = "dgv_ListaClientes";
             this.dgv_ListaClientes.ReadOnly = true;
+            this.dgv_ListaClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_ListaClientes.RowHeadersVisible = false;
+            this.dgv_ListaClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.dgv_ListaClientes.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ListaClientes.RowTemplate.Height = 25;
-            this.dgv_ListaClientes.Size = new System.Drawing.Size(280, 275);
+            this.dgv_ListaClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ListaClientes.Size = new System.Drawing.Size(280, 277);
             this.dgv_ListaClientes.TabIndex = 0;
             this.dgv_ListaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaClientes_CellClick);
             // 
@@ -157,6 +179,7 @@ namespace PetShop
             // gpb_Productos
             // 
             this.gpb_Productos.Controls.Add(this.dgv_ListaProductos);
+            this.gpb_Productos.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gpb_Productos.Location = new System.Drawing.Point(295, 5);
             this.gpb_Productos.Name = "gpb_Productos";
             this.gpb_Productos.Size = new System.Drawing.Size(384, 297);
@@ -168,18 +191,34 @@ namespace PetShop
             // 
             this.dgv_ListaProductos.AllowUserToAddRows = false;
             this.dgv_ListaProductos.AllowUserToDeleteRows = false;
-            this.dgv_ListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListaProductos.AllowUserToResizeColumns = false;
+            this.dgv_ListaProductos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.dgv_ListaProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_ListaProductos.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_ListaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_ListaProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_ListaProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_ListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_ListaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.Categoria,
             this.dataGridViewTextBoxColumn4});
             this.dgv_ListaProductos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_ListaProductos.Location = new System.Drawing.Point(3, 19);
+            this.dgv_ListaProductos.EnableHeadersVisualStyles = false;
+            this.dgv_ListaProductos.GridColor = System.Drawing.Color.DarkSlateGray;
+            this.dgv_ListaProductos.Location = new System.Drawing.Point(3, 17);
             this.dgv_ListaProductos.Name = "dgv_ListaProductos";
             this.dgv_ListaProductos.ReadOnly = true;
+            this.dgv_ListaProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_ListaProductos.RowHeadersVisible = false;
+            this.dgv_ListaProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_ListaProductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ListaProductos.RowTemplate.Height = 25;
-            this.dgv_ListaProductos.Size = new System.Drawing.Size(378, 275);
+            this.dgv_ListaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ListaProductos.Size = new System.Drawing.Size(378, 277);
             this.dgv_ListaProductos.TabIndex = 0;
             this.dgv_ListaProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaProductos_CellClick);
             // 
@@ -212,6 +251,7 @@ namespace PetShop
             // gpb_Facturacion
             // 
             this.gpb_Facturacion.Controls.Add(this.dgv_Facturacion);
+            this.gpb_Facturacion.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gpb_Facturacion.Location = new System.Drawing.Point(5, 308);
             this.gpb_Facturacion.Name = "gpb_Facturacion";
             this.gpb_Facturacion.Size = new System.Drawing.Size(674, 319);
@@ -223,7 +263,16 @@ namespace PetShop
             // 
             this.dgv_Facturacion.AllowUserToAddRows = false;
             this.dgv_Facturacion.AllowUserToDeleteRows = false;
-            this.dgv_Facturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Facturacion.AllowUserToResizeColumns = false;
+            this.dgv_Facturacion.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            this.dgv_Facturacion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_Facturacion.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_Facturacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Facturacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_Facturacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Facturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_Facturacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn17,
@@ -232,13 +281,60 @@ namespace PetShop
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn21});
             this.dgv_Facturacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Facturacion.Location = new System.Drawing.Point(3, 19);
+            this.dgv_Facturacion.EnableHeadersVisualStyles = false;
+            this.dgv_Facturacion.GridColor = System.Drawing.Color.DarkSlateGray;
+            this.dgv_Facturacion.Location = new System.Drawing.Point(3, 17);
             this.dgv_Facturacion.Name = "dgv_Facturacion";
             this.dgv_Facturacion.ReadOnly = true;
+            this.dgv_Facturacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_Facturacion.RowHeadersVisible = false;
+            this.dgv_Facturacion.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgv_Facturacion.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Facturacion.RowTemplate.Height = 25;
-            this.dgv_Facturacion.Size = new System.Drawing.Size(668, 297);
+            this.dgv_Facturacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Facturacion.Size = new System.Drawing.Size(668, 299);
             this.dgv_Facturacion.TabIndex = 0;
             this.dgv_Facturacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Facturacion_CellClick);
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.HeaderText = "Cant";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.HeaderText = "Precio";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
             // 
             // gpb_Detalle
             // 
@@ -250,6 +346,7 @@ namespace PetShop
             this.gpb_Detalle.Controls.Add(this.lbl_RazonSocial);
             this.gpb_Detalle.Controls.Add(this.lbl_NombreComercio);
             this.gpb_Detalle.Controls.Add(this.lbl_Comercio);
+            this.gpb_Detalle.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.gpb_Detalle.Location = new System.Drawing.Point(685, 5);
             this.gpb_Detalle.Name = "gpb_Detalle";
             this.gpb_Detalle.Size = new System.Drawing.Size(345, 128);
@@ -260,107 +357,107 @@ namespace PetShop
             // lbl_NumCuit
             // 
             this.lbl_NumCuit.AutoSize = true;
-            this.lbl_NumCuit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_NumCuit.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_NumCuit.Location = new System.Drawing.Point(182, 91);
             this.lbl_NumCuit.Name = "lbl_NumCuit";
-            this.lbl_NumCuit.Size = new System.Drawing.Size(14, 19);
+            this.lbl_NumCuit.Size = new System.Drawing.Size(11, 15);
             this.lbl_NumCuit.TabIndex = 9;
             this.lbl_NumCuit.Text = "/";
             // 
             // lbl_Cuit
             // 
             this.lbl_Cuit.AutoSize = true;
-            this.lbl_Cuit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Cuit.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Cuit.Location = new System.Drawing.Point(178, 72);
             this.lbl_Cuit.Name = "lbl_Cuit";
-            this.lbl_Cuit.Size = new System.Drawing.Size(34, 19);
+            this.lbl_Cuit.Size = new System.Drawing.Size(30, 15);
             this.lbl_Cuit.TabIndex = 8;
             this.lbl_Cuit.Text = "Cuit";
             // 
             // lbl_NombreDireccion
             // 
             this.lbl_NombreDireccion.AutoSize = true;
-            this.lbl_NombreDireccion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_NombreDireccion.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_NombreDireccion.Location = new System.Drawing.Point(182, 46);
             this.lbl_NombreDireccion.Name = "lbl_NombreDireccion";
-            this.lbl_NombreDireccion.Size = new System.Drawing.Size(14, 19);
+            this.lbl_NombreDireccion.Size = new System.Drawing.Size(11, 15);
             this.lbl_NombreDireccion.TabIndex = 7;
             this.lbl_NombreDireccion.Text = "/";
             // 
             // lbl_Direccion
             // 
             this.lbl_Direccion.AutoSize = true;
-            this.lbl_Direccion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Direccion.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Direccion.Location = new System.Drawing.Point(178, 27);
             this.lbl_Direccion.Name = "lbl_Direccion";
-            this.lbl_Direccion.Size = new System.Drawing.Size(65, 19);
+            this.lbl_Direccion.Size = new System.Drawing.Size(60, 15);
             this.lbl_Direccion.TabIndex = 6;
             this.lbl_Direccion.Text = "Direccion";
             // 
             // lbl_NombreRazonSoc
             // 
             this.lbl_NombreRazonSoc.AutoSize = true;
-            this.lbl_NombreRazonSoc.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_NombreRazonSoc.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_NombreRazonSoc.Location = new System.Drawing.Point(25, 91);
             this.lbl_NombreRazonSoc.Name = "lbl_NombreRazonSoc";
-            this.lbl_NombreRazonSoc.Size = new System.Drawing.Size(14, 19);
+            this.lbl_NombreRazonSoc.Size = new System.Drawing.Size(11, 15);
             this.lbl_NombreRazonSoc.TabIndex = 5;
             this.lbl_NombreRazonSoc.Text = "/";
             // 
             // lbl_RazonSocial
             // 
             this.lbl_RazonSocial.AutoSize = true;
-            this.lbl_RazonSocial.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_RazonSocial.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_RazonSocial.Location = new System.Drawing.Point(21, 72);
             this.lbl_RazonSocial.Name = "lbl_RazonSocial";
-            this.lbl_RazonSocial.Size = new System.Drawing.Size(83, 19);
+            this.lbl_RazonSocial.Size = new System.Drawing.Size(73, 15);
             this.lbl_RazonSocial.TabIndex = 4;
             this.lbl_RazonSocial.Text = "Razon social";
             // 
             // lbl_NombreComercio
             // 
             this.lbl_NombreComercio.AutoSize = true;
-            this.lbl_NombreComercio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_NombreComercio.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_NombreComercio.Location = new System.Drawing.Point(25, 46);
             this.lbl_NombreComercio.Name = "lbl_NombreComercio";
-            this.lbl_NombreComercio.Size = new System.Drawing.Size(14, 19);
+            this.lbl_NombreComercio.Size = new System.Drawing.Size(11, 15);
             this.lbl_NombreComercio.TabIndex = 3;
             this.lbl_NombreComercio.Text = "/";
             // 
             // lbl_Comercio
             // 
             this.lbl_Comercio.AutoSize = true;
-            this.lbl_Comercio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Comercio.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Comercio.Location = new System.Drawing.Point(21, 27);
             this.lbl_Comercio.Name = "lbl_Comercio";
-            this.lbl_Comercio.Size = new System.Drawing.Size(67, 19);
+            this.lbl_Comercio.Size = new System.Drawing.Size(59, 15);
             this.lbl_Comercio.TabIndex = 2;
             this.lbl_Comercio.Text = "Comercio";
             // 
             // lbl_Empleado
             // 
             this.lbl_Empleado.AutoSize = true;
-            this.lbl_Empleado.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Empleado.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Empleado.Location = new System.Drawing.Point(710, 157);
             this.lbl_Empleado.Name = "lbl_Empleado";
-            this.lbl_Empleado.Size = new System.Drawing.Size(72, 19);
+            this.lbl_Empleado.Size = new System.Drawing.Size(65, 15);
             this.lbl_Empleado.TabIndex = 0;
             this.lbl_Empleado.Text = "Empleado:";
             // 
             // lbl_NombreEmpleado
             // 
             this.lbl_NombreEmpleado.AutoSize = true;
-            this.lbl_NombreEmpleado.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_NombreEmpleado.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_NombreEmpleado.Location = new System.Drawing.Point(780, 157);
             this.lbl_NombreEmpleado.Name = "lbl_NombreEmpleado";
-            this.lbl_NombreEmpleado.Size = new System.Drawing.Size(14, 19);
+            this.lbl_NombreEmpleado.Size = new System.Drawing.Size(11, 15);
             this.lbl_NombreEmpleado.TabIndex = 1;
             this.lbl_NombreEmpleado.Text = "/";
             // 
             // lbl_PrecioFinal
             // 
-            this.lbl_PrecioFinal.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_PrecioFinal.Location = new System.Drawing.Point(780, 405);
+            this.lbl_PrecioFinal.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_PrecioFinal.Location = new System.Drawing.Point(780, 413);
             this.lbl_PrecioFinal.Name = "lbl_PrecioFinal";
             this.lbl_PrecioFinal.Size = new System.Drawing.Size(226, 54);
             this.lbl_PrecioFinal.TabIndex = 2;
@@ -370,63 +467,63 @@ namespace PetShop
             // lbl_Cliente
             // 
             this.lbl_Cliente.AutoSize = true;
-            this.lbl_Cliente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Cliente.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Cliente.Location = new System.Drawing.Point(867, 157);
             this.lbl_Cliente.Name = "lbl_Cliente";
-            this.lbl_Cliente.Size = new System.Drawing.Size(54, 19);
+            this.lbl_Cliente.Size = new System.Drawing.Size(51, 15);
             this.lbl_Cliente.TabIndex = 3;
             this.lbl_Cliente.Text = "Cliente:";
             // 
             // npd_Cantidad
             // 
-            this.npd_Cantidad.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.npd_Cantidad.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.npd_Cantidad.Location = new System.Drawing.Point(915, 327);
             this.npd_Cantidad.Name = "npd_Cantidad";
-            this.npd_Cantidad.Size = new System.Drawing.Size(91, 25);
+            this.npd_Cantidad.Size = new System.Drawing.Size(91, 24);
             this.npd_Cantidad.TabIndex = 4;
             // 
             // lbl_NombreCliente
             // 
             this.lbl_NombreCliente.AutoSize = true;
-            this.lbl_NombreCliente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_NombreCliente.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_NombreCliente.Location = new System.Drawing.Point(920, 157);
             this.lbl_NombreCliente.Name = "lbl_NombreCliente";
-            this.lbl_NombreCliente.Size = new System.Drawing.Size(0, 19);
+            this.lbl_NombreCliente.Size = new System.Drawing.Size(0, 15);
             this.lbl_NombreCliente.TabIndex = 5;
             // 
             // lbl_Producto
             // 
             this.lbl_Producto.AutoSize = true;
-            this.lbl_Producto.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Producto.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Producto.Location = new System.Drawing.Point(705, 235);
             this.lbl_Producto.Name = "lbl_Producto";
-            this.lbl_Producto.Size = new System.Drawing.Size(65, 19);
+            this.lbl_Producto.Size = new System.Drawing.Size(56, 15);
             this.lbl_Producto.TabIndex = 6;
             this.lbl_Producto.Text = "Producto";
             // 
             // txt_NombreProducto
             // 
-            this.txt_NombreProducto.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_NombreProducto.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_NombreProducto.Location = new System.Drawing.Point(710, 257);
             this.txt_NombreProducto.Name = "txt_NombreProducto";
             this.txt_NombreProducto.ReadOnly = true;
-            this.txt_NombreProducto.Size = new System.Drawing.Size(296, 25);
+            this.txt_NombreProducto.Size = new System.Drawing.Size(296, 24);
             this.txt_NombreProducto.TabIndex = 7;
             // 
             // lbl_Precio
             // 
             this.lbl_Precio.AutoSize = true;
-            this.lbl_Precio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Precio.Location = new System.Drawing.Point(710, 306);
+            this.lbl_Precio.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Precio.Location = new System.Drawing.Point(710, 304);
             this.lbl_Precio.Name = "lbl_Precio";
-            this.lbl_Precio.Size = new System.Drawing.Size(46, 19);
+            this.lbl_Precio.Size = new System.Drawing.Size(43, 15);
             this.lbl_Precio.TabIndex = 8;
             this.lbl_Precio.Text = "Precio";
             // 
             // lbl_Importe
             // 
-            this.lbl_Importe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Importe.Location = new System.Drawing.Point(713, 468);
+            this.lbl_Importe.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Importe.Location = new System.Drawing.Point(713, 476);
             this.lbl_Importe.Name = "lbl_Importe";
             this.lbl_Importe.Size = new System.Drawing.Size(132, 25);
             this.lbl_Importe.TabIndex = 9;
@@ -436,24 +533,28 @@ namespace PetShop
             // lbl_Cantidad
             // 
             this.lbl_Cantidad.AutoSize = true;
-            this.lbl_Cantidad.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Cantidad.Location = new System.Drawing.Point(915, 299);
+            this.lbl_Cantidad.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Cantidad.Location = new System.Drawing.Point(915, 303);
             this.lbl_Cantidad.Name = "lbl_Cantidad";
-            this.lbl_Cantidad.Size = new System.Drawing.Size(64, 19);
+            this.lbl_Cantidad.Size = new System.Drawing.Size(56, 15);
             this.lbl_Cantidad.TabIndex = 10;
             this.lbl_Cantidad.Text = "Cantidad";
             // 
             // txt_Precio
             // 
-            this.txt_Precio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Precio.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Precio.Location = new System.Drawing.Point(710, 328);
             this.txt_Precio.Name = "txt_Precio";
             this.txt_Precio.ReadOnly = true;
-            this.txt_Precio.Size = new System.Drawing.Size(174, 25);
+            this.txt_Precio.Size = new System.Drawing.Size(174, 24);
             this.txt_Precio.TabIndex = 11;
             // 
             // btn_Agregar
             // 
+            this.btn_Agregar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Agregar.FlatAppearance.BorderSize = 2;
+            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Agregar.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Agregar.Location = new System.Drawing.Point(713, 366);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(91, 35);
@@ -464,6 +565,10 @@ namespace PetShop
             // 
             // btn_Limpiar
             // 
+            this.btn_Limpiar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Limpiar.FlatAppearance.BorderSize = 2;
+            this.btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Limpiar.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Limpiar.Location = new System.Drawing.Point(814, 366);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(91, 35);
@@ -474,6 +579,10 @@ namespace PetShop
             // 
             // btn_Eliminar
             // 
+            this.btn_Eliminar.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Eliminar.FlatAppearance.BorderSize = 2;
+            this.btn_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Eliminar.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Eliminar.Location = new System.Drawing.Point(915, 366);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(91, 35);
@@ -484,6 +593,10 @@ namespace PetShop
             // 
             // btn_Vender
             // 
+            this.btn_Vender.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Vender.FlatAppearance.BorderSize = 2;
+            this.btn_Vender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Vender.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Vender.Location = new System.Drawing.Point(713, 508);
             this.btn_Vender.Name = "btn_Vender";
             this.btn_Vender.Size = new System.Drawing.Size(293, 67);
@@ -495,16 +608,20 @@ namespace PetShop
             // lbl_Fecha
             // 
             this.lbl_Fecha.AutoSize = true;
-            this.lbl_Fecha.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Fecha.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Fecha.Location = new System.Drawing.Point(710, 194);
             this.lbl_Fecha.Name = "lbl_Fecha";
-            this.lbl_Fecha.Size = new System.Drawing.Size(55, 19);
+            this.lbl_Fecha.Size = new System.Drawing.Size(49, 15);
             this.lbl_Fecha.TabIndex = 17;
             this.lbl_Fecha.Text = "Fecha : ";
             this.lbl_Fecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btn_Ticket
             // 
+            this.btn_Ticket.FlatAppearance.BorderColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Ticket.FlatAppearance.BorderSize = 2;
+            this.btn_Ticket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ticket.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Ticket.Location = new System.Drawing.Point(713, 585);
             this.btn_Ticket.Name = "btn_Ticket";
             this.btn_Ticket.Size = new System.Drawing.Size(293, 32);
@@ -516,10 +633,10 @@ namespace PetShop
             // lbl_numFecha
             // 
             this.lbl_numFecha.AutoSize = true;
-            this.lbl_numFecha.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_numFecha.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_numFecha.Location = new System.Drawing.Point(767, 194);
             this.lbl_numFecha.Name = "lbl_numFecha";
-            this.lbl_numFecha.Size = new System.Drawing.Size(44, 19);
+            this.lbl_numFecha.Size = new System.Drawing.Size(40, 15);
             this.lbl_numFecha.TabIndex = 19;
             this.lbl_numFecha.Text = "Fecha";
             this.lbl_numFecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -527,18 +644,18 @@ namespace PetShop
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(710, 405);
+            this.label1.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(710, 413);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 54);
+            this.label1.Size = new System.Drawing.Size(52, 56);
             this.label1.TabIndex = 20;
             this.label1.Text = "$";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_masIva
             // 
-            this.lbl_masIva.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_masIva.Location = new System.Drawing.Point(851, 472);
+            this.lbl_masIva.Font = new System.Drawing.Font("Lapsus Pro (theguybrush.com)", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_masIva.Location = new System.Drawing.Point(851, 480);
             this.lbl_masIva.Name = "lbl_masIva";
             this.lbl_masIva.Size = new System.Drawing.Size(143, 21);
             this.lbl_masIva.TabIndex = 21;
@@ -639,46 +756,6 @@ namespace PetShop
             this.dataGridViewTextBoxColumn15.HeaderText = "Total";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "Cant";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.HeaderText = "Descripcion";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.HeaderText = "Precio";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
             // 
             // Frm_Vender
             // 
